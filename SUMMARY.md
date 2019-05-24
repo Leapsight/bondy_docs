@@ -26,18 +26,18 @@
 
 ## Operating
 
-* [Security](monitoring-logging-and-debugging/security/README.md)
-  * [Security Basics](monitoring-logging-and-debugging/security/overview.md)
-  * [Authentication](monitoring-logging-and-debugging/security/authentication.md)
-  * [Authorization](monitoring-logging-and-debugging/security/authorization.md)
-  * [Realms](monitoring-logging-and-debugging/security/realms.md)
-  * [Role Based Access Control](monitoring-logging-and-debugging/security/role-based-access-control.md)
-  * [OAuth2](monitoring-logging-and-debugging/security/oauth2.md)
-  * [Managing Security Sources](monitoring-logging-and-debugging/security/managing-security-sources.md)
-* [Monitoring](monitoring-logging-and-debugging/monitoring.md)
-* [Logging](monitoring-logging-and-debugging/logging.md)
-* [Debugging](monitoring-logging-and-debugging/debugging.md)
-* [Operating a Cluster](monitoring-logging-and-debugging/operating-a-cluster.md)
+* [Security](operating/security/README.md)
+  * [Security Basics](operating/security/overview.md)
+  * [Authentication](operating/security/authentication.md)
+  * [Authorization](operating/security/authorization.md)
+  * [Realms](operating/security/realms.md)
+  * [Role Based Access Control](operating/security/role-based-access-control.md)
+  * [OAuth2](operating/security/oauth2.md)
+  * [Managing Security Sources](operating/security/managing-security-sources.md)
+* [Monitoring](operating/monitoring.md)
+* [Logging](operating/logging.md)
+* [Debugging](operating/debugging.md)
+* [Operating a Cluster](operating/operating-a-cluster.md)
 
 ## API Reference
 
