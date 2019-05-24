@@ -27,18 +27,18 @@ A subscription can be dynamically added at runtime using the Broker Bridge API. 
 ### Adding Subscriptions via the Briker Bridge API
 
 {% tabs %}
-{% tab title="First Tab" %}
+{% tab title="WAMP" %}
 
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="HTTP" %}
 
 {% endtab %}
 {% endtabs %}
 
 ### Adding Subscriptions via configuration
 
- To configure one or more subscriptions you need to modify the `bondy.conf` to tell Bondy where to find a specification file using the [Bridge Subscriptions Specification Format](./#bridge-subscriptions-specification-format).
+To configure one or more subscriptions you need to modify the `bondy.conf` to tell Bondy where to find a specification file using the [Bridge Subscriptions Specification Format](./#bridge-subscriptions-specification-format).
 
 {% code-tabs %}
 {% code-tabs-item title="bondy.conf" %}
@@ -89,7 +89,7 @@ The following snippet provides an example subscriptions specification file.
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-### Bridge Subscriptions Specification Format
+## Bridge Subscriptions Specification Format
 
 ### Specification Object
 
