@@ -10,7 +10,7 @@ Bondy Broker Bridge is a substem that acts as an anonymous WAMP subscriber allow
 
 The subsytem manages a set of bridges, each one enabled through the `bondy.conf` file. At the moment the `bondy_kafka_bridge` is the only one provided and diabled by default.
 
-To enable the Kafka Bridge modifiy the `broker_bdirge.kafka.enabled` option as shown below:
+To enable the Kafka Bridge modifiy the `broker_bridge.kafka.enabled` option as shown below:
 
 ```erlang
 broker_bridge.kafka.enabled = on
@@ -22,13 +22,11 @@ To learn more about the Kafka Bridge and how to configure it, read the following
 
 ## Configuring Subscriptions
 
-A subscription can be dynamically created and removed at runtime using the HTTP and WAMP APIs or it can be created at Bondy initialisation time through a configuration file.
+A subscription can be dynamically created and removed at runtime using the HTTP and WAMP APIs or it can be created at Bondy initialisation time through a [Bridge Subscription Specification Format](./#bridge-subscriptions-specification-format).
 
 ### Configuring Subscriptions via a configuration file
 
-To configure one or more subscriptions you need to modify the `bondy.conf` to tell Bondy where to find the Subscriptions configuration using Broker Bridge Subscription Configuration format.
-
-The following tells Bondy to find and load the subcribers specified in the `data/subscribers.json` file.
+To configure one or more subscriptions you need to modify the `bondy.conf` to tell Bondy where to find a specification file using the [Bridge Subscriptions Specification Format](./#bridge-subscriptions-specification-format).
 
 {% code-tabs %}
 {% code-tabs-item title="bondy.conf" %}
@@ -38,7 +36,7 @@ bondy_broker_bridge.config_file = /data/subscriptions.json
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-The following snippet provides an example 
+The following snippet provides an example subscriptions specification file.
 
 {% code-tabs %}
 {% code-tabs-item title="/data/subscriptions.json" %}
@@ -78,4 +76,26 @@ The following snippet provides an example
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
+### Bridge Subscriptions Specification Format
+
+### Specification Object
+
+| Property | Required | Type | Description | Examples |
+| :--- | :--- | :--- | :--- | :--- |
+| **id** | true | string | A unique identifier for this specification | subscribers\_1 |
+| **meta** | false | object | An arbitrary object containing user metadata. Bondy treats it as an opaque object. | {"foo" : "bar"} |
+| **subscriptions** | true | array | An array of Subscription Object |  |
+
+### Subscription Object
+
+| Property | Required | Type | Description | Examples |
+| :--- | :--- | :--- | :--- | :--- |
+| **bridge** | true | Bridge Identifier | The identifier of the bridge to use. These are the Erlang module names of the implemented bridges. | bondy\_kafka\_bridge |
+| **match** | true | Match Object |  |  |
+| **action** | true | Action Object |  |  |
+
+### Match Object
+
+### Action Object
 
