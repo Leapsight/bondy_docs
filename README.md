@@ -8,13 +8,13 @@ description: >-
 
 ## What is Bondy?
 
-_Bondy is an open-source high-performance and scalable all-in-one API Management, Gateway and Networking Bus Platform specially designed for the requirements of distributed architectures based on microservices \(µServices\) and the dynamics of Cloud and Internet Of Things \(IoT\) applications._
+_**Bondy is an open-source high-performance and scalable all-in-one API Management, Gateway and Networking Platform specially designed for the requirements of distributed architectures based on microservices \(µServices\) and the dynamics of Cloud and Internet Of Things \(IoT\) applications.**_
 
-As opposed to other API management solutions, Bondy unifies Remote Procedure Call \(RPC\) and Publish-Subscribe messaging patterns over multiple transports under a single layer, implementing the open Web Application Messaging Protocol \(WAMP\).
+As opposed to other API management solutions, Bondy unifies Remote Procedure Call \(RPC\) and Publish-Subscribe messaging patterns over multiple transports under a single layer, implementing the open [Web Application Messaging Protocol \(WAMP\)](https://wamp-proto.org).
 
-Becuase it used WAMP, Bondy enables loosely coupled application components \(embedded software, µServices, mobile and web applications\) to communicate in \(soft\) real-time.
+Because it uses WAMP, Bondy enables loosely coupled application components such as embedded software, µServices, mobile and web applications, to communicate in \(soft\) real-time.
 
-Bondy enables a polyglot architecture. It routes messages between those application components, which can be written in any language as long as they implement the WAMP protocol.
+It also enables a polyglot architecture. Bondy routes messages between WAMP peers, regsardless of their implementation language.
 
 ## How is Bondy different than other WAMP routers?
 
@@ -28,7 +28,7 @@ Bondy provides a unique sets of features which sets it apart from other WAMP rou
 
 
 
-## How is a WAMP Router different than other technologies?
+## How is a WAMP Router different than other messaging technologies?
 
 
 
