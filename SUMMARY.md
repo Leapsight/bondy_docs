@@ -18,6 +18,8 @@
 * [Security](configuring/security.md)
 * [Storage](configuring/storage.md)
 * [Setting up a cluster](configuring/setting-up-a-cluster.md)
+* [Broker Bridge](configuring/broker-bridge/README.md)
+  * [Kafka Broker Bridge](configuring/broker-bridge/kafka-broker-bridge.md)
 
 ## Using
 
