@@ -87,9 +87,7 @@ A subscription is created when a client sends a subscription request for a topic
 A subscriber receives a subscription ID as the result of a successful subscription request. When an second subscriber issues a subscription request for the same topic, then it receives a **different** subscription ID.
 {% endtab %}
 
-{% tab title="Rational" %}
-
-
+{% tab title="Rationale" %}
 Bondy was designed as a distributed router with continuous availailability as its main goal. Bondy uses an eventually consistent model avoiding coordination between nodes at all cost.
 
 Sharing a subscription between two or more subscribers in at least two cluster nodes will require coordination \(concensus\) and thus we do not support it.
