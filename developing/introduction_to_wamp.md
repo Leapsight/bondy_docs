@@ -22,7 +22,7 @@ Combining these two patterns into a single protocol allows it to be used for the
 
 WAMP is a routed protocol**,**  with all components connecting to a WAMP Router e.g. Bondy, where the WAMP Router performs message routing between the components.
 
-WAMP provides two messaging patterns: Publish & Subscribe \(PubSub\) and Routed Remote Procedure Calls \(RPCs\).
+WAMP provides two messaging patterns: [Publish & Subscribe \(PubSub\)](introduction_to_wamp.md#publish-and-subscribe-pubsub) and [Routed Remote Procedure Calls \(RPCs\)](introduction_to_wamp.md#routed-remote-procedure-calls-rpcs).
 
 Using WAMP you can build distributed systems out of application components which are loosely coupled, written in multiple programming languages and communicate in \(soft\) real-time. WAMP clients already exist for multiple languages and is very easy to implement in your preferred language.
 
