@@ -9,13 +9,28 @@ description: >-
 
 ## What is WAMP?
 
-WAMP is an open standard WebSocket and TCP/IP subprotocol that provides two application messaging patterns in one unified protocol: Remote Procedure Calls + Publish & Subscribe. Using WAMP you can build distributed systems out of application components which are loosely coupled, written in multiple programming languages and communicate in \(soft\) real-time. WAMP clients already exist for multiple languages and is very easy to implement in your preferred language.
+> The Web Application Messaging Protocol \(WAMP\) is intended to provide application developers with the semantics they need to handle messaging between components in distributed applications.  
+> – WAMP Protocol Specification
 
-### **Routed Remote Procedure Calls \(RPCs\)**
+WAMP is an open standard WebSocket and TCP/IP subprotocol that provides two application messaging patterns in one unified protocol: Remote Procedure Calls + Publish & Subscribe. 
 
-In WAMP, software components register individual procedures and any other component can call this via Crossbar.io, with Crossbario handling the registrations, call and result routing.
+{% hint style="success" %}
+Combining these two patterns into a single protocol allows it to be used for the entire messaging requirements of a distributed system, thus reducing technology stack complexity, as well as networking overheads.
+{% endhint %}
+
+## Key Characteristics
+
+WAMP is a routed protocol**,**  with all components connecting to a WAMP Router e.g. Bondy, where the WAMP Router performs message routing between the components.
+
+WAMP provides two messaging patterns: Publish & Subscribe \(PubSub\) and Routed Remote Procedure Calls \(RPCs\).
+
+Using WAMP you can build distributed systems out of application components which are loosely coupled, written in multiple programming languages and communicate in \(soft\) real-time. WAMP clients already exist for multiple languages and is very easy to implement in your preferred language.
 
 ### **Publish & Subscribe \(PubSub\)** 
 
-components subscribe to topics and publish to these, with Crossbar.io handling the subscriptions and dispatching.
+Publish & Subscribe \(PubSub\) is an established messaging pattern where a component, the _Subscriber_, informs the router that it wants to receive information on a topic \(i.e., it subscribes to a topic\). Another component, a _Publisher_, can then publish to this topic, and the router distributes events to all Subscribers.
+
+### **Routed Remote Procedure Calls \(RPCs\)**
+
+Routed Remote Procedure Calls \(RPCs\) rely on the same sort of decoupling that is used by the Publish & Subscribe pattern. A component, the _Callee_, announces to the router that it provides a certain procedure, identified by a procedure name. Other components, _Callers_, can then call the procedure, with the router invoking the procedure on the Callee, receiving the procedure's result, and then forwarding this result back to the Caller. Routed RPCs differ from traditional client-server RPCs in that the router serves as an intermediary between the Caller and the Callee.
 
