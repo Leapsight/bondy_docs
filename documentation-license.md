@@ -9,7 +9,7 @@ This license allows you to use the material in this documentation, whole or in p
 1. Attribute the material to Leapsight giving the attribution details provided below, and
 2. Share the material under this same License
 
-Attribution details:
+Please use the following attribution details when using this work:
 
 > Copyright by Ngineo Limited trading as Leapsight, material licensed under the CC-BY-SA 4.0, provided as-is without any warranties, [Bondy documentation](https://leapsight.gitbook.io/bondy).
 
@@ -19,7 +19,7 @@ By contributing, you accept that the above License applies to your contributions
 
 ## Copyright
 
-Copyright 2019 Ngineo Limited trading as Leapsight
+Copyright 2019 Ngineo Limited trading as Leapsight.
 
 ## Attributions
 
