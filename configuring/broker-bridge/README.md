@@ -22,7 +22,7 @@ To learn more about the Kafka Bridge and how to configure it, read the following
 
 ## Configuring Subscriptions
 
-A subscription can be dynamically created and removed at runtime using the HTTP and WAMP APIs or it can be created at Bondy initialisation time through a [Bridge Subscription Specification Format](./#bridge-subscriptions-specification-format).
+A subscription can be dynamically created and removed at runtime using the HTTP and WAMP APIs or it can be created at Bondy initialisation time through a [Bridge Subscriptions Specification Format](./#bridge-subscriptions-specification-format).
 
 ### Configuring Subscriptions via a configuration file
 
