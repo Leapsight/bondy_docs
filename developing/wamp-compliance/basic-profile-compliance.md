@@ -16,11 +16,33 @@
 
 ## PubSub Features
 
-| Feature | Implementation Status | Notes |
-| :--- | :--- | :--- |
-| Ordering Guarantees | Partial |  |
-
-#### NC: Ordering Guarantees
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Feature</th>
+      <th style="text-align:left">Implementation Status</th>
+      <th style="text-align:left">Extensions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Ordering Guarantees</td>
+      <td style="text-align:left">Partial, see <a href="basic-profile-compliance.md#nc-1-pubsub-ordering-guarantees">NC1</a>
+      </td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <p>Subscription (and Subscription ID) to be shared amongst subscribers to
+          the same topic.</p>
+      </td>
+      <td style="text-align:left">Partial, see <a href="basic-profile-compliance.md#nc-2-bondy-does-not-share-subscriptions-across-subscribers">NC2</a>
+      </td>
+      <td style="text-align:left"></td>
+    </tr>
+  </tbody>
+</table>### NC1: PubSub Ordering Guarantees
 
 {% tabs %}
 {% tab title="Requirement" %}
@@ -42,17 +64,13 @@ There is no guarantee regarding the order of return for multiple subsequent subs
 {% tab title="Rationale" %}
 
 {% endtab %}
+
+{% tab title="Roadmap" %}
+
+{% endtab %}
 {% endtabs %}
 
-
-
-## RPC Features
-
-## Non-compliance Cases
-
-### Publish & Subscribe
-
-#### NC: Bondy does not share subscriptions across subscribers
+### NC2: Bondy does not share subscriptions across subscribers
 
 {% tabs %}
 {% tab title="Protocol Requirement" %}
@@ -69,14 +87,20 @@ A subscription is created when a client sends a subscription request for a topic
 A subscriber receives a subscription ID as the result of a successful subscription request. When an second subscriber issues a subscription request for the same topic, then it receives a **different** subscription ID.
 {% endtab %}
 
-{% tab title="Rationale" %}
+{% tab title="Rational" %}
+
+
 Bondy was designed as a distributed router with continuous availailability as its main goal. Bondy uses an eventually consistent model avoiding coordination between nodes at all cost.
 
 Sharing a subscription between two or more subscribers in at least two cluster nodes will require coordination \(concensus\) and thus we do not support it.
 {% endtab %}
+
+{% tab title="Roadmap" %}
+No plans to change the implementation.
+{% endtab %}
 {% endtabs %}
 
-### Routed RPC
+## RPC Features
 
 
 
