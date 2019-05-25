@@ -3,6 +3,7 @@
 * [Welcome](README.md)
 * [Getting Started](getting-started.md)
 * [Release Notes](release-notes.md)
+* [Documentation License](documentation-license.md)
 * [FAQs](faqs.md)
 * [Source Code](https://gitlab.com/leapsight/bondy)
 
@@ -24,6 +25,7 @@
 ## Using
 
 * [Introduction to WAMP](developing/introduction_to_wamp.md)
+* [WAMP Compliance](developing/wamp-compliance.md)
 * [WAMP Protocol Docs](https://wamp-proto.org)
 
 ## Operating

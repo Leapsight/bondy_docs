@@ -85,23 +85,32 @@ The following snippet provides an example subscriptions specification file.
 | :--- | :--- | :--- | :--- | :--- |
 | **id** | true | string | A unique identifier for this specification | subscribers\_1 |
 | **meta** | false | object | An arbitrary object containing user metadata. Bondy treats it as an opaque object. | {"foo" : "bar"} |
-| **subscriptions** | true | array | An array of Subscription Object |  |
+| **subscriptions** | true | array | An array of [Subscription Objects](./#subscription-object) |  |
 
 ### Subscription Object
 
 | Property | Required | Type | Description | Examples |
 | :--- | :--- | :--- | :--- | :--- |
 | **bridge** | true | Bridge Identifier | The identifier of the bridge to use. These are the Erlang module names of the implemented bridges. | bondy\_kafka\_bridge |
-| **match** | true | Match Object |  |  |
-| **action** | true | Action Object |  |  |
+| **match** | true | [Match Specification Object](./#match-specification-object) |  |  |
+| **action** | true | [Action Object](./#action-object) |  |  |
 
-### Match Object
+### Match Specification Object
 
 | Property | Required | Type | Description | Examples |
 | :--- | :--- | :--- | :--- | :--- |
 | **realm** | true | string | The bondy realm this subscription will live in | my\_realm, com.example.realm |
 | **topic** | true | string | The WAMP topic we want to match | com.example.user.added |
+| **options** | false | [Match Options Object](./#match-options-object) | The way we want to match the topic. It should be one of "exact", "prefix" or "wildcard" | {"match": "exact"} |
+
+### Match Options Object
+
+This the WAMP Subscription Options object.
+
+| Property | Required | Type | Description | Examples |
+| :--- | :--- | :--- | :--- | :--- |
 | **match** | false | string | The way we want to match the topic. It should be one of "exact", "prefix" or "wildcard" | exact |
+| nkey |  |  |  |  |
 
 {% hint style="warning" %}
 At the moment Bondy does not support `wilcard` matching. Support is planned.
