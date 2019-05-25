@@ -25,7 +25,10 @@
 ## Using
 
 * [Introduction to WAMP](developing/introduction_to_wamp.md)
-* [WAMP Compliance](developing/wamp-compliance.md)
+* [WAMP Compliance](developing/wamp-compliance/README.md)
+  * [Basic Profile Compliance](developing/wamp-compliance/basic-profile-compliance.md)
+  * [Advanced Profile Compliance](developing/wamp-compliance/advanced-profile-compliance.md)
+  * [Custom Extensions](developing/wamp-compliance/custom-extensions.md)
 * [WAMP Protocol Docs](https://wamp-proto.org)
 
 ## Operating

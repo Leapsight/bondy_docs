@@ -1,10 +1,33 @@
----
-description: >-
-  This section explains Bondy copliance to WAMP with details on those cases were
-  it deviates and why.
----
+# Basic Profile Compliance
 
-# WAMP Compliance
+## Serialization
+
+| Feature | Implementation Status | Notes |
+| :--- | :--- | :--- |
+| JSON | Implemented |  |
+| Msgpack | Implemented |  |
+
+Bondy implements additional serializations.
+
+## PubSub Features
+
+| Feature | Implementation Status | Notes |
+| :--- | :--- | :--- |
+| Ordering Guarantees | Partial |  |
+
+### Ordering Guarantees
+
+The ordering guarantees are as follows:
+
+If _Subscriber A_ is subscribed to both **Topic 1** and **Topic 2**, and _Publisher B_ first publishes an **Event 1** to **Topic 1**and then an **Event 2** to **Topic 2**, then _Subscriber A_ will first receive **Event 1** and then **Event 2**. This also holds if **Topic 1** and **Topic 2** are identical.
+
+In other words, WAMP guarantees ordering of events between any given _pair_ of Publisher and Subscriber.
+
+Further, if _Subscriber A_ subscribes to **Topic 1**, the `SUBSCRIBED` message will be sent by the _Broker_ to _Subscriber A_ before any `EVENT` message for **Topic 1**.
+
+There is no guarantee regarding the order of return for multiple subsequent subscribe requests. A subscribe request might require the _Broker_ to do a time-consuming lookup in some database, whereas another subscribe request second might be permissible immediately.
+
+## RPC Features
 
 ## Non-compliance Cases
 
@@ -34,9 +57,7 @@ Sharing a subscription between two or more subscribers in at least two cluster n
 {% endtab %}
 {% endtabs %}
 
+### Routed RPC
 
 
-
-
-### Remote Procedure Calls
 
