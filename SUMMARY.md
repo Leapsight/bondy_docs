@@ -44,8 +44,7 @@
 ## API Reference
 
 * [Overview](api-reference/untitled.md)
-* [WAMP API](api-reference/wamp-api/README.md)
-  * [Broker Bridge](api-reference/wamp-api/broker-bridge.md)
+* [WAMP API](api-reference/wamp-api.md)
 * [REST API](api-reference/rest-api/README.md)
   * [Realm](api-reference/rest-api/realm.md)
 * [CLI](api-reference/cli.md)

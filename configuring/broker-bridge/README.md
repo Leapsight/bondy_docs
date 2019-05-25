@@ -20,23 +20,11 @@ To learn more about the Kafka Bridge and how to configure it, read the following
 
 {% page-ref page="kafka-broker-bridge.md" %}
 
-## Adding Subscriptions
+## Configuring Subscriptions
 
-A subscription can be dynamically added at runtime using the Broker Bridge API. Alternatively, you can add subscriptions via configuration.
+A subscription can be dynamically created and removed at runtime using the HTTP and WAMP APIs or it can be created at Bondy initialisation time through a [Bridge Subscription Specification Format](./#bridge-subscriptions-specification-format).
 
-### Adding Subscriptions via the Briker Bridge API
-
-{% tabs %}
-{% tab title="WAMP" %}
-
-{% endtab %}
-
-{% tab title="HTTP" %}
-
-{% endtab %}
-{% endtabs %}
-
-### Adding Subscriptions via configuration
+### Configuring Subscriptions via a configuration file
 
 To configure one or more subscriptions you need to modify the `bondy.conf` to tell Bondy where to find a specification file using the [Bridge Subscriptions Specification Format](./#bridge-subscriptions-specification-format).
 
@@ -60,7 +48,7 @@ The following snippet provides an example subscriptions specification file.
         {
             "bridge": "bondy_kafka_bridge",
             "match": {
-                "realm_uri": "com.example.realm",
+                "realm": "com.example.realm",
                 "topic" : "com.example.user.created",
                 "options": {"match": "exact"}
             },
@@ -89,7 +77,7 @@ The following snippet provides an example subscriptions specification file.
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## Bridge Subscriptions Specification Format
+### Bridge Subscriptions Specification Format
 
 ### Specification Object
 
@@ -109,5 +97,25 @@ The following snippet provides an example subscriptions specification file.
 
 ### Match Object
 
+| Property | Required | Type | Description | Examples |
+| :--- | :--- | :--- | :--- | :--- |
+| **realm** | true | string | The bondy realm this subscription will live in | my\_realm, com.example.realm |
+| **topic** | true | string | The WAMP topic we want to match | com.example.user.added |
+| **match** | false | string | The way we want to match the topic. It should be one of "exact", "prefix" or "wildcard" | exact |
+
+{% hint style="warning" %}
+At the moment Bondy does not support `wilcard` matching. Support is planned.
+{% endhint %}
+
 ### Action Object
+
+The Action Object is and abstract object. Concrete implementations are defined by each Bridge.
+
+Review the following link for the Kafka Bridge implementation.
+
+{% page-ref page="kafka-broker-bridge.md" %}
+
+
+
+
 
