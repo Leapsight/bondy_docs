@@ -1,13 +1,17 @@
 # Basic Profile Compliance
 
-## Serialization
+## General Features
 
 | Feature | Implementation Status | Notes |
 | :--- | :--- | :--- |
-| JSON | Implemented |  |
-| Msgpack | Implemented |  |
-
-Bondy implements additional serializations.
+| Transport and Session Lifetime | Implemented | Each session establishes a new transport connection. |
+| Close session and connection on protocol errors | Implemented | As required, Bondy sends an `ABORT` message with error `wamp.error.protocol_violation` |
+| JSON Serialization | Implemented |  |
+| Msgpack Serialization | Implemented |  |
+| Extensibility | Partial | `Options` and `Details` object keys are not validated against regex `[a-z][a-z0-9_]{2,}` for WAMP predefined key, nor `[a-z0-9]{3,}` for custom keys. |
+| No Polymorphism, avoid empty arguments and keyword arguments | Implemented |  |
+| Session Lifecycle | Implemented |  |
+| Agent Identification | Implemented |  |
 
 ## PubSub Features
 
@@ -37,7 +41,7 @@ There is no guarantee regarding the order of return for multiple subsequent subs
 
 {% tabs %}
 {% tab title="Protocol Requirement" %}
-The WAMP protocol requires subscription to be shared amogst subscribers to the same topic. 
+The WAMP protocol requires a subscription to be shared amogst subscribers to the same topic. 
 
 A subscription is created when a client sends a subscription request for a topic where there are currently no other subscribers. It is deleted when the last subscriber cancels its subscriptions, or its session is disconnected.
 
