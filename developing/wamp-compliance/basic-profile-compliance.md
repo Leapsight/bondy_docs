@@ -73,7 +73,7 @@ There is no guarantee regarding the order of return for multiple subsequent subs
 ### NC2: Bondy does not share subscriptions across subscribers
 
 {% tabs %}
-{% tab title="Protocol Requirement" %}
+{% tab title="Requirement" %}
 The WAMP protocol requires a subscription to be shared amogst subscribers to the same topic. 
 
 A subscription is created when a client sends a subscription request for a topic where there are currently no other subscribers. It is deleted when the last subscriber cancels its subscriptions, or its session is disconnected.
