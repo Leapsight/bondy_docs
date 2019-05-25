@@ -2,16 +2,15 @@
 
 ## General Features
 
-| Feature | Compliance Status | Notes |
+| Feature | Compliance Status | Extensions |
 | :--- | :--- | :--- |
-| Transport and Session Lifetime | Full | Each session establishes a new transport connection. |
-| Close session and connection on protocol errors | Full | As required, Bondy sends an `ABORT` message with error `wamp.error.protocol_violation` |
-| JSON Serialization | Full |  |
-| Msgpack Serialization | Full |  |
+| Transport and Session Lifetime | Full, Each session establishes a new transport connection. | No |
+| Close session and connection on protocol errors | Full | No |
+| Serialization \(JSON and Msgpack\) | Full | Yes |
 | Validation of custom object keys using regex `[a-z0-9]{3,}` | Planned |  |
-| No Polymorphism, avoid empty arguments and keyword arguments | Full |  |
-| Session Lifecycle | Full |  |
-| Agent Identification | Full |  |
+| No Polymorphism, avoid empty arguments and keyword arguments | Full | No |
+| Session Lifecycle | Full | No |
+| Agent Identification | Full | No |
 
 
 
