@@ -94,7 +94,7 @@ Sharing a subscription between two or more subscribers in at least two cluster n
 {% endtab %}
 
 {% tab title="Roadmap" %}
-No plans to change the implementation.
+No plans to implement this requierement.
 {% endtab %}
 {% endtabs %}
 
