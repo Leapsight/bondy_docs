@@ -2,16 +2,18 @@
 
 ## General Features
 
-| Feature | Implementation Status | Notes |
+| Feature | Compliance Status | Notes |
 | :--- | :--- | :--- |
-| Transport and Session Lifetime | Implemented | Each session establishes a new transport connection. |
-| Close session and connection on protocol errors | Implemented | As required, Bondy sends an `ABORT` message with error `wamp.error.protocol_violation` |
-| JSON Serialization | Implemented |  |
-| Msgpack Serialization | Implemented |  |
-| Extensibility | Partial | `Options` and `Details` object keys are not validated against regex `[a-z][a-z0-9_]{2,}` for WAMP predefined key, nor `[a-z0-9]{3,}` for custom keys. |
-| No Polymorphism, avoid empty arguments and keyword arguments | Implemented |  |
-| Session Lifecycle | Implemented |  |
-| Agent Identification | Implemented |  |
+| Transport and Session Lifetime | Full | Each session establishes a new transport connection. |
+| Close session and connection on protocol errors | Full | As required, Bondy sends an `ABORT` message with error `wamp.error.protocol_violation` |
+| JSON Serialization | Full |  |
+| Msgpack Serialization | Full |  |
+| Validation of custom object keys using regex `[a-z0-9]{3,}` | Planned |  |
+| No Polymorphism, avoid empty arguments and keyword arguments | Full |  |
+| Session Lifecycle | Full |  |
+| Agent Identification | Full |  |
+
+
 
 ## PubSub Features
 
@@ -19,8 +21,10 @@
 | :--- | :--- | :--- |
 | Ordering Guarantees | Partial |  |
 
-### Ordering Guarantees
+#### NC: Ordering Guarantees
 
+{% tabs %}
+{% tab title="Requirement" %}
 The ordering guarantees are as follows:
 
 If _Subscriber A_ is subscribed to both **Topic 1** and **Topic 2**, and _Publisher B_ first publishes an **Event 1** to **Topic 1**and then an **Event 2** to **Topic 2**, then _Subscriber A_ will first receive **Event 1** and then **Event 2**. This also holds if **Topic 1** and **Topic 2** are identical.
@@ -30,6 +34,18 @@ In other words, WAMP guarantees ordering of events between any given _pair_ of P
 Further, if _Subscriber A_ subscribes to **Topic 1**, the `SUBSCRIBED` message will be sent by the _Broker_ to _Subscriber A_ before any `EVENT` message for **Topic 1**.
 
 There is no guarantee regarding the order of return for multiple subsequent subscribe requests. A subscribe request might require the _Broker_ to do a time-consuming lookup in some database, whereas another subscribe request second might be permissible immediately.
+{% endtab %}
+
+{% tab title="Implementation" %}
+
+{% endtab %}
+
+{% tab title="Rationale" %}
+
+{% endtab %}
+{% endtabs %}
+
+
 
 ## RPC Features
 
@@ -37,7 +53,7 @@ There is no guarantee regarding the order of return for multiple subsequent subs
 
 ### Publish & Subscribe
 
-#### Bondy does not share subscriptions across subscribers
+#### NC: Bondy does not share subscriptions across subscribers
 
 {% tabs %}
 {% tab title="Protocol Requirement" %}
