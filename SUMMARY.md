@@ -6,6 +6,7 @@
 * [Documentation License](documentation-license.md)
 * [FAQs](faqs.md)
 * [Source Code](https://gitlab.com/leapsight/bondy)
+* [Ideas Portal](https://bondy.ideas.craft.io/BON)
 
 ## Installing
 
