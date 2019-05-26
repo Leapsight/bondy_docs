@@ -8,11 +8,11 @@ description: >-
 
 ## What is Bondy?
 
-_Bondy is an open-source high-performance and scalable all-in-one API Management, Gateway and Networking Bus Platform specially designed for the requirements of distributed architectures based on microservices \(µServices\) and the dynamics of Cloud and Internet Of Things \(IoT\) applications._
+_Bondy is an open-source high-performance and scalable all-in-one API Management, Gateway and Networking  Platform specially designed for the requirements of distributed architectures based on microservices \(µServices\) and the dynamics of Cloud and Internet Of Things \(IoT\) applications._
 
-As opposed to other API management solutions, Bondy unifies Remote Procedure Call \(RPC\) and Publish-Subscribe messaging patterns over multiple transports under a single layer, implementing the open Web Application Messaging Protocol \(WAMP\).
+As opposed to other API management solutions, Bondy unifies Remote Procedure Call \(RPC\) and Publish-Subscribe messaging patterns over multiple transports under a single layer, implementing the open [Web Application Messaging Protocol \(WAMP\)](developing/introduction_to_wamp.md).
 
-Becuase it used WAMP, Bondy enables loosely coupled application components \(embedded software, µServices, mobile and web applications\) to communicate in \(soft\) real-time.
+Becuase it implements WAMP, Bondy enables loosely coupled application components \(embedded software, µServices, mobile and web applications\) to communicate in \(soft\) real-time.
 
 Bondy enables a polyglot architecture. It routes messages between those application components, which can be written in any language as long as they implement the WAMP protocol.
 
