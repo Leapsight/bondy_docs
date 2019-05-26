@@ -70,5 +70,5 @@
 
 ## Contributing
 
-* [Overview](contributing/overview.md)
+* [Coding Guidelines](contributing/coding-guidelines.md)
 

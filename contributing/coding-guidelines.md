@@ -1,14 +1,18 @@
-# Overview
+---
+description: >-
+  This section explains the coding guidelines every contributor should respect.
+  These are “things that may be used as reason to reject a Pull Request".
+---
+
+# Coding Guidelines
 
 ## Conventions & Rules
 
 {% hint style="info" %}
-This work is based on [Inaka's Erlang Coding Guidelines](https://github.com/inaka/erlang_guidelines).
+This work is an adaptation and extension of [Inaka's Erlang Coding Guidelines](https://github.com/inaka/erlang_guidelines).
 {% endhint %}
 
-Suggested reading material: [http://www.erlang.se/doc/programming\_rules.shtml](http://www.erlang.se/doc/programming_rules.shtml)
-
-These are _"Things that may be used as reason to reject a Pull Request"_.
+Suggested reading material: [http://www.erlang.se/doc/programming\_rules.shtml](http://www.erlang.se/doc/programming_rules.shtml).
 
 ### Source Code Layout
 
@@ -22,44 +26,173 @@ When editing an existing module or writing a new one, stick to this style Guide.
 {% tab title="Rationale" %}
 It's better to keep a module that just looks ugly to you than to have a module that looks half ugly to you, half ugly to somebody else.
 {% endtab %}
-
-{% tab title="Examples" %}
-None.
-{% endtab %}
 {% endtabs %}
 
 #### Spaces over tabs
 
-> Spaces over tabs, 2 space indentation.
+{% tabs %}
+{% tab title="Description" %}
+Spaces over tabs, four \(4\) space indentation.
+{% endtab %}
 
-_Reasoning_: This is _not_ intended to allow deep nesting levels in the code. 2 spaces are enough if the code is clean enough, and the code looks more concise, allowing more characters in the same line.
+{% tab title="Rationale" %}
+This is not intended to allow deep nesting levels in the code. Four \(4\) spaces are enough if the code is clean enough, and the code looks more concise, allowing more characters in the same line.
+{% endtab %}
+{% endtabs %}
 
 #### Use your spacebar
 
-> Surround operators and commas with spaces.
+{% tabs %}
+{% tab title="Description" %}
+Surround operators and commas with spaces.
+{% endtab %}
 
-_Reasoning_: It produces cleaner code that's easier to find / read / etc.
+{% tab title="Rationale" %}
+It produces cleaner code that's easier to find and read.
+{% endtab %}
+
+{% tab title="Examples" %}
+Do not write
+
+```erlang
+Tuple = {A,B,C},
+List = [1,2,3],
+lists:append(tuple_to_list(Tuple),List).
+```
+
+Instead, write
+
+```erlang
+Tuple = {A, B, C},
+List = [1, 2, 3],
+lists:append(tuple_to_list(Tuple), List).
+```
+{% endtab %}
+{% endtabs %}
+
+#### Do not abuse the spacebar
+
+{% tabs %}
+{% tab title="Description" %}
+Do not add a space right after the curly brace, parenthesis or bracket.
+{% endtab %}
+
+{% tab title="Rationale" %}
+It produces cleaner code that's easier to find and read.
+{% endtab %}
+
+{% tab title="Examples" %}
+Do not write:
+
+```erlang
+Tuple = { a, b, c },
+List = [ a, b, c ],
+lists:append( tuple_to_list( Tuple ), List ).
+```
+
+Instead, write:
+
+```erlang
+Tuple = {A, B, C},
+List = [1, 2, 3],
+lists:append(tuple_to_list(Tuple), List).
+```
+{% endtab %}
+{% endtabs %}
 
 #### No Trailing Whitespace
 
-> Remove trailing whitespaces from your lines
+{% tabs %}
+{% tab title="Description" %}
+Remove trailing whitespaces from your lines
+{% endtab %}
 
-_Reasoning_: It's commit noise. As a reference, check out [this long argument](https://programmers.stackexchange.com/questions/121555/why-is-trailing-whitespace-a-big-deal).
+{% tab title="Rationale" %}
+It's commit noise. As a reference, check out [this long argument](https://programmers.stackexchange.com/questions/121555/why-is-trailing-whitespace-a-big-deal).
+{% endtab %}
+{% endtabs %}
 
-#### 80 column per line
+#### 80 columns per line
 
-> Stick to 80 chars per line, maximum.
+{% tabs %}
+{% tab title="Description" %}
+Stick to 80 chars per line, maximum.
+{% endtab %}
 
-_Reasoning_: Excessively long lines are a pain to deal with: you either have to scroll horizontally while editing, or live with ugly line wrapping at arbitrary points. The 80 character limit also keeps lines short enough that you can comfortably work with two source files side by side on a typical laptop screen, or three on a 1080p display.
+{% tab title="Rationale" %}
+Excessively long lines are a pain to deal with: you either have to scroll horizontally while editing, or live with ugly line wrapping at arbitrary points. The 80 character limit also keeps lines short enough that you can comfortably work with two source files side by side on a typical laptop screen, or three on a 1080p display.
+{% endtab %}
+{% endtabs %}
 
 #### More, smaller functions over case expressions
 
-> Use pattern-maching in clause functions rather than case's. Specially important if the case is:
->
-> * the top-level expression of the function
-> * huge
+{% tabs %}
+{% tab title="Description" %}
+Use pattern-maching in clause functions rather than case's. Specially important if the case is: 
 
-_Reasoning:_ it is usually the case that a case in a function body represents some sort of decision, and functions should be as simple as possible. If each branch of a decision's outcome is implemented as a function clause instead of as a case clause, the decision may be given a meaningful name. In other words, the case is acting as an 'anonymous function', which unless they are being used in the context of a higher-order function, merely obscure meaning.
+* the top-level expression of the function 
+* huge
+{% endtab %}
+
+{% tab title="Rationale" %}
+it is usually the case that a case in a function body represents some sort of decision, and functions should be as simple as possible. If each branch of a decision's outcome is implemented as a function clause instead of as a case clause, the decision may be given a meaningful name. In other words, the case is acting as an 'anonymous function', which unless they are being used in the context of a higher-order function, merely obscure meaning.
+{% endtab %}
+
+{% tab title="" %}
+Try not to write like this:
+
+```erlang
+send(UserId, Message) ->
+    case user:lookup(UserId) of
+        {ok, User} ->
+            case user:email(User) of
+                undefined ->
+                    error(no_email);
+                Email ->
+                    Email = user:email(User),
+                    send(Email, Message)
+            end;
+        {error, not_found} ->
+            error(not_found)
+    end.
+```
+
+Instead write:
+
+```erlang
+send(UserId, Message) ->
+    case user:lookup(UserId) of
+        {ok, User} ->
+            maybe_send(user:email(User), Message);
+        {error, not_found} ->
+            error(not_found)
+    end.
+
+%% @private
+maybe_send(undefined, _) ->
+    error(no_email);
+maybe_send(Email, Message)
+    send(Email, Message).
+```
+
+Or even:
+
+```erlang
+send(UserId, Message) ->
+    maybe_send(user:lookup(UserId), Message).
+
+%% @private
+maybe_send({ok, User} ->
+    maybe_send(user:email(User), Message);
+maybe_send({error, not_found}, _) ->
+    error(not_found);
+maybe_send(undefined, _) ->
+    error(no_email);
+maybe_send(Email, Message)
+    send(Email, Message).
+```
+{% endtab %}
+{% endtabs %}
 
 #### Group functions logically
 
