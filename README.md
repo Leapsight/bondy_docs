@@ -32,7 +32,9 @@ Bondy provides a unique sets of features which sets it apart from other WAMP rou
 In the current release the security system is just used for authentication and not authorization. Work is on the way to implement authorization in the next release.
 {% endhint %}
 
-## How is a WAMP Router different than other technologies?
+## How is a WAMP Router different than other messaging technologies?
+
+For a comparison with other products and technologies review the [WAMP Compared article](https://wamp-proto.org/comparison.html) in the protocol specification website.
 
 
 
