@@ -1,5 +1,9 @@
 # Documentation License
 
+## Copyright
+
+Copyright 2019 Ngineo Limited trading as Leapsight.
+
 ## License
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
@@ -17,10 +21,6 @@ Please use the following attribution details when using this work:
 By contributing, you accept that the above License applies to your contributions.
 {% endhint %}
 
-## Copyright
-
-Copyright 2019 Ngineo Limited trading as Leapsight.
-
 ## Attributions
 
 This work includes adaptations of the following licensed works:
@@ -37,13 +37,11 @@ Copyright by Crossbar.io Technologies GmbH, material licensed under the CC-BY-SA
 
 ## Trademarks
 
-{% hint style="info" %}
+"Leapsight" is a registered trademark of Ngineo Limited trading as Leapsight.
+
 "Leapsight Bondy" is a trademark of Ngineo Limited trading as Leapsight.
-{% endhint %}
 
-{% hint style="info" %}
-“WAMP” is a trademarks of Crossbar.io Technologies GmbH.
-{% endhint %}
+"Riak" is a registered trademark of Hillside \(Technology\) Limited.
 
-
+“WAMP” is a trademark of Crossbar.io Technologies GmbH.
 
