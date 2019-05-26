@@ -12,8 +12,6 @@
 | Session Lifecycle | Full | No |
 | Agent Identification | Full | No |
 
-
-
 ## PubSub Features
 
 <table>
@@ -42,7 +40,9 @@
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>### NC1: PubSub Ordering Guarantees
+</table>### Non-compliance Cases
+
+#### NC1: PubSub Ordering Guarantees
 
 {% tabs %}
 {% tab title="Requirement" %}
@@ -58,19 +58,19 @@ There is no guarantee regarding the order of return for multiple subsequent subs
 {% endtab %}
 
 {% tab title="Implementation" %}
-
+TBD
 {% endtab %}
 
 {% tab title="Rationale" %}
-
+TBD
 {% endtab %}
 
 {% tab title="Roadmap" %}
-
+TBD
 {% endtab %}
 {% endtabs %}
 
-### NC2: Bondy does not share subscriptions across subscribers
+#### NC2: Bondy does not share subscriptions across subscribers
 
 {% tabs %}
 {% tab title="Requirement" %}
@@ -95,6 +95,30 @@ Sharing a subscription between two or more subscribers in at least two cluster n
 
 {% tab title="Roadmap" %}
 No plans to implement this requierement.
+{% endtab %}
+{% endtabs %}
+
+#### NC3: Reuse of Registration ID
+
+{% tabs %}
+{% tab title="Requirement" %}
+The WAMP protocol is not clear on whether a registration ID is shared or nor amongst multiple Callees registering the same URI under the shared registration feature.
+
+According to section 14.3.7.1.3.5. the call to `wamp.registration.list_callees(RegistrationId)`retrieves a list of session IDs for sessions currently attached to the registration, which implies all Callees shared the same RegistrationId. Crossbar.io documentation says the same.
+{% endtab %}
+
+{% tab title="Implementation" %}
+Every registration gets its own registration ID, which eases the implementation of the replica merge algorithm as it is natural and requires no coordination.
+{% endtab %}
+
+{% tab title="Rationale" %}
+Bondy was designed as a distributed router with continuous availailability as its main goal. Bondy uses an eventually consistent model avoiding coordination between nodes at all cost.
+
+Sharing a registration ID between two or more callees in at least two cluster nodes will require coordination \(concensus\) and thus we do not support it.
+{% endtab %}
+
+{% tab title="Roadmap" %}
+
 {% endtab %}
 {% endtabs %}
 
