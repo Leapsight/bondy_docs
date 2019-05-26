@@ -12,6 +12,11 @@
   </thead>
   <tbody>
     <tr>
+      <td style="text-align:left">Web Socket transport</td>
+      <td style="text-align:left">&#x2714;</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
       <td style="text-align:left">Transport and Session Lifetime</td>
       <td style="text-align:left">&#x2714;
         <br />Each session establishes a new transport connection.</td>
