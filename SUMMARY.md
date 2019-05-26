@@ -42,7 +42,7 @@
   * [Managing Security Sources](operating/security/managing-security-sources.md)
 * [Monitoring](operating/monitoring.md)
 * [Logging](operating/logging.md)
-* [Debugging](operating/debugging.md)
+* [Tracing](operating/debugging.md)
 * [Operating a Cluster](operating/operating-a-cluster.md)
 
 ## API Reference
