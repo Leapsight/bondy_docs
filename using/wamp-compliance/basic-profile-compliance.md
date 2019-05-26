@@ -2,17 +2,57 @@
 
 ## General Features
 
-| Feature | Compliance Status | Extensions |
-| :--- | :--- | :--- |
-| Transport and Session Lifetime | ✔  Each session establishes a new transport connection. |  |
-| Close session and connection on protocol errors | ✔  |  |
-| Serialization \(JSON and Msgpack\) | ✔  | ✔  |
-| Validation of custom object keys using regex `[a-z0-9]{3,}` | 🔜  |  |
-| No Polymorphism, avoid empty arguments and keyword arguments | ✔  |  |
-| Session Lifecycle | ✔  |  |
-| Agent Identification | ✔  |  |
-
-## PubSub Features
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Feature</th>
+      <th style="text-align:left">Compliance Status</th>
+      <th style="text-align:left">Extensions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Transport and Session Lifetime</td>
+      <td style="text-align:left">&#x2714;
+        <br />Each session establishes a new transport connection.</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Close session and connection on protocol errors</td>
+      <td style="text-align:left">&#x2714;</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Serializations (JSON and Msgpack)</td>
+      <td style="text-align:left">&#x2714;</td>
+      <td style="text-align:left">
+        <p>&#x2714;</p>
+        <p>BERT, Erlang</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Validation of custom object keys using regex <code>[a-z0-9]{3,}</code>
+      </td>
+      <td style="text-align:left">&#x1F51C;</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">No Polymorphism, avoid empty arguments and keyword arguments</td>
+      <td style="text-align:left">&#x2714;</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Session Lifecycle</td>
+      <td style="text-align:left">&#x2714;</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Agent Identification</td>
+      <td style="text-align:left">&#x2714;</td>
+      <td style="text-align:left"></td>
+    </tr>
+  </tbody>
+</table>## PubSub Features
 
 <table>
   <thead>
