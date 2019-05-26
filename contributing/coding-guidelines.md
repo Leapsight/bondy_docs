@@ -196,9 +196,126 @@ maybe_send(Email, Message)
 
 #### Group functions logically
 
-> Try to always separate **unexported** and **exported** functions in groups, with the exported ones first, unless it helps readability and code discovery.
+{% tabs %}
+{% tab title="Description" %}
+Try to always separate unexported and exported functions in groups, with the exported ones first, unless it helps readability and code discovery.
+{% endtab %}
 
-_Reasoning_: Well structured code is easier to read/understand/modify.
+{% tab title="Rationale" %}
+Well structured code is easier to read/understand/modify.
+{% endtab %}
+
+{% tab title="Examples" %}
+```erlang
+%% -----------------------------------------------------------------------------
+%% @doc 
+%% @end
+%% -----------------------------------------------------------------------------
+-module(email_helper).
+
+-export([send/2]).
+
+
+
+%% =============================================================================
+%% API
+%% =============================================================================
+
+
+
+%% -----------------------------------------------------------------------------
+%% @doc 
+%% @end
+%% -----------------------------------------------------------------------------
+-spec send(UserId :: binary(), Message :: binary()) ->
+    ok | no_return().
+
+send(UserId, Message) ->
+    maybe_send(user:lookup(UserId), Message).
+
+
+
+%% =============================================================================
+%% PRIVATE
+%% =============================================================================
+
+
+
+%% @private
+maybe_send({ok, User} ->
+    maybe_send(user:email(User), Message);
+maybe_send({error, not_found}, _) ->
+    error(not_found);
+maybe_send(undefined, _) ->
+    error(no_email);
+maybe_send(Email, Message)
+    send(Email, Message).
+
+
+
+
+```
+{% endtab %}
+{% endtabs %}
+
+#### Use comment banners to separate your module sections
+
+{% tabs %}
+{% tab title="Description" %}
+
+{% endtab %}
+
+{% tab title="Rationale" %}
+
+{% endtab %}
+
+{% tab title="Examples" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### \(We know is a widespread practice in Erlang, but\) Avoid Erlang emacs-style excesive indentation  
+
+{% tabs %}
+{% tab title="Description" %}
+Try to align long expressions to the left.
+{% endtab %}
+
+{% tab title="Reationale" %}
+It is easier to read and it plays nicely with the 80 columns pero row rule.
+{% endtab %}
+
+{% tab title="Examples" %}
+Please avoid writing this:
+
+```erlang
+-record(bondy_oauth2_token, {
+                                issuer             ::  binary(),
+                                username           ::  binary(),
+                                groups = []        ::  [binary()],
+                                meta = #{}         ::  map(),
+                                expires_in         ::  pos_integer(),
+                                issued_at          ::  pos_integer(),
+                                is_active = true   ::  boolean
+                                }).
+
+```
+
+Instead, write:
+
+```erlang
+-record(bondy_oauth2_token, {
+    issuer              ::  binary(),
+    username            ::  binary(),
+    groups = []         ::  [binary()],
+    meta = #{}          ::  map(),
+    expires_in          ::  pos_integer(),
+    issued_at           ::  pos_integer(),
+    is_active = true    ::  boolean
+}).
+```
+{% endtab %}
+{% endtabs %}
 
 #### Get your types together
 
@@ -285,19 +402,19 @@ _Debate_:
 
 _Reasoning_: Nesting `try…catch` blocks defeats the whole purpose of them, which is to isolate the code that deals with error scenarios from the nice and shiny code that deals with the expected execution path.
 
-#### Avoid matching unnecesary terms in function clauses
+#### Avoid matching unnecesary structure fields in function clauses
 
 {% tabs %}
 {% tab title="Description" %}
-
+Do not use the function head to bind fields in a struct that are not used to switch between the different function clauses.
 {% endtab %}
 
 {% tab title="Rationale" %}
-
+It results in clean and clear logic.
 {% endtab %}
 
 {% tab title="Examples" %}
-This is bad, because we are just switching on the `x` property.
+This is bad, because we are just switching on the `x` field, binding `X` and `Y` confuses the reader.
 
 ```erlang
 my_function(#{x := foo, y := Y, z := Z}) ->
