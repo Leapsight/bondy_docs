@@ -8,7 +8,7 @@ description: >-
 
 ## What is Bondy?
 
-_Bondy is an open-source high-performance and scalable all-in-one API Management, Gateway and Networking  Platform specially designed for the requirements of distributed architectures based on microservices \(µServices\) and the dynamics of Cloud and Internet Of Things \(IoT\) applications._
+> Leapsight Bondy is an open source, scalable networking platform for distributed miicroservices _\(µServices\)_ and _Internet Of Things \(IoT\)_ applications written in Erlang. Bondy implements the open Web Application Messaging Protocol \(WAMP\) offering both PubSub and routed RPC.
 
 As opposed to other API management solutions, Bondy unifies Remote Procedure Call \(RPC\) and Publish-Subscribe messaging patterns over multiple transports under a single layer, implementing the open [Web Application Messaging Protocol \(WAMP\)](developing/introduction_to_wamp.md).
 
@@ -25,8 +25,12 @@ Bondy provides a unique sets of features which sets it apart from other WAMP rou
 * **Peer-to-peer master-less clustering** – All nodes in a Bondy cluster are equal, thanks to the underlying clustering and networking technology which provides a master-less architecture.
 * **Low latency data replication** – All nodes in a Bondy cluster share a global state which is replicated through a highly scaleable and low latency eventually consistency model based on gossip. The underlying technology enables various network topologies which supports large clusters \(the underlying technology has been demonstrated to scale up to 1,024 nodes\). 
 * **Ease of use** – Bondy is easy to operate due to its operational simplicity provided by its peer-to-peer nature and the lack of special nodes, the automatic data replication and self-healing.
+* **Embedded REST API Gateway** – Bondy embeds a powerfull API Gateway that can translate HTTP REST actions to WAMP RPC and PubSub operations. The API Gateway leverages the underlying storage and replication technology to deploy the API Specifications to the cluster nodes ni real-time.
+* **Embedded Role-based Access Control \(RBAC\)** – Bondy embeds a RBAC subsystem to empower the per realm API Gateway OAuth2 and WAMP security features. It borrows its design and implementation from Riak Core's Security subsystem which itself was modelled after PostgreSQL RBAC.
 
-
+{% hint style="warning" %}
+In the current release the security system is just used for authentication and not authorization. Work is on the way to implement authorization in the next release.
+{% endhint %}
 
 ## How is a WAMP Router different than other technologies?
 
