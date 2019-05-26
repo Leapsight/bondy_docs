@@ -2,7 +2,7 @@
 
 
 {% tabs %} {% tab title="Rule" %}
-> When editing a module written by someone else, stick to the style in which it was written. If a project has an overall style, stick to that when writing new modules as well.
+When editing a module written by someone else, stick to the style in which it was written. If a project has an overall style, stick to that when writing new modules as well.
 {% endtab %}
 
 {% tab title="Rationale" %}
