@@ -16,7 +16,6 @@
 ## Getting Started
 
 * [Getting Started](getting-started-1/getting-started.md)
-* [Untitled](getting-started-1/untitled.md)
 
 ## Installing
 
@@ -30,10 +29,9 @@
 * [Security](configuring/security.md)
 * [Storage](configuring/storage.md)
 * [Setting up a cluster](configuring/setting-up-a-cluster.md)
-* [Subsystems](configuring/subsystems/README.md)
-  * [API Gateway](configuring/subsystems/api-gateway.md)
-  * [Broker Bridge](configuring/subsystems/broker-bridge/README.md)
-    * [Kafka Broker Bridge](configuring/subsystems/broker-bridge/kafka-broker-bridge.md)
+* [API Gateway](configuring/api-gateway.md)
+* [Broker Bridge](configuring/broker-bridge/README.md)
+  * [Kafka Broker Bridge](configuring/broker-bridge/kafka-broker-bridge.md)
 
 ## Using
 
@@ -59,13 +57,16 @@
 * [Tracing](operating/debugging.md)
 * [Operating a Cluster](operating/operating-a-cluster.md)
 
-## API Reference
+## Reference
 
-* [Overview](api-reference/untitled.md)
-* [WAMP API](api-reference/wamp-api.md)
-* [REST API](api-reference/rest-api/README.md)
-  * [Realm](api-reference/rest-api/realm.md)
-* [CLI](api-reference/cli.md)
+* [Overview](reference/untitled.md)
+* [WAMP API](reference/wamp-api/README.md)
+  * [WAMP Meta API](reference/wamp-api/wamp-meta-api.md)
+  * [Bondy Meta API](reference/wamp-api/bondy-meta-api.md)
+  * [Bondy Admin API](reference/wamp-api/bondy-admin-api.md)
+* [REST API](reference/rest-api/README.md)
+  * [Realm](reference/rest-api/realm.md)
+* [CLI](reference/cli.md)
 
 ## Contributing
 
