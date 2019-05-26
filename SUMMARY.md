@@ -1,12 +1,22 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Getting Started](getting-started.md)
 * [Release Notes](release-notes.md)
 * [Documentation License](documentation-license.md)
 * [FAQs](faqs.md)
 * [Gitlab Repository](https://gitlab.com/leapsight/bondy)
 * [Ideas Portal](https://bondy.ideas.craft.io/BON)
+
+## Overview
+
+* [What is Bondy](overview/what-is-bondy.md)
+* [Architecture](overview/architecture.md)
+* [Features](overview/features.md)
+
+## Getting Started
+
+* [Getting Started](getting-started-1/getting-started.md)
+* [Untitled](getting-started-1/untitled.md)
 
 ## Installing
 
@@ -28,6 +38,7 @@
 ## Using
 
 * [Introduction to WAMP](using/introduction_to_wamp.md)
+* [WAMP Concepts](using/wamp-concepts.md)
 * [WAMP Compliance](using/wamp-compliance/README.md)
   * [Basic Profile Compliance](using/wamp-compliance/basic-profile-compliance.md)
   * [Advanced Profile Compliance](using/wamp-compliance/advanced-profile-compliance.md)
@@ -55,10 +66,6 @@
 * [REST API](api-reference/rest-api/README.md)
   * [Realm](api-reference/rest-api/realm.md)
 * [CLI](api-reference/cli.md)
-
-## Architecture
-
-* [Overview](architecture/overview.md)
 
 ## Contributing
 
