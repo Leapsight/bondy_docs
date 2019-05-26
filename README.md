@@ -8,7 +8,7 @@ description: >-
 
 ## What is Bondy?
 
-> Leapsight Bondy is an open source, scalable networking platform for distributed miicroservices _\(µServices\)_ and _Internet Of Things \(IoT\)_ applications written in Erlang. Bondy implements the open Web Application Messaging Protocol \(WAMP\) offering both PubSub and routed RPC.
+> Leapsight Bondy is an open source, scalable networking platform for distributed microservices _\(µServices\)_ and _Internet Of Things \(IoT\)_ applications written in Erlang. Bondy implements the open Web Application Messaging Protocol \(WAMP\) offering both PubSub and routed RPC.
 
 As opposed to other API management solutions, Bondy unifies Remote Procedure Call \(RPC\) and Publish-Subscribe messaging patterns over multiple transports under a single layer, implementing the open [Web Application Messaging Protocol \(WAMP\)](using/introduction_to_wamp.md).
 
