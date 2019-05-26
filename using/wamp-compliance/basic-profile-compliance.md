@@ -4,13 +4,13 @@
 
 | Feature | Compliance Status | Extensions |
 | :--- | :--- | :--- |
-| Transport and Session Lifetime | Full, Each session establishes a new transport connection. | No |
-| Close session and connection on protocol errors | Full | No |
-| Serialization \(JSON and Msgpack\) | Full | Yes |
-| Validation of custom object keys using regex `[a-z0-9]{3,}` | Planned |  |
-| No Polymorphism, avoid empty arguments and keyword arguments | Full | No |
-| Session Lifecycle | Full | No |
-| Agent Identification | Full | No |
+| Transport and Session Lifetime | ✔  Each session establishes a new transport connection. |  |
+| Close session and connection on protocol errors | ✔  |  |
+| Serialization \(JSON and Msgpack\) | ✔  | ✔  |
+| Validation of custom object keys using regex `[a-z0-9]{3,}` | 🔜  |  |
+| No Polymorphism, avoid empty arguments and keyword arguments | ✔  |  |
+| Session Lifecycle | ✔  |  |
+| Agent Identification | ✔  |  |
 
 ## PubSub Features
 
