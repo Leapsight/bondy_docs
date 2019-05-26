@@ -35,7 +35,7 @@
         <p>Subscription (and Subscription ID) to be shared amongst subscribers to
           the same topic.</p>
       </td>
-      <td style="text-align:left">Partial, see <a href="basic-profile-compliance.md#nc-2-bondy-does-not-share-subscriptions-across-subscribers">NC2</a>
+      <td style="text-align:left">Partial, see <a href="basic-profile-compliance.md#nc-2-bondy-does-not-reuse-subscription-ids-across-subscribers">NC2</a>
       </td>
       <td style="text-align:left"></td>
     </tr>
@@ -70,7 +70,7 @@ TBD
 {% endtab %}
 {% endtabs %}
 
-#### NC2: Bondy does not share subscriptions across subscribers
+#### NC2: Bondy does not reuse subscription IDs across subscribers
 
 {% tabs %}
 {% tab title="Requirement" %}
@@ -98,7 +98,7 @@ No plans to implement this requierement.
 {% endtab %}
 {% endtabs %}
 
-#### NC3: Reuse of Registration ID
+#### NC3: Bondy does not reuse registration IDs across callees
 
 {% tabs %}
 {% tab title="Requirement" %}
