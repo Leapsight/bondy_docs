@@ -1,22 +1,544 @@
 # Overview
-# Conventions & Rules
 
+## Conventions & Rules
+
+{% hint style="info" %}
 This work is based on [Inaka's Erlang Coding Guidelines](https://github.com/inaka/erlang_guidelines).
+{% endhint %}
 
-Suggested reading material: http://www.erlang.se/doc/programming_rules.shtml
-
+Suggested reading material: [http://www.erlang.se/doc/programming\_rules.shtml](http://www.erlang.se/doc/programming_rules.shtml)
 
 These are _"Things that may be used as reason to reject a Pull Request"_.
 
-## Source Code Layout
+### Source Code Layout
 
-### Maintain existing style
+#### Maintain existing style
 
-{% tabs %} {% tab title="Rule" %}
-When editing a module written by someone else, stick to the style in which it was written. If a project has an overall style, stick to that when writing new modules as well.
+{% tabs %}
+{% tab title="Description" %}
+When editing an existing module or writing a new one, stick to this style Guide.
 {% endtab %}
 
 {% tab title="Rationale" %}
 It's better to keep a module that just looks ugly to you than to have a module that looks half ugly to you, half ugly to somebody else.
+{% endtab %}
+
 {% tab title="Examples" %}
-{% endtab %} {% endtabs %}
+None.
+{% endtab %}
+{% endtabs %}
+
+#### Spaces over tabs
+
+> Spaces over tabs, 2 space indentation.
+
+_Reasoning_: This is _not_ intended to allow deep nesting levels in the code. 2 spaces are enough if the code is clean enough, and the code looks more concise, allowing more characters in the same line.
+
+#### Use your spacebar
+
+> Surround operators and commas with spaces.
+
+_Reasoning_: It produces cleaner code that's easier to find / read / etc.
+
+#### No Trailing Whitespace
+
+> Remove trailing whitespaces from your lines
+
+_Reasoning_: It's commit noise. As a reference, check out [this long argument](https://programmers.stackexchange.com/questions/121555/why-is-trailing-whitespace-a-big-deal).
+
+#### 80 column per line
+
+> Stick to 80 chars per line, maximum.
+
+_Reasoning_: Excessively long lines are a pain to deal with: you either have to scroll horizontally while editing, or live with ugly line wrapping at arbitrary points. The 80 character limit also keeps lines short enough that you can comfortably work with two source files side by side on a typical laptop screen, or three on a 1080p display.
+
+#### More, smaller functions over case expressions
+
+> Use pattern-maching in clause functions rather than case's. Specially important if the case is:
+>
+> * the top-level expression of the function
+> * huge
+
+_Reasoning:_ it is usually the case that a case in a function body represents some sort of decision, and functions should be as simple as possible. If each branch of a decision's outcome is implemented as a function clause instead of as a case clause, the decision may be given a meaningful name. In other words, the case is acting as an 'anonymous function', which unless they are being used in the context of a higher-order function, merely obscure meaning.
+
+#### Group functions logically
+
+> Try to always separate **unexported** and **exported** functions in groups, with the exported ones first, unless it helps readability and code discovery.
+
+_Reasoning_: Well structured code is easier to read/understand/modify.
+
+#### Get your types together
+
+> Place all types at the beginning of the file
+
+_Reasoning_: Types are used to define data structures that will most likely be used by multiple functions on the module, so their definition can not be tied to just one of them. Besides it's a good practice to place them in code in a similar way as the documentation presents them and edoc puts types at the beginning of each module documentation
+
+#### No God modules
+
+> Don't design your system using **god** modules \(modules that have a huge number of functions and/or deal with very unrelated things\)
+
+_Reasoning_: God modules, like god objects, are modules that do too much or know too much. God modules usually come into existence by feature accretion. A beautiful, to-the-point module with one job, one responsibility done well, gains a function. Then another, which does the same thing but with different parameters. Then one day, you have a 6000-line module with 500 functions. Having modules \(and functions\) that do one and only one thing well makes it easy to explore and reason about code, and thus maintain it.
+
+#### Simple unit tests
+
+> Single responsibility applies to tests as well. When writing **unit** tests, keep them short and don't put more than 1 or 2 asserts per test
+
+_Reasoning_: Multiple tests can identify multiple errors in one run, if you put all the things you want to test into one test you'll have to fix one thing at a time until the test passes.
+
+#### Honor DRY
+
+> Don't write the same code in many places, use functions and variables for that
+
+_Reasoning_: This convention is specifically put in this list \(instead of treat it as a great idea\) so that reviewers can reject PRs that include the same code several times or PRs that re-implement something that they know it's already done somewhere else.
+
+#### Group modules in subdirectories by functionality
+
+> When having lots of modules, use subdirectories for them, named with a nice descriptive name for what that "package" does.
+
+_Reasoning_: That way it's easier to find what you need and determine what a certain module does.
+
+_Note_: Remember to properly configure your `Emakefile` to handle that, if you use it.
+
+#### Header files
+
+> Header files:
+>
+> * SHOULD NOT include type definitions nor record definitions nor function definitions.
+> * MAY include macros definitions, although macros should be avoided.
+
+_Reasoning_: Type definitions should be located in the modules where the data and its associated functions are defined. In type specs types may be module-prefixed which also makes it clear where the data type is defined, so there is no reason to need to share them via headers.
+
+Including record definitions in header files promotes sharing internal details of those records across modules, increasing coupling and preventing encapsulation, in turn making it more difficult to change and maintain the code. Records should be defined in their own modules which should provide an opaque data type and functions to access and manipulate the record.
+
+Function definitions should most definitely not be included in header files because it leads to code duplication.
+
+### Syntax
+
+Erlang syntax is horrible amirite? So you might as well make the best of it, right? _Right_?
+
+#### Don't write spaghetti code
+
+> Don't write spaghetti code \(A list comprehension with a case inside, or blocks with begin/end, and nested stuff\)
+
+_Reasoning_: Spaghetti code is harder to read, understand and edit. The function callgraph for your program should strive to be a directed acyclic graph.
+
+#### Avoid dynamic calls
+
+> If there is no specific need for it, don't use dynamic function calling.
+
+_Reasoning_: Dynamic calls can't be checked by [`xref`](http://erlang.org/doc/apps/tools/xref_chapter.html), one of the most useful tools in the Erlang world. `xref` is a cross reference checking/observing tool.
+
+#### Avoid deep nesting
+
+> Try not to nest more than 3 levels deep.
+
+_Reasoning_: Nested levels indicate deep logic in a function, too many decisions taken or things done in a single function. This hinders not only readability, but also maintainability \(making changes\) and debugging, and writing unit tests. See also: More, smaller functions over case expressions.
+
+#### Avoid if expressions
+
+> Don't use `if`.
+
+_Reasoning_: In some circumstances `if` introduces static boolean logic in your code, reducing code flexibility. In other cases, a `case` or a function call with pattern matching in its clauses is just more declarative. For newcommers \(that have learned to use `if` in other languages\), Erlang's `if` can be either hard to understand or easily abused.
+
+_Debate_:
+
+* [From OOP world](http://antiifcampaign.com/)
+* [In this repo](issues/14)
+* [In erlang-questions](http://erlang.org/pipermail/erlang-questions/2014-September/080827.html)
+
+#### Avoid nested try...catches
+
+> Don't nest `try…catch` clauses
+
+_Reasoning_: Nesting `try…catch` blocks defeats the whole purpose of them, which is to isolate the code that deals with error scenarios from the nice and shiny code that deals with the expected execution path.
+
+#### Avoid matching unnecesary terms in function clauses
+
+{% tabs %}
+{% tab title="Description" %}
+
+{% endtab %}
+
+{% tab title="Rationale" %}
+
+{% endtab %}
+
+{% tab title="Examples" %}
+This is bad, because we are just switching on the `x` property.
+
+```erlang
+my_function(#{x := foo, y := Y, z := Z}) ->
+    foo(Y, Z);
+my_function(#{x := bar, y := Y, z := Z}) ->
+    bar(Y, Z).
+     
+```
+
+This is good
+
+```erlang
+my_function(#{x := foo} = Map) ->
+    #{y := Y, z := Z} = Map,
+    foo(Y, Z);
+my_function(#{x := bar} = Map) ->
+    #{y := Y, z := Z} = Map,
+    bar(Y, Z).
+```
+{% endtab %}
+{% endtabs %}
+
+### Naming
+
+#### Be consistent when naming concepts
+
+> Use the same variable name for the same concept everywhere \(even in different modules\).
+
+_Reasoning_: When trying to figure out all the places where an `OrgID` is needed \(e.g. if we want to change it from `string` to `binary`\), it's way easier if we can just grep for `OrgID` instead of having to check all possible names.
+
+#### Explicit state should be explicitly named
+
+> Name your state records `#mod_state` and use `-type state():: #mod_state{}` in all your modules that implement OTP behaviors.
+
+_Reasoning_: OTP behaviours implementations usually require a state, and if it has a recognizable name it makes it more easily identifiable. Defining a type for it, helps _dialyzer_ detect leaks \(where an internal type as the state is used outside of the module\). The usage of the module prefix in the record name has the goal of distinguishing different state tuples while debugging: Since records are just tuples when one is dumped into the shell it is easier to read `{good_state, att1, attr2}` than `{state, attr1, attr2, attr3}` or `{state, attr1, att2}`. At a glance you know that the tuple/record can be found in the `good.erl`module.
+
+#### Don't use \_Ignored variables
+
+> Variables beginning with  _are still variables, and are matched and bound, the_  just keeps the compiler from warning when you don't use them. If you add the \_ to a variable's name, don't use it.
+
+_Reasoning_: They are **not** supposed to be used.
+
+#### Avoid boolean parameters
+
+> Don't use boolean parameters \(i.e. `true` and `false`\) to control clause selection.
+
+_Reasoning_: Clarity of intention and not requiring the reader to check the function definition to understand what it does.
+
+#### Stick to one convention for naming modules
+
+> Stick to one convention when naming modules \(i.e: ik\_something vs iksomething vs something\).
+
+_Reasoning_: It gives coherence to your system.
+
+#### Lowercase atoms
+
+> Atoms should use only lowercase characters. Words in atom names should be separated with `_`. Special cases are allowed \(like `'GET'`, `'POST'`, etc.\) but should be properly justified.
+
+_Reasoning_: Adhering to one convention makes it easier not to have "duplicated" atoms all around the code. Also, not using caps or special characters reduces the need for `'` around atoms.
+
+#### Function Names
+
+> Function names must use only lowercase characters or digits. Words in function names must be separated with `_`.
+
+_Reasoning_: Function names are atoms, they should follow the same rules that apply to them.
+
+#### Variable Names
+
+> CamelCase must be used for variables. Don’t separate words in variables with `_`.
+
+_Reasoning_: Adhering to one convention makes it easier not to have "duplicated" variables all around the code. Camel-case makes variable names more visually distinguishable from atoms and it matches the OTP standard.
+
+### Strings
+
+#### IOLists over string concatenation
+
+> Use iolists instead of string concatenation whenever possible
+
+_Reasoning_: Performance and errors during conversion. [iolists](http://www.erlangpatterns.org/iolist.html) are just deeply nested lists of integers and binaries to represent IO data to avoid copying when concatenating strings or binaries.
+
+### Macros
+
+#### No Macros
+
+> Don't use macros, except for very specific cases, that include
+>
+> * Predefined ones: `?MODULE`, `?MODULE_STRING` and `?LINE`
+> * Magic numbers: `?DEFAULT_TIMEOUT`
+
+_Reasoning_: Macros make code harder to debug. If you're trying to use them to avoid repeating the same block of code over and over, you can use functions for that. See [related blog post](https://medium.com/@erszcz/when-not-to-use-macros-in-erlang-1d3f10d377f#.xc9b4bsl9) by [@erszcz](https://github.com/erszcz).
+
+#### Uppercase macros
+
+> Macros should be named in ALL\_UPPER\_CASE:
+
+_Reasoning_: It makes it easier not to duplicate macro names, to find them using grep, etc.
+
+#### No module or function name macros
+
+> Don't use macros for module or function names
+
+_Reasoning_: Copying lines of code to the console for debugging \(something that happens _a lot_\) becomes a really hard task if we need to manually replace all the macros.
+
+### Records
+
+#### Record names
+
+> Record names must use only lowercase characters. Words in record names must be separated with `_`. Same rule applies to record field names
+
+_Reasoning_: Record and field names are atoms, they should follow the same rules that apply to them.
+
+#### Records go first
+
+> Records that are used within a module should be defined before any function bodies.
+
+_Reasoning_: Records are used to define data types that will most likely be used by multiple functions on the module, so their definition can not be tied to just one. Also, since records will be associated to types, it's a good practice to place them in code in a similar way as the documentation does \(and edoc puts types at the beginning of each module documentation\)
+
+#### Don't share your records
+
+> Records should not be shared among multiple modules. If you need to share _objects_ that are represented as records, use opaque exported types and provide adequate accesor functions in your module.
+
+_Reasoning_: Records are used for data structure definitions. Hiding those structures aids encapsulation and abstraction. If a record structure needs to be changed and its definition is written in a .hrl file, the developer should find all the files where that .hrl and verify that his change hasn't broken anything. That's not needed if the record structure is internal to the module that manages it.
+
+#### Avoid records in specs
+
+> Avoid using records in your specs, use types.
+
+_Reasoning_: Types can be exported, which aids documentation and, using `opaque` types it also helps with encapsulation and abstraction.
+
+#### Types in records
+
+> Always add type definitions to your record fields
+
+_Reasoning_: Records define data structures, and one of the most important parts of that definition is the type of the constituent pieces.
+
+### Misc
+
+#### Write function specs
+
+> Write the **-spec**'s for your exported fun's, and for unexported fun's when it adds real value for documentation purposes. Define as many types as needed.
+
+_Reasoning_: Dialyzer output is complicated as is, and it is improved with good type names. In general, having semantically loaded type names for arguments makes reasoning about possible type failures easier, as well as the function's purpose.
+
+#### Use -callback attributes over behaviour\_info/1.
+
+> Unless you know your project will be compiled with R14 or lower, use `-callback` instead of `behavior_info/1` for your behavior definitions.
+
+_Reasoning_: Avoid deprecated functionality
+
+#### Use atoms or tagged tuples for messages
+
+> When sending a message between processes, you should typically either send a single, human-readable atom, or a tuple with a human-readable atom placed in element 1. This includes messages being sent via `gen_server:call` and the like.
+
+_Reasoning_: Tagging messages with a distinctive, human-readable atom helps clarify the purpose of a message for anyone reading or debugging the code. Using element 1 of the tuple makes code more consistent and predictable, and improves readability when browsing through multiple clauses of functions like `handle_call`.
+
+This pattern also helps avoid bugs where different messages get confused with one another, or where messages get sent to the wrong recipient; it's much easier to find the source of an unexpected message if it looks like `{set_foobar_worker_pid, <0.312.0>}` than if you just find a bare pid in your mailbox.
+
+#### No nested header inclusion
+
+> When having many _nested_ "include files", use -ifndef\(HEADER\_FILE\_HRL\) .... -endif so they can be included in any order without conflicts.
+
+_Reasoning_: `-include` directives in included headers may lead to duplication of inclusions and/or other conflicts and it also hides things from the developer view.
+
+#### No types in include files
+
+> No `-type` in hrl files
+
+_Reasoning_: Defining types in public header files \(especially those intended for inclusion via `-include_lib()`\) might lead to type name clashes between projects and even modules of a single big project. Instead, types should be defined in modules which they correspond to \(with `-export_type()`\) and this way take advantage of the namespacing offered by module names. In other words, "no type definitions in header files" rule means that we will always need to use `some_mod:some_type()` unless referring to a type from the same module it's defined in. Following this rule you also get the benefits that `-opaque` types provide, for instance, to dialyzer.
+
+#### Don't import
+
+> Do not use the `-import` directive
+
+_Reasoning_: Importing functions from other modules makes the code harder to read and debug since you cannot directly distinguish local from external functions. In appropriately named functions, the module is _part_ of the function name, it gives meaning to it.
+
+#### Don't export\_all
+
+> Do not use the `-compile(export_all)` directive
+
+_Reasoning_: It's generally considered best to only export the specific functions that make up your module's known and documented external API. Keeping this list of functions small and consistent encourages good encapsulation and allows for more aggressive refactoring and internal improvements without altering the experience for those who make use of your module.
+
+#### Encapsulate OTP server APIs
+
+> Never do raw `gen_server` calls across module boundaries; the call should be encapsulated in an API function in the same module that implements the corresponding `handle_call` function. The same goes for other such OTP constructs \(`gen_server` casts, `gen_fsm` events, etc\).
+
+_Reasoning_: By sticking to this pattern of encapsulation, we make it _much_ easier to find out where calls/events might originate from. Instead of having to search through the entire source tree for e.g. `gen_server` calls that look like they might send a certain message to a given process, we can just search for calls to the corresponding API function. This makes it much easier to modify APIs, and also allows us to benefit more from Dialyzer's checks, assuming our API functions have appropriate type specs on them. We can also change the underlying message format without disturbing any code outside of the module in question, and we can more easily avoid issues with RPC calls when running a mixed cluster. With good encapsulation, you can even do things like convert a `gen_server` to a `gen_fsm` without any code changes beyond just the one module.
+
+#### No debug calls
+
+> Unless your project is meant to be run as an escript, there should be no `io:format` nor `ct:pal` calls in your production code \(i.e. in the modules inside the `src` folder\). Same rule applies for `lager` or `error_logger` calls if they're used just for debugging purposes during test stages.
+
+_Reasoning_: Leaving unnecessary logs on production code impacts performance. It increases the processing time for the functions you're debugging and also consumes disk space if the logs are written to a file \(as they usually are\). Besides, more often than not the log messages are only understood in the context of the test or debugging round in which they were created, therefore the become useless pretty fast.
+
+#### Don't Use Case Catch
+
+> Don't capture errors with `case catch`, use `try ... of ... catch` instead.
+
+_Reasoning_: `case catch ...` mixes good results with errors which is confusing. By using `try ... of ... catch` the golden path is kept separate from the error handling.
+
+### Tools
+
+#### Lock your dependencies
+
+> In your rebar.config or Erlang.mk, specify a tag or commit, but not master.
+>
+> * [erlang.mk](priv/Makefile)
+> * [rebar.config](priv/rebar.config)
+
+_Reasoning_: You don't want to be suddenly affected by a change in one of your dependencies. Once you've found the right version for you, stick to it until you _need_ to change.
+
+#### Loud errors
+
+> Don't let errors and exceptions go unlogged. Even when you handle them, write a log line with the stack trace.
+
+_Reasoning_: The idea is that somebody watching the logs has enough info to understand what's happening.
+
+#### Properly use logging levels
+
+> When using lager, use the different logging levels with the following meanings:
+
+_Meanings_:
+
+* `debug`: Very low-level info, that may cover your screen and don't let you type in it :P
+* `info`: The system's life, in some detail. Things that happen usually, but not all the time. You should be able to use the console with acceptable interruptions in this level.
+* `notice`: Meaningful things that are worth noticing, like the startup or termination of supervisors or important gen\_servers, etc…
+* `warning`: Handled errors, the system keeps working as usual, but something out of the ordinary happened
+* `error`: Something bad and unexpected happen, usually an exception or error \(**DO** log the **stack trace** here\)
+* `critical`: The system \(or a part of it\) crashed and somebody should be informed and take action about it
+* `alert`: _There is no rule on when to use this level_
+* `emergency`: _There is no rule on when to use this level_
+
+#### Prefer the https protocol over others when specifying dependency URLs
+
+> When specifying dependencies in erlang.mk Makefiles or rebar.config, prefer using the https protocol to download the dependency repository.
+>
+> * [makefile example](src/dependency_protocol/dep_protocol.makefile)
+> * [rebar example](src/dependency_protocol/dep_protocol.config)
+
+_Reasoning_: HTTPS is recommended by GitHub and is easier for CI.
+
+* [Git on the Server - The Protocols](http://git-scm.com/book/ch4-1.html)
+* [GitHub Official Recommendation](https://help.github.com/articles/which-remote-url-should-i-use/)
+* [GitHub Protocol Comparison](https://gist.github.com/grawity/4392747#file-github-protocol-comparison-md)
+
+#### No implicit functions with mixer
+
+> Don't implicitly include all functions from a module when using the [mixer](https://github.com/chef/mixer) library. Explicitly list all mixed-in functions.
+
+_Reasoning_: Knowing all the functions that are included in a module makes it easier to reason about it. If any number of functions are implicitly brought from another module, it introduces an extra level of unnecessary indirection that requires jumping back and forth between files. The less information we have to keep in our heads the better.
+
+### Suggestions & Great Ideas
+
+Things that should be considered when writing code, but do not cause a PR rejection, or are too vague to consistently enforce.
+
+#### Prefer pattern-matching over testing for equality
+
+> When you want to write a conditional statement based on a comparison of two values, don't use equality and then switch according to the boolean result value. Use pattern matching instead.
+
+_Reasoning_: From a semantic standpoint, _boolean switches_ after _equality_ introduce static boolean logic in your code, reducing its flexibility. Besides, pattern matching is just more declarative. And, specially in the case where there is a function involved, using pattern matching you get a chance to _do something_ with the result of such a function call.
+
+#### Favor higher-order functions over manual use of recursion
+
+> Occasionally recursion is the best way to implement a function, but often a fold or a list comprehension will yield safer, more comprehensible code.
+
+_Reasoning_: Manually writing a recursive function is error-prone, and mistakes can be costly. In the wrong circumstances, a buggy recursive function can miss its base case, spiral out of control, and take down an entire node. This tends to counteract one of the main benefits of Erlang, where an error in a single process does not normally cause the entire node to crash.
+
+Additionally, to an experienced Erlang developer, folds and list comprehensions are much easier to understand than complex recursive functions. Such contstructs behave predictably: they always perform an action for each element in a list. A recursive function may work similarly, but it often requires careful scrutiny to verify what path the control flow will actually take through the code in practice.
+
+#### CamelCase over Under\_Score
+
+> Symbol naming: Use variables in CamelCase and atoms, function and module names with underscores.
+
+_Reasoning_: It helps a lot with the next issue in this list ;\)
+
+#### Prefer shorter \(but still meaningful\) variable names
+
+> As long as it's easy to read and understand, keep variable names short
+
+_Reasoning_: It helps reducing line lengths, which is also described above
+
+#### Comment levels
+
+> Module comments go with **%%%**, function comments with **%%**, and code comments with **%**.
+
+_Reasoning_: It clearly states what the comment is about, also helpful to search for specific comments, like "%% @".
+
+#### Keep functions small
+
+> Try to write functions with a small number of expressions, and that do only one thing. **12** expressions per function except for integration tests is a good measure.
+
+_Reasoning_: From 3 different sources:
+
+* Small functions aid readability and composeability. Readability aids maintainability. This cannot be stressed enough. The smaller your code, the easier it is to fix and change.
+* A small function allows one to see its purpose clearly, so that you need to only understand the small subset of operations it performs, which makes it very simple to verify it works correctly.
+* These are all compeling reasons:
+  * a function should do one thing, if it's too large you are likely to be doing work better suited for multiple functions
+  * clarity, it's easier to see what a function does when it's short and concise
+  * reuse, keeping them short means you can use them later for something else \(specially true for Erlang\)
+  * screen size: you want to be able to see the whole function if you want to connect via ssh to a server for whatever reason
+
+_Notes_:
+
+This guideline, together with **Avoid deep nesting** and **More, smaller functions over case expressions**, can be well followed by structuring your functions as follows:
+
+```erlang
+some_fun(#state{name=foo} = State) ->
+  do_foo_thing(),
+  continue_some_fun(State);
+some_fun(#state{name=bar} = State) ->
+  do_bar_thing(),
+  continue_some_fun(State).
+
+continue_some_fun(State) ->
+  ...,
+  ok.
+```
+
+Remember:
+
+* There is no cost for a tail call like that.
+* This pattern is efficient, compact, clear.
+* It "resets" indentation so the code doesn't wander off the right edge of the screen.
+
+Most importantly:
+
+* It's easier to test because the functions delineate the testing hinge points.
+* It gives more surface for tracing, so one can get very specific about where the computation goes off the rails. Nested cases are opaque at runtime.
+
+#### Use behaviours.
+
+> Encapsulate reusable code in behaviors.
+
+_Reasoning_: It's the OTP way ;\)
+
+#### When programming defensively, do so on client side
+
+Do validations on the outmost layers of your code.
+
+_Reasoning_: One aspect of choosing where want you to crash is how you design your API: A function that checks the input before calling the gen\_server behind it will avoid a full roundtrip to the gen\_server and maybe even a gen\_server crash. do\_it\(Pid, X\) when is\_integer\(X\) -&gt; gen\_server:call\(Pid, {do\_it, X}\). If you design this way, the caller crashes if the arg is wrong. If you don't tighten up the function head, the gen\_server will crash.
+
+#### Avoid unnecesary calls to length/1
+
+> Lots of use cases of length/1 can be replaced by pattern matching, this is specially true when checking if the list has at least one element.
+
+_Reasoning_: Pattern matching is one of the core aspects of Erlang and as such it's both performant and readable. Pattern matching is also more flexible so changes to the logic get simpler.
+
+#### Move stuff to independent applications
+
+> When you identify a block of functionality that is self-contained \(it may be several modules or just a big one\) and actually independent of the main purpose of your application, place that in a separate application. And consider open-sourcing it.
+
+_Reasoning_: It's easier to share among apps. If open-sourced, you're sharing it with the community and you get the benefits of the community being involved in it.
+
+_Note_: Do **not** create highly specific libraries that are too coupled with the project you're working on. Use this rule for libraries that will likely be reused in other projects.
+
+#### Use the facade pattern on libraries
+
+> [The facade pattern](http://en.wikipedia.org/wiki/Facade_pattern) is great to simplify library usage and serves as a form of self-documentation.kafkerl.erl\)
+
+_Reasoning_: Having the relevant functions in a single module means that the end user doesn't have a hard time figuring out which functions to call. Note that to avoid making it too complex, you probably want to carefully consider which functionality you wish to support here; exposing fewer functions \(the ones that show the basic use of the library\) as opposed to just creating a dummy module containing every single exported function in the library is prefered. This greatly reduces the learning curve of the library and therefore makes it more tempting to use.
+
+#### Types in exported functions
+
+> Custom data types used in exported functions should be defined with Erlang type declarations and exported from the module
+
+_Reasoning_: It helps with function documentation and, when using opaque types, we ensure encapsulation.
+
+#### Separate responsibilities in sumo\_db
+
+> When using sumo\_db you should separate the responsibilities clearly, creating for each entity:
+>
+> * one module \(usually called MODELs\) to describe the entity and allow administrating instances of the model in memory
+> * one module \(usually called MODEL\_repo\) to handle the various operations that require business logic relating to the entityfiar/tree/master/src/models\)
+
+_Reasoning_: By dividing the functions into two different modules we increase understandability of the functionality especially if these are called from external modules. It also allows us to better organize the code and have smaller modules.
+
+
+
