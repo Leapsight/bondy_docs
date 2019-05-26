@@ -10,8 +10,8 @@
 
 ## Installing
 
-* [On-prem Installation](installing-bondy/on-prem-installation.md)
-* [Cloud Installation](installing-bondy/cloud-installation.md)
+* [On-prem Installation](installing/on-prem-installation.md)
+* [Cloud Installation](installing/cloud-installation.md)
 
 ## Configuring
 
@@ -27,10 +27,10 @@
 
 ## Using
 
-* [Introduction to WAMP](developing/introduction_to_wamp.md)
-* [WAMP Compliance](developing/wamp-compliance/README.md)
-  * [Basic Profile Compliance](developing/wamp-compliance/basic-profile-compliance.md)
-  * [Advanced Profile Compliance](developing/wamp-compliance/advanced-profile-compliance.md)
+* [Introduction to WAMP](using/introduction_to_wamp.md)
+* [WAMP Compliance](using/wamp-compliance/README.md)
+  * [Basic Profile Compliance](using/wamp-compliance/basic-profile-compliance.md)
+  * [Advanced Profile Compliance](using/wamp-compliance/advanced-profile-compliance.md)
 * [WAMP Protocol Docs](https://wamp-proto.org)
 
 ## Operating

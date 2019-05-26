@@ -6,9 +6,9 @@ description: Quickly get up and running with Bondy.
 
 ## Installing Bondy
 
-{% page-ref page="installing-bondy/on-prem-installation.md" %}
+{% page-ref page="installing/on-prem-installation.md" %}
 
-{% page-ref page="installing-bondy/cloud-installation.md" %}
+{% page-ref page="installing/cloud-installation.md" %}
 
 ## Starting Bondy
 
