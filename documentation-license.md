@@ -25,15 +25,43 @@ By contributing, you accept that the above License applies to your contributions
 
 This work includes adaptations of the following licensed works:
 
-{% hint style="info" %}
-[Basho Docs](https://docs.riak.com/index.html)  
-Copyright by Basho Techologies Inc, material licensed under the  [Creative Commons Attribution 4.0 International Public License](http://creativecommons.org/licenses/by/4.0/).
-{% endhint %}
-
-{% hint style="info" %}
-[Crossbario Docs](https://crossbar.io/docs/#)   
-Copyright by Crossbar.io Technologies GmbH, material licensed under the CC-BY-SA 4.0, provided as-is without any warranties, [Crossbar.io documentation wiki](https://github.com/crossbario/crossbar/wiki).
-{% endhint %}
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Source</th>
+      <th style="text-align:left">Attribution</th>
+      <th style="text-align:left">Sections</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><a href="https://docs.riak.com/index.html">Basho Docs</a>
+      </td>
+      <td style="text-align:left">Copyright by Basho Techologies Inc, material licensed under the
+        <br /><a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Public License</a>.</td>
+      <td
+      style="text-align:left">Documentation of the Security subsystem</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://crossbar.io/docs/">Crossbario Docs</a>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <p>Copyright by Crossbar.io Technologies GmbH, material licensed under
+          <br
+          />the CC-BY-SA 4.0, provided as-is without any warranties, <a href="https://github.com/crossbario/crossbar/wiki">Crossbar.io documentation wiki</a>.</p>
+      </td>
+      <td style="text-align:left">WAMP tutorials</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://github.com/inaka/erlang_guidelines">Inaka&apos;s Coding Standards and Guidelines</a>
+      </td>
+      <td style="text-align:left">Apache License Version 2</td>
+      <td style="text-align:left"><a href="contributing/coding-guidelines.md">Coding Guidelines</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Trademarks
 
