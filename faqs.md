@@ -8,7 +8,9 @@ Bondy is implemented in Erlang, a wonderful programming language and platform fo
 
 ### Why does Bondy use an eventually consistent model?
 
-Because we need Bondy to be scaleable and always-on either in the case of inter- or intra-datacentre clusters. We think it is really stupid to design super scaleable and fault-tolerant backend platforms using NoSQL databases, eventually consistency and more sophisticated techniques like CRDTs only to then define an API layer on top that relies on a strong consistency model. 
+Because we need Bondy to be scaleable and always-on either in the case of inter- or intra-datacentre clusters. 
+
+We think it is really stupid to design super scaleable and fault-tolerant backend platforms using NoSQL databases, eventually consistency and more sophisticated techniques like CRDTs only to then define an API layer on top that relies on a strong consistency model. 
 
 This problem usually happens when you use an API Gateway that relies on strong consistency for configuration and/or cluster state data replication,  in most cases by relying on a strong consistency database management system. All the hard work you've done in the backend to provide an always-on system is then hampered by an entry point which is not!
 

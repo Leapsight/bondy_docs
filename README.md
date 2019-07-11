@@ -16,6 +16,8 @@ Bondy was **designed for availability and scalability**. It scales horizontally 
 
 Bondy provides a reliable application message router, offering both routed Remote Procedure Call \(RPC\) and Publish & Subscribe communication patterns.
 
+By combining these two patterns into a single infrastructure component, Bondy can be used for the entire messaging requirements of a distributed system, thus reducing technology stack complexity, as well as networking overheads.
+
 Find out more in the [What is Bondy](overview/what-is-bondy.md) section.
 {% endhint %}
 

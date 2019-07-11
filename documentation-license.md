@@ -23,7 +23,7 @@ By contributing, you accept that the above License applies to your contributions
 
 ## Attributions
 
-This work includes adaptations of the following licensed works:
+This documentation work includes adaptations of the following licensed works:
 
 <table>
   <thead>
