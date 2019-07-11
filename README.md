@@ -15,6 +15,8 @@ description: >-
 Bondy was **designed for availability and scalability**. It scales horizontally and vertically to support a high number of concurrent clients while maintaining low latency and fault tolerance. 
 
 Bondy provides a reliable application message router, offering both routed Remote Procedure Call \(RPC\) and Publish & Subscribe communication patterns.
+
+Find out more in the [What is Bondy](overview/what-is-bondy.md) section.
 {% endhint %}
 
 ![Example Bondy application](.gitbook/assets/bondy_solution_1%20%281%29.svg)
@@ -30,5 +32,7 @@ WAMP \(Web Application Messaging Protocol\) is an open standard WebSocket and TC
 * **Publish & Subscribe**
 
 The WAMP protocol is a community effort and the [specification](https://wamp-proto.org) is made available for free under an open license for everyone to use or implement.
+
+Find out more in the [Introduction to WAMP](using/introduction_to_wamp.md) section.
 {% endhint %}
 
