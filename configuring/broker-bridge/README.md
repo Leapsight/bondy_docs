@@ -113,7 +113,7 @@ This the WAMP Subscription Options object.
 | nkey |  |  |  |  |
 
 {% hint style="warning" %}
-At the moment Bondy does not support `wilcard` matching. Support is planned.
+At the moment Bondy does not support `wildcard` matching. Support is planned.
 {% endhint %}
 
 ### Action Object

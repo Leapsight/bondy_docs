@@ -21,7 +21,7 @@
     <tr>
       <td style="text-align:left">Cookie authentication</td>
       <td style="text-align:left">beta</td>
-      <td style="text-align:left">&#x2714;</td>
+      <td style="text-align:left">&#x1F51C;</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
@@ -45,7 +45,7 @@
     <tr>
       <td style="text-align:left">Longpoll transport</td>
       <td style="text-align:left">beta</td>
-      <td style="text-align:left">&#x1F51C;</td>
+      <td style="text-align:left"></td>
       <td style="text-align:left"></td>
     </tr>
     <tr>

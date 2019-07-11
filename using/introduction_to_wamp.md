@@ -34,6 +34,8 @@ Publish & Subscribe \(PubSub\) is an established messaging pattern where a compo
 
 Routed Remote Procedure Calls \(RPCs\) rely on the same sort of decoupling that is used by the Publish & Subscribe pattern. A component, the _Callee_, announces to the router that it provides a certain procedure, identified by a procedure name. Other components, _Callers_, can then call the procedure, with the router invoking the procedure on the Callee, receiving the procedure's result, and then forwarding this result back to the Caller. Routed RPCs differ from traditional client-server RPCs in that the router serves as an intermediary between the Caller and the Callee.
 
+![](../.gitbook/assets/router.png)
+
 ## Two flavours: Basic and Advanced Profiles
 
 The WAMP Protocol Specification separated protocol features into two profiles: Basic and Advanced.

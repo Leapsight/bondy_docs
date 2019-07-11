@@ -139,11 +139,11 @@ Sharing a subscription between two or more subscribers in at least two cluster n
 {% endtab %}
 
 {% tab title="Roadmap" %}
-No plans to implement this requierement.
-{% endtab %}
-{% endtabs %}
+No changes planned.
 
 #### NC3: Bondy does not reuse registration IDs across callees
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="Requirement" %}
@@ -163,7 +163,7 @@ Sharing a registration ID between two or more callees in at least two cluster no
 {% endtab %}
 
 {% tab title="Roadmap" %}
-
+No changes planned.
 {% endtab %}
 {% endtabs %}
 
