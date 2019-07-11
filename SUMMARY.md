@@ -13,7 +13,7 @@
 * [Architecture](overview/architecture.md)
 * [Features](overview/features.md)
 
-## Getting Started
+## Getting Started <a id="getting-started-1"></a>
 
 * [Getting Started](getting-started-1/getting-started.md)
 
