@@ -71,4 +71,5 @@
 ## Contributing
 
 * [Coding Guidelines](contributing/coding-guidelines.md)
+* [Contributor Covenant Code of Conduct](contributing/contributor-covenant-code-of-conduct.md)
 

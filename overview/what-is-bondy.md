@@ -22,10 +22,6 @@ Bondy provides a unique sets of features which sets it apart from other WAMP rou
 * **Embedded REST API Gateway** – Bondy embeds a powerful API Gateway that can translate HTTP REST actions to WAMP RPC and PubSub operations. The API Gateway leverages the underlying storage and replication technology to deploy the API Specifications to the cluster nodes in real-time.
 * **Embedded Role-based Access Control \(RBAC\)** – Bondy embeds a RBAC subsystem to empower the per realm API Gateway, OAuth2 and WAMP security features. It borrows its design and implementation from Riak Core's Security subsystem which itself was modelled after PostgreSQL RBAC.
 
-{% hint style="warning" %}
-In the current release the security system is just used for authentication and not authorization. Work is on the way to implement authorization in the next release.
-{% endhint %}
-
 
 
 
