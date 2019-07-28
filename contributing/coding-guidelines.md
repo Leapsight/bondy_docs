@@ -138,7 +138,7 @@ Use pattern-maching in clause functions rather than case's. Specially important 
 it is usually the case that a case in a function body represents some sort of decision, and functions should be as simple as possible. If each branch of a decision's outcome is implemented as a function clause instead of as a case clause, the decision may be given a meaningful name. In other words, the case is acting as an 'anonymous function', which unless they are being used in the context of a higher-order function, merely obscure meaning.
 {% endtab %}
 
-{% tab title="" %}
+{% tab title="Examples" %}
 Try not to write like this:
 
 ```erlang
@@ -270,7 +270,22 @@ maybe_send(Email, Message)
 {% endtab %}
 
 {% tab title="Examples" %}
+```erlang
+%% =============================================================================
+%% API
+%% =============================================================================
 
+
+
+start writing here leving 3 empty lines from the banner
+
+
+
+%% =============================================================================
+%% PRIVATE
+%% =============================================================================
+
+```
 {% endtab %}
 {% endtabs %}
 
