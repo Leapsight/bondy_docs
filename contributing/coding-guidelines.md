@@ -468,7 +468,7 @@ _Reasoning_: OTP behaviours implementations usually require a state, and if it h
 
 #### Don't use \_Ignored variables
 
-> Variables beginning with  _are still variables, and are matched and bound, the_  just keeps the compiler from warning when you don't use them. If you add the \_ to a variable's name, don't use it.
+> Variables beginning with \\_ are still variables, and are matched and bound_, the_  just keeps the compiler from warning when you don't use them. If you add the \_ to a variable's name, don't use it.
 
 _Reasoning_: They are **not** supposed to be used.
 
@@ -795,15 +795,6 @@ _Reasoning_: Having the relevant functions in a single module means that the end
 > Custom data types used in exported functions should be defined with Erlang type declarations and exported from the module
 
 _Reasoning_: It helps with function documentation and, when using opaque types, we ensure encapsulation.
-
-#### Separate responsibilities in sumo\_db
-
-> When using sumo\_db you should separate the responsibilities clearly, creating for each entity:
->
-> * one module \(usually called MODELs\) to describe the entity and allow administrating instances of the model in memory
-> * one module \(usually called MODEL\_repo\) to handle the various operations that require business logic relating to the entityfiar/tree/master/src/models\)
-
-_Reasoning_: By dividing the functions into two different modules we increase understandability of the functionality especially if these are called from external modules. It also allows us to better organize the code and have smaller modules.
 
 
 
