@@ -21,6 +21,8 @@
 
 * [On-prem Installation](installing/on-prem-installation.md)
 * [Cloud Installation](installing/cloud-installation.md)
+* [Running with Docker](installing/running-with-docker.md)
+* [Deploying with Kubernetes](installing/deploying-with-kubernetes.md)
 
 ## Configuring
 
