@@ -20,6 +20,7 @@ Bondy provides a unique sets of features which sets it apart from other WAMP rou
 * **Low latency data replication** – All nodes in a Bondy cluster share a global state which is replicated through a highly scaleable and low latency eventually consistency model based on gossip. Bondy uses [Partisan](http://partisan.cloud), a high-performance Distributed Erlang replacement that enables various network topologies and supports large clusters \(Partisan has been demonstrated to scale up to 1,024 Erlang nodes, and provide better scalability and reduced latency than Distributed Erlang\). 
 * **Ease of use** – Bondy is easy to operate due to its operational simplicity provided by its peer-to-peer nature and the lack of special nodes, the automatic data replication and self-healing.
 * **Embedded REST API Gateway** – Bondy embeds a powerful API Gateway that can translate HTTP REST actions to WAMP RPC and PubSub operations. The API Gateway leverages the underlying storage and replication technology to deploy the API Specifications to the cluster nodes in real-time.
+* **Embedded Broker Bridge** – Bondy embeds a Broker Bridge that can manage a set of WAMP subscribers that re-publish WAMP events to an external non-WAMP system e.g. a message broker.
 * **Embedded Role-based Access Control \(RBAC\)** – Bondy embeds a RBAC subsystem to empower the per realm API Gateway, OAuth2 and WAMP security features. It borrows its design and implementation from Riak Core's Security subsystem which itself was modelled after PostgreSQL RBAC.
 
 
