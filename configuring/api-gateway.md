@@ -1,2 +1,4 @@
-# API Gateway
+# REST API Gateway
+
+## API Gateway Specification Format
 

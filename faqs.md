@@ -20,7 +20,7 @@ This is a difficult question to answer as it all depends on your use cases, qual
 
 In general, WAMP differs from other messaging platforms in that it natively \(and by design\) provides an implementation of routed Remote Procedure Calls \(RPC\) together with Publish & Subscribe.
 
-As is name implies, Publish & Subscribe offers at most once semantics a.k.a fire-and-forget, whereas other messaging platforms  provide stronger message delivery guarantees e.g. at least once and exactly once semantics.
+As is name implies, Publish & Subscribe offers at most once semantics a.k.a fire-and-forget, whereas other messaging platforms provide stronger message delivery guarantees e.g. at least once and exactly once semantics.
 
 Being an extensible protocol means we can extend the message delivery guarantees and we have plans to do so e.g. at least once.
 
@@ -28,13 +28,13 @@ For a further comparison with other products and technologies we invite you to r
 
 ### Why does Bondy use its own embedded database?
 
-Because we want to provide an always on platform which is also easy to manage. Most data entities in Bondy are resident in memory to reduce latency e.g. routing tables, authorization checks, access tokens. So using an external database would imply not only the possibility of losing the connection to it but also the need to instrument a caching layer.
+Because we want to provide an always on platform which is also easy to manage. Most data entities in Bondy are resident in memory to reduce latency e.g. routing tables, authorization checks, access tokens. Using an external database would imply not only the possibility of losing the connection to it, but also the need to instrument a caching layer.
 
 ### Can Bondy use an external database for storing its state?
 
 The answer is "not now" for some data entities and "not ever" for some others. 
 
-For example, some data entities could be managed externally and we have plans to enable that capability through plugins e.g. managing user credentials in an external LDAP or database. But for some others it would be in detriment of Bondy's capabilities. Please refer to [Why does Bondy use its own embedded database?](faqs.md#why-does-bondy-use-its-own-embedded-database).
+For example, some data entities could be managed externally and we have plans to enable that capability through plugins e.g. managing user credentials in an external LDAP or database. But for some others it would be in detriment of Bondy's capabilities and the architectural tradeoffs we made for its design. Please refer to [Why does Bondy use its own embedded database?](faqs.md#why-does-bondy-use-its-own-embedded-database).
 
 ## License
 

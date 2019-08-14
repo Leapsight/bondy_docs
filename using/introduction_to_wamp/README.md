@@ -22,7 +22,7 @@ Combining these two patterns into a single protocol allows it to be used for the
 
 WAMP is a routed protocol**,**  with all components connecting to a WAMP Router e.g. Bondy, where the WAMP Router performs message routing between the components.
 
-WAMP provides two messaging patterns: [Publish & Subscribe \(PubSub\)](introduction_to_wamp.md#publish-and-subscribe-pubsub) and [Routed Remote Procedure Calls \(RPCs\)](introduction_to_wamp.md#routed-remote-procedure-calls-rpcs).
+WAMP provides two messaging patterns: [Publish & Subscribe \(PubSub\)](./#publish-and-subscribe-pubsub) and [Routed Remote Procedure Calls \(RPCs\)](./#routed-remote-procedure-calls-rpcs).
 
 Using WAMP you can build distributed systems out of application components which are loosely coupled, written in multiple programming languages and communicate in \(soft\) real-time. WAMP clients already exist for multiple languages and is very easy to implement in your preferred language.
 
@@ -34,7 +34,7 @@ Publish & Subscribe \(PubSub\) is an established messaging pattern where a compo
 
 Routed Remote Procedure Calls \(RPCs\) rely on the same sort of decoupling that is used by the Publish & Subscribe pattern. A component, the _Callee_, announces to the router that it provides a certain procedure, identified by a procedure name. Other components, _Callers_, can then call the procedure, with the router invoking the procedure on the Callee, receiving the procedure's result, and then forwarding this result back to the Caller. Routed RPCs differ from traditional client-server RPCs in that the router serves as an intermediary between the Caller and the Callee.
 
-![](../.gitbook/assets/router.png)
+![](../../.gitbook/assets/router.png)
 
 ## Two flavours: Basic and Advanced Profiles
 

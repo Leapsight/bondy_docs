@@ -1,16 +1,19 @@
 ---
 description: >-
-  A subsystem that enables to manage WAMP subscriptions that are re-published to
-  an external non-WAMP broker.
+  A subsystem that enables to re-publish WAMP Events to an external non-WAMP
+  broker.
 ---
 
 # Broker Bridge
 
-Bondy Broker Bridge is a substem that acts as an anonymous WAMP subscriber allowing Bondy to re-publish events to an external message broker.
+#### Bondy Broker Bridge is a subsystem that enables you to have a set of supervised embedded WAMP subscribers that re-publish events to an external message broker or system.
 
-The subsytem manages a set of bridges, each one enabled through the `bondy.conf` file. At the moment the `bondy_kafka_bridge` is the only one provided and diabled by default.
+The subsystem manages a set of bridges, each one enabled through the `bondy.conf` file.   
+At the moment the `bondy_kafka_bridge` is the only one provided and it is disabled by default.
 
-To enable the Kafka Bridge modifiy the `broker_bridge.kafka.enabled` option as shown below:
+## Enabling the Kafka Bridge
+
+To enable the Kafka Bridge modify the `broker_bridge.kafka.enabled` option in the `bondy.conf` file as shown below:
 
 ```erlang
 broker_bridge.kafka.enabled = on
@@ -20,26 +23,32 @@ To learn more about the Kafka Bridge and how to configure it, read the following
 
 {% page-ref page="kafka-broker-bridge.md" %}
 
-## Configuring Bridge Subscriptions
+## Configuring Broker Bridge Subscriptions
 
 A subscription can be dynamically created and removed at runtime using the HTTP and WAMP APIs or it can be created at Bondy initialisation time through a [Bridge Subscriptions Specification Format](./#bridge-subscriptions-specification-format).
 
-### Configuring Bridge Subscriptions via a configuration file
+### Dynamically configuring subscriptions
 
-To configure one or more subscriptions you need to modify the `bondy.conf` to tell Bondy where to find a specification file using the [Bridge Subscriptions Specification Format](./#bridge-subscriptions-specification-format).
+TBD
 
-{% code-tabs %}
-{% code-tabs-item title="bondy.conf" %}
-```text
-bondy_broker_bridge.config_file = /data/subscriptions.json
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% tabs %}
+{% tab title="WAMP" %}
+
+{% endtab %}
+
+{% tab title="HTTP/REST" %}
+
+{% endtab %}
+{% endtabs %}
+
+### Statically configuring subscriptions via a configuration file
+
+To configure one or more subscriptions you need to define a specification file using the [Bridge Subscriptions Specification Format](./#bridge-subscriptions-specification-format) an modify the `bondy.conf` to tell Bondy where to find it.
 
 The following snippet provides an example subscriptions specification file.
 
 {% code-tabs %}
-{% code-tabs-item title="/data/subscriptions.json" %}
+{% code-tabs-item title="/bondy/etc/subscriptions.json" %}
 ```javascript
 {
     "id":"subscribers_1",
@@ -77,7 +86,17 @@ The following snippet provides an example subscriptions specification file.
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-### Bridge Subscriptions Specification Format
+The following snippet shows how to modify the `bondy.conf` file to tell Bondy where to locate the file.
+
+{% code-tabs %}
+{% code-tabs-item title="bondy.conf" %}
+```text
+bondy_broker_bridge.config_file = /bondy/etc/subscriptions.json
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+## Broker Bridge Subscriptions Specification Format
 
 ### Specification Object
 

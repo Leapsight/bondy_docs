@@ -33,6 +33,6 @@ WAMP \(Web Application Messaging Protocol\) is an open standard WebSocket and TC
 
 The WAMP protocol is a community effort and the [specification](https://wamp-proto.org) is made available for free under an open license for everyone to use or implement.
 
-Find out more in the [Introduction to WAMP](using/introduction_to_wamp.md) section.
+Find out more in the [Introduction to WAMP](using/introduction_to_wamp/) section.
 {% endhint %}
 

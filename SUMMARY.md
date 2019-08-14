@@ -31,14 +31,15 @@
 * [Security](configuring/security.md)
 * [Storage](configuring/storage.md)
 * [Setting up a cluster](configuring/setting-up-a-cluster.md)
-* [API Gateway](configuring/api-gateway.md)
+* [REST API Gateway](configuring/api-gateway.md)
 * [Broker Bridge](configuring/broker-bridge/README.md)
   * [Kafka Broker Bridge](configuring/broker-bridge/kafka-broker-bridge.md)
 
 ## Using
 
-* [Introduction to WAMP](using/introduction_to_wamp.md)
-* [WAMP Concepts](using/wamp-concepts.md)
+* [Introduction to WAMP](using/introduction_to_wamp/README.md)
+  * [WAMP Concepts](using/introduction_to_wamp/wamp-concepts.md)
+* [Developing with WAMP](using/developing-with-wamp.md)
 * [WAMP Compliance](using/wamp-compliance/README.md)
   * [Basic Profile Compliance](using/wamp-compliance/basic-profile-compliance.md)
   * [Advanced Profile Compliance](using/wamp-compliance/advanced-profile-compliance.md)
@@ -73,5 +74,6 @@
 ## Contributing
 
 * [Coding Guidelines](contributing/coding-guidelines.md)
-* [Contributor Covenant Code of Conduct](contributing/contributor-covenant-code-of-conduct.md)
+* [Code of Conduct](contributing/contributor-covenant-code-of-conduct.md)
+* [Roadmap](contributing/roadmap.md)
 

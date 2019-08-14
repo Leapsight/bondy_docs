@@ -2,11 +2,11 @@
 
 ## The `bondy.conf` file
 
-Bondy  has a `bondy.conf` configuration file located under the `platform_etc_dir` directory which by default is located under the `/etc` directory if you are using a source install or in `/etc/bondy` or `/usr/local/etc` if you used a binary install.
+Bondy  has a `bondy.conf` configuration file located under the `platform_etc_dir` directory which by default is located under the `/etc` directory if you are using a source install, or in `/bondy/etc` if you are using Docker or `/usr/local/etc` if you used a binary install.
 
 The `bondy.conf` file is used to set a wide variety of configuration options for Bondy.
 
-in addition, you can place a `vm.args` configuration file in the same path in which you find `bondy.conf` to configure Bondy's Erlang VM.
+In addition to the `bondy.conf` file , you can place a `vm.args` configuration file in the same path in which you find `bondy.conf` to configure Bondy's Erlang VM.
 
 {% hint style="danger" %}
 ### vm.args
