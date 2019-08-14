@@ -36,6 +36,12 @@ The answer is "not now" for some data entities and "not ever" for some others.
 
 For example, some data entities could be managed externally and we have plans to enable that capability through plugins e.g. managing user credentials in an external LDAP or database. But for some others it would be in detriment of Bondy's capabilities and the architectural tradeoffs we made for its design. Please refer to [Why does Bondy use its own embedded database?](faqs.md#why-does-bondy-use-its-own-embedded-database).
 
+## WAMP
+
+### How compliant is Bondy to the WAMP protocol?
+
+Please find the answers to this question in the [WAMP Compliance](using/wamp-compliance/) section.
+
 ## License
 
 ### How is Bondy licensed?
