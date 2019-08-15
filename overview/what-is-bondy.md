@@ -6,9 +6,9 @@
 
 As opposed to other API management solutions, Bondy unifies Remote Procedure Call \(RPC\) and Publish-Subscribe messaging patterns over multiple transports under a single layer, implementing the open [Web Application Messaging Protocol \(WAMP\)](../using/introduction_to_wamp/).
 
-Because it implements WAMP, Bondy enables loosely coupled application components \(embedded software, µServices, mobile and web applications\) to communicate in \(soft\) real-time.
+Because it implements WAMP, Bondy enables **loosely coupled application components** \(embedded software, µServices, mobile and web applications\) to communicate in **\(soft\) real-time**.
 
-Bondy enables a polyglot architecture. It routes messages between those application components, which can be written in any language as long as they implement the WAMP protocol.
+Bondy enables a **polyglot architecture**. Bondy  routes messages between those application components, which can be written in any language as long as they use a compliant [WAMP client](https://crossbar.io/docs/Getting-Started/#wamp-clients).
 
 ## How is Bondy different than other WAMP routers?
 
