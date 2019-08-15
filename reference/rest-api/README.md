@@ -1,2 +1,2 @@
-# REST API
+# Admin REST API
 

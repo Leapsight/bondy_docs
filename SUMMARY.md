@@ -67,7 +67,7 @@
   * [WAMP Meta API](reference/wamp-api/wamp-meta-api.md)
   * [Bondy Meta API](reference/wamp-api/bondy-meta-api.md)
   * [Bondy Admin API](reference/wamp-api/bondy-admin-api.md)
-* [REST API](reference/rest-api/README.md)
+* [Admin REST API](reference/rest-api/README.md)
   * [Realm](reference/rest-api/realm.md)
 * [CLI](reference/cli.md)
 
