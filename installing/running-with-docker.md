@@ -5,7 +5,7 @@ description: Bondy is available as a Docker image.
 # Running with Docker
 
 {% hint style="info" %}
-Bondy Docker images are defined in  [bondy\_docker](https://gitlab.com/leapsight/bondy_docker) git repository and the images are published in [Docker Hub](https://hub.docker.com/r/leapsight/bondy).
+Bondy Docker images are defined in  [bondy\_docker](https://gitlab.com/leapsight/bondy_docker) git repository and the images are published in [Docker Hub](https://hub.docker.com/r/leapsight/bondy) under the `leapsight/bondy` namespace.
 {% endhint %}
 
 ## Running a Bondy node using docker
@@ -26,8 +26,6 @@ To run the slim variant of the same release you would use:
 ```bash
 docker run -d leapsight/bondy:0.8.6-slim
 ```
-
-Bondy Docker images are hosted in [Docker Hub](https://hub.docker.com/r/leapsight/bondy).
 
 ### Exposing ports
 
