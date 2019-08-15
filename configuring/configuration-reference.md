@@ -2,14 +2,14 @@
 
 ## The `bondy.conf` file
 
-Bondy  has a `bondy.conf` configuration file located under the `platform_etc_dir` and its location depends on the type of install you are using shown in the following table.
+Bondy  has a `bondy.conf` configuration file that is used to set a wide variety of _static configuration options_ for Bondy and its location depends on the type of install you are using shown in the following table.
 
 | Install Type | bondy.conf location |
 | :--- | :--- |
 | Source install | `/etc` |
 | Docker Image | `/bondy/etc` |
 
-The `bondy.conf` file is used to set a wide variety of configuration options for Bondy. Its syntax is `key = value` per row, where the available keys and acceptable values are described in the following sections. For example:
+The `bondy.conf` file is used to set a wide variety of configuration options for Bondy. The file uses a sysctl-like syntax that looks like this:
 
 ```text
 nodename = bondy@127.0.0.1
@@ -17,7 +17,9 @@ distributed_cookie = bondy
 security.allow_anonymous_user = off
 ```
 
+{% hint style="warning" %}
 Notice that for every option not provided by your configuration, Bondy will define a default value \(also specified in the following sections\).
+{% endhint %}
 
 ## Other configuration options
 
