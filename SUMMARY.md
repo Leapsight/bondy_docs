@@ -81,6 +81,7 @@
   * [Security](contributing/roadmap/security/README.md)
     * [Auth Providers](contributing/roadmap/security/auth-providers.md)
     * [OAuth2](contributing/roadmap/security/oauth2.md)
+    * [ABAC](contributing/roadmap/security/abac.md)
   * [Always-on](contributing/roadmap/always-on.md)
   * [Broker Bridge](contributing/roadmap/broker-bridge.md)
   * [Edge Computing](contributing/roadmap/edge-computing.md)
