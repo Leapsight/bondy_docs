@@ -10,8 +10,8 @@
 ## Overview
 
 * [What is Bondy](overview/what-is-bondy.md)
-* [Architecture](overview/architecture.md)
 * [Features](overview/features.md)
+* [Architecture](overview/architecture.md)
 
 ## Getting Started <a id="getting-started-1"></a>
 
@@ -75,5 +75,13 @@
 
 * [Coding Guidelines](contributing/coding-guidelines.md)
 * [Code of Conduct](contributing/contributor-covenant-code-of-conduct.md)
-* [Roadmap](contributing/roadmap.md)
+* [Roadmap](contributing/roadmap/README.md)
+  * [Scalability](contributing/roadmap/scalability/README.md)
+    * [Replication](contributing/roadmap/scalability/replication.md)
+  * [Security](contributing/roadmap/security/README.md)
+    * [Auth Providers](contributing/roadmap/security/auth-providers.md)
+    * [OAuth2](contributing/roadmap/security/oauth2.md)
+  * [Always-on](contributing/roadmap/always-on.md)
+  * [Broker Bridge](contributing/roadmap/broker-bridge.md)
+  * [Edge Computing](contributing/roadmap/edge-computing.md)
 

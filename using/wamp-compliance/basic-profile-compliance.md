@@ -28,8 +28,11 @@
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">Serializations (JSON and Msgpack)</td>
-      <td style="text-align:left">&#x2714;</td>
+      <td style="text-align:left">Serializations</td>
+      <td style="text-align:left">
+        <p>&#x2714;</p>
+        <p>JSON, Msgpack</p>
+      </td>
       <td style="text-align:left">
         <p>&#x2714;</p>
         <p>BERT, Erlang</p>
