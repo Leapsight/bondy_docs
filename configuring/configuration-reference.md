@@ -2,7 +2,12 @@
 
 ## The `bondy.conf` file
 
-Bondy  has a `bondy.conf` configuration file located under the `platform_etc_dir` directory which by default is located under the `/etc` directory if you are using a source install, or in `/bondy/etc` if you are using Docker or `/usr/local/etc` if you used a binary install.
+Bondy  has a `bondy.conf` configuration file located under the `platform_etc_dir` and its location depends on the type of install you are using shown in the following table.
+
+| Install Type | bondy.conf location |
+| :--- | :--- |
+| Source install | `/etc` |
+| Docker Image | `/bondy/etc` |
 
 The `bondy.conf` file is used to set a wide variety of configuration options for Bondy. Its syntax is `key = value` per row, where the available keys and acceptable values are described in the following sections. For example:
 
@@ -13,8 +18,6 @@ security.allow_anonymous_user = off
 ```
 
 Notice that for every option not provided by your configuration, Bondy will define a default value \(also specified in the following sections\).
-
-### Variables
 
 ## Other configuration options
 
@@ -27,6 +30,8 @@ Notice that providing your own`vm.args` works differently than providing a `bond
 
 So only use this option if you really know what you are doing. If you really need to do this, we suggest  using Bondy's generated `vm.args` as a base for your customisations.
 {% endhint %}
+
+Some subsystems in Bondy also allow referencing additional configuration files as you will see in the following sections.
 
 ## General settings
 

@@ -1,2 +1,2 @@
-# Storage
+# Storage Settings
 

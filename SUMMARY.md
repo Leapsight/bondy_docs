@@ -12,27 +12,24 @@
 * [What is Bondy](overview/what-is-bondy.md)
 * [Features](overview/features.md)
 * [Architecture](overview/architecture.md)
-
-## Getting Started <a id="getting-started-1"></a>
-
-* [Getting Started](getting-started-1/getting-started.md)
+* [Getting Started](overview/getting-started.md)
 
 ## Installing
 
-* [On-prem Installation](installing/on-prem-installation.md)
-* [Cloud Installation](installing/cloud-installation.md)
 * [Running with Docker](installing/running-with-docker.md)
 * [Deploying with Kubernetes](installing/deploying-with-kubernetes.md)
+* [Installing from Source](installing/on-prem-installation.md)
 
 ## Configuring
 
-* [Overview](configuring/untitled/README.md)
-  * [Configuration Reference](configuring/untitled/configuration-reference.md)
-* [Security](configuring/security.md)
-* [Storage](configuring/storage.md)
+* [Basic Configuration](configuring/untitled.md)
+* [Configuration Reference](configuring/configuration-reference.md)
+* [Configuring Bondy on Docker](configuring/configuring-bondy-on-docker.md)
 * [Setting up a cluster](configuring/setting-up-a-cluster.md)
-* [REST API Gateway](configuring/api-gateway.md)
-* [Broker Bridge](configuring/broker-bridge/README.md)
+* [Security Settings](configuring/security.md)
+* [Storage Settings](configuring/storage.md)
+* [REST API Gateway Settings](configuring/api-gateway.md)
+* [Broker Bridge Settings](configuring/broker-bridge/README.md)
   * [Kafka Broker Bridge](configuring/broker-bridge/kafka-broker-bridge.md)
 
 ## Using
