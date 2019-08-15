@@ -27,9 +27,9 @@ Notice that for every option not provided by your configuration, Bondy will defi
 
 ## Feature-specific configuration files
 
-Some feature and/or subsystems in Bondy also allow providing additional JSON configuration files as you will see in the following sections e.g. the Security subsystem.
+Some features and/or subsystems in Bondy  allow providing an additional JSON configuration file e.g. the Security subsystem.
 
-In those cases we need to let Bondy know where to find the specific file. This is done in the `bondy.conf` under the desired section e.g. the following configuration file adds the location for the `security_conf.json` file.
+In those cases, we need to let Bondy know where to find those specific files. This is done in the `bondy.conf` under the desired section e.g. the following configuration file adds the location for the `security_conf.json` file.
 
 {% code-tabs %}
 {% code-tabs-item title="bondy.conf" %}
