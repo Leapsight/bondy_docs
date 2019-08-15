@@ -8,7 +8,7 @@ description: 'Frequently asked questions about Bondy, its architecture and WAMP.
 
 ### How compliant is Bondy to the WAMP protocol?
 
-Please find the answers to this question in the [WAMP Compliance](using/wamp-compliance/) section.
+Please find the answers to this question in the [WAMP Compliance](reference/wamp-compliance/) section.
 
 ### How is a WAMP Router different than other messaging technologies?
 

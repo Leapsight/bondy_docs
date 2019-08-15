@@ -37,10 +37,7 @@
 * [Introduction to WAMP](using/introduction_to_wamp/README.md)
   * [WAMP Concepts](using/introduction_to_wamp/wamp-concepts.md)
 * [Developing with WAMP](using/developing-with-wamp.md)
-* [WAMP Compliance](using/wamp-compliance/README.md)
-  * [Basic Profile Compliance](using/wamp-compliance/basic-profile-compliance.md)
-  * [Advanced Profile Compliance](using/wamp-compliance/advanced-profile-compliance.md)
-* [WAMP Protocol Docs](https://wamp-proto.org)
+* [Developing with REST](using/developing-with-the-rest-api-gateway.md)
 
 ## Operating
 
@@ -67,6 +64,10 @@
 * [Admin REST API](reference/rest-api/README.md)
   * [Security](reference/rest-api/realm.md)
 * [CLI](reference/cli.md)
+* [WAMP Compliance](reference/wamp-compliance/README.md)
+  * [Basic Profile Compliance](reference/wamp-compliance/basic-profile-compliance.md)
+  * [Advanced Profile Compliance](reference/wamp-compliance/advanced-profile-compliance.md)
+* [WAMP Protocol Docs](https://wamp-proto.org)
 
 ## Contributing
 
