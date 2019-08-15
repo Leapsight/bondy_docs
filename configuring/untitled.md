@@ -12,7 +12,7 @@ All configuration values discussed here are managed via a configuration file on 
 
 ## Security Settings
 
-To get started we need to define at least one Realm. We recommend to disable security to get started until you get to know how to configure the security subsystem. You can achieve that by creating a Security configuration file and letting Bondy know its location via the `bondy.conf` file. Alternatively you can use the REST API to create the Realm.
+To get started we need to define at least one Realm. We recommend to disable security to get started until you get to know how to configure the security subsystem. You can achieve that by creating a Security configuration file and letting Bondy know its location via the `bondy.conf` file. Alternatively you can use the REST API to create the [Realm](../operating/security/realms.md).
 
 {% tabs %}
 {% tab title="Configuration Files" %}
