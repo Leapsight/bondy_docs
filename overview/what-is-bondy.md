@@ -10,9 +10,7 @@ Because it implements WAMP, Bondy enables **loosely coupled application componen
 
 Bondy enables a **polyglot architecture**. Bondy  routes messages between those application components, which can be written in any language as long as they use a compliant [WAMP client](https://crossbar.io/docs/Getting-Started/#wamp-clients).
 
-![](../.gitbook/assets/polyglot%20%281%29.png)
-
-
+![Bondy enables a polyglot architecture.](../.gitbook/assets/polyglot%20%281%29.png)
 
 ## How is Bondy different than other WAMP routers?
 
