@@ -1,8 +1,10 @@
 # What is Bondy
 
-> ### Bondy is an open source, distributed, scalable networking platform for microservices and Internet Of Things applications written in Erlang. It implements the open Web Application Messaging Protocol \(WAMP\) offering both PubSub and Routed RPC.
+{% hint style="success" %}
+### Bondy is an open source, distributed, scalable networking platform for microservices and Internet Of Things applications written in Erlang. It implements the open Web Application Messaging Protocol \(WAMP\) offering both PubSub and Routed RPC.
+{% endhint %}
 
-## WAMP Router
+## A WAMP Router
 
 As opposed to other API management solutions, Bondy unifies Remote Procedure Call \(RPC\) and Publish-Subscribe messaging patterns over multiple transports under a single layer, implementing the open [Web Application Messaging Protocol \(WAMP\)](../using/introduction_to_wamp/).
 
