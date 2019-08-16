@@ -12,7 +12,7 @@ All configuration values discussed here are managed via a configuration file on 
 
 ## The `bondy.conf` file
 
-Bondy  has a `bondy.conf` configuration file that is used to set a wide variety of _static configuration options_ for Bondy and its location depends on the type of install you are using shown in the following table.
+A Bondy node  has a `bondy.conf` configuration file that is used to set a wide variety of _static configuration options_ for Bondy and its location depends on the type of install you are using shown in the following table.
 
 | Install Type | bondy.conf location |
 | :--- | :--- |
@@ -32,6 +32,12 @@ distributed_cookie = bondy
 
 {% hint style="warning" %}
 Notice that for every option not provided by your configuration, Bondy will define a default value \(also specified in the following sections\).
+
+Also notice that you should apply the same `bondy.conf` file **for every node** in the same cluster.
+{% endhint %}
+
+{% hint style="info" %}
+A node must be restarted for any changes in the `bondy.conf` file to take effect.
 {% endhint %}
 
 ## Security Settings
