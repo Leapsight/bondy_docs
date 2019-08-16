@@ -4,7 +4,7 @@ description: A guide covering commonly adjusted parameters when setting up a new
 
 # Basic Configuration
 
-This section covers the parameters that are commonly adjusted when setting up a new cluster. We recommend that you also review the detailed [Configuration Reference](configuration-reference.md) section before moving a cluster into production.
+This section covers the parameters that are commonly adjusted when setting up a new cluster. We recommend that you also review the detailed [Configuration Reference](configuration-reference/) section before moving a cluster into production.
 
 ## The `bondy.conf` file
 
@@ -38,7 +38,7 @@ distributed_cookie = bondy
 
 Bondy can accumulate a large number of open file handles during operation. The creation of numerous data files is normal, and the storage backend performs periodic merges of data file collections to avoid accumulating file handles.
 
-To accommodate this you should increase the open files limit on your system. We recommend you to read the [Configuring Open File Limits](os-settings.md#configuring-open-file-limits) section.
+To accommodate this you should increase the open files limit on your system. We recommend you to read the [Configuring Open File Limits](configuration-reference/os-settings.md#configuring-open-file-limits) section.
 
 ## Security Settings
 
@@ -101,7 +101,7 @@ To be defined.
 {% endtab %}
 {% endtabs %}
 
-The [Security Settings](security.md) section provides the details of the Realm resource and the security configuration file format and the supported parameters, but for now the above snippet will suffice to get you going.
+The [Security Settings](configuration-reference/security.md) section provides the details of the Realm resource and the security configuration file format and the supported parameters, but for now the above snippet will suffice to get you going.
 
 {% hint style="warning" %}
 #### Static vs Dynamic Configuration

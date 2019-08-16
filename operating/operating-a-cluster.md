@@ -6,7 +6,7 @@ description: >-
 
 # Operating a Cluster
 
-For information on creating a cluster check out [Setting up a Cluster](../configuring/setting-up-a-cluster.md).
+For information on creating a cluster check out [Setting up a Cluster](../configuring/configuration-reference/setting-up-a-cluster.md).
 
 ## Start the Node
 

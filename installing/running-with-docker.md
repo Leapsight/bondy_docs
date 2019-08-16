@@ -55,7 +55,7 @@ docker run \
 
 ## Configuring a Bondy node using Docker
 
-The methods explained above do not allow you to provide a custom `bondy.conf` file and associated files as explained in the [Configuration Reference](../configuring/configuration-reference.md) section.
+The methods explained above do not allow you to provide a custom `bondy.conf` file and associated files as explained in the [Configuration Reference](../configuring/configuration-reference/) section.
 
 In order to configure Bondy when using Docker you will need  to create your own custom docker image from the official images or deploy the official image using a container orchestration platform like Kubernetes. 
 

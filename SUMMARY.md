@@ -23,15 +23,16 @@
 ## Configuring
 
 * [Basic Configuration](configuring/untitled.md)
-* [Configuration Reference](configuring/configuration-reference.md)
+* [Configuration Reference](configuring/configuration-reference/README.md)
+  * [General Settings](configuring/configuration-reference/general-settings.md)
+  * [OS Settings](configuring/configuration-reference/os-settings.md)
+  * [Security Settings](configuring/configuration-reference/security.md)
+  * [Storage Settings](configuring/configuration-reference/storage.md)
+  * [Cluster Settings](configuring/configuration-reference/setting-up-a-cluster.md)
 * [Configuring Bondy on Docker](configuring/configuring-bondy-on-docker.md)
-* [Setting up a cluster](configuring/setting-up-a-cluster.md)
-* [OS Settings](configuring/os-settings.md)
-* [Security Settings](configuring/security.md)
-* [Storage Settings](configuring/storage.md)
 * [REST API Gateway Settings](configuring/api-gateway.md)
 * [Broker Bridge Settings](configuring/broker-bridge/README.md)
-  * [Kafka Broker Bridge](configuring/broker-bridge/kafka-broker-bridge.md)
+  * [Kafka Broker Bridge Settings](configuring/broker-bridge/kafka-broker-bridge.md)
 
 ## Using
 

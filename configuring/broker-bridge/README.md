@@ -43,7 +43,7 @@ TBD
 
 ### Statically configuring subscriptions via a configuration file
 
-To configure one or more subscriptions you need to define a specification file using the [Bridge Subscriptions Specification Format](./#bridge-subscriptions-specification-format) an modify the `bondy.conf` to tell Bondy where to find it.
+To configure one or more subscriptions you need to define a specification file using the [Bridge Subscriptions Specification Format](./#bridge-subscriptions-specification-format) and modify the `bondy.conf` to tell Bondy where to find it.
 
 The following snippet provides an example subscriptions specification file.
 

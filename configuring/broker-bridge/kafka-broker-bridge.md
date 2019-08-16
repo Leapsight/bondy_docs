@@ -1,14 +1,21 @@
-# Kafka Broker Bridge
+# Kafka Broker Bridge Settings
+
+## Supported parameters
+
+All parameters explained below should be prefixed by `broker_bridge.kafka` e.g. `broker_bridge.kafka.enabled`.
 
 | Key | Accepts | Default |
 | :--- | :--- | :--- |
-|  |  |  |
+| `enabled` |  |  |
+| `clients.<name>.allow_topic_auto_creation` |  |  |
+
+## Example configuration
 
 {% code-tabs %}
 {% code-tabs-item title="bondy.conf" %}
 ```bash
-broker_bridge.kafka.enabled = on
 broker_bridge.config_file = $(platform_etc_dir)/broker_bridge_config.json
+broker_bridge.kafka.enabled = on
 broker_bridge.kafka.clients.default.allow_topic_auto_creation = off
 broker_bridge.kafka.clients.default.auto_start_producers = on
 broker_bridge.kafka.clients.default.endpoints = [{"127.0.0.1", 9092}]
