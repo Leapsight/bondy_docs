@@ -34,6 +34,12 @@ distributed_cookie = bondy
 * You should apply the same bondy.conf file for every node in a cluster.
 {% endhint %}
 
+## Getting your environment ready
+
+Bondy can accumulate a large number of open file handles during operation. The creation of numerous data files is normal, and the storage backend performs periodic merges of data file collections to avoid accumulating file handles.
+
+To accommodate this you should increase the open files limit on your system. We recommend you to read the [Configuring Open File Limits](os-settings.md#configuring-open-file-limits) section.
+
 ## Security Settings
 
 To get started we need to define at least one [WAMP Realm](../operating/security/realms.md). 

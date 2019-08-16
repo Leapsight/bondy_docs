@@ -26,6 +26,7 @@
 * [Configuration Reference](configuring/configuration-reference.md)
 * [Configuring Bondy on Docker](configuring/configuring-bondy-on-docker.md)
 * [Setting up a cluster](configuring/setting-up-a-cluster.md)
+* [OS Settings](configuring/os-settings.md)
 * [Security Settings](configuring/security.md)
 * [Storage Settings](configuring/storage.md)
 * [REST API Gateway Settings](configuring/api-gateway.md)
