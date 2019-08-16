@@ -7,8 +7,8 @@ In order to configure Bondy when running on Docker you will need to create your 
 ```text
 FROM leapsight/bondy:0.8.6 AS builder
 
-COPY --chown=bondy:bondy etc/security_config.json /bondy/etc/security_config.json
-COPY --chown=bondy:bondy etc/bondy.conf /bondy/etc/bondy.conf
+COPY etc/security_config.json /bondy/etc/security_config.json
+COPY etc/bondy.conf /bondy/etc/bondy.conf
 
 ```
 {% endcode-tabs-item %}
@@ -40,8 +40,8 @@ Using the example above, the only modification required for Bondy Docker to subs
 ```text
 FROM leapsight/bondy:0.8.6 AS builder
 
-COPY --chown=bondy:bondy etc/security_config.json /bondy/etc/security_config.json.template
-COPY --chown=bondy:bondy etc/bondy.conf /bondy/etc/bondy.conf.template
+COPY etc/security_config.json /bondy/etc/security_config.json.template
+COPY etc/bondy.conf /bondy/etc/bondy.conf.template
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
