@@ -2,7 +2,7 @@
 description: Quickly get up and running with Bondy.
 ---
 
-# Getting Started
+# Getting Started \(Docker\)
 
 ## Installing Bondy
 

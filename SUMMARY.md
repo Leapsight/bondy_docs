@@ -12,13 +12,13 @@
 * [What is Bondy](overview/what-is-bondy.md)
 * [Features](overview/features.md)
 * [Architecture](overview/architecture.md)
-* [Getting Started](overview/getting-started.md)
+* [Getting Started \(Docker\)](overview/getting-started-docker.md)
 
 ## Installing
 
-* [Running with Docker](installing/running-with-docker.md)
+* [Install from Source](installing/on-prem-installation.md)
+* [Install using Docker](installing/running-with-docker.md)
 * [Deploying with Kubernetes](installing/deploying-with-kubernetes.md)
-* [Installing from Source](installing/on-prem-installation.md)
 
 ## Configuring
 

@@ -1,14 +1,12 @@
 ---
-description: >-
-  Docker is the preferred way of running Bondy. Leapsight provides Official
-  Docker images for Bondy.
+description: Docker is the preferred way of installing and running Bondy.
 ---
 
-# Running with Docker
+# Install using Docker
 
-{% hint style="info" %}
-Bondy Docker images are defined in  [bondy\_docker](https://gitlab.com/leapsight/bondy_docker) git repository and the images are published in [Docker Hub](https://hub.docker.com/r/leapsight/bondy) under the `leapsight/bondy` namespace.
-{% endhint %}
+You can install Bondy by using Docker images. 
+
+Images are available on [Docker Hub](https://hub.docker.com/r/leapsight/bondy). The source files for the images are [available on Gitlab](https://gitlab.com/leapsight/bondy_docker). From Gitlab you can extend and rebuild the images and upload them to your own docker repository.
 
 ## Running a Bondy node using docker
 
@@ -59,7 +57,9 @@ docker run \
 
 The methods explained above do not allow you to provide a custom `bondy.conf` file and associated files as explained in the [Configuration Reference](../configuring/configuration-reference.md) section.
 
-In order to configure Bondy when using Docker you will need  to create your own custom docker image from the official images. This is explained in [Configuring Bondy on Docker](../configuring/configuring-bondy-on-docker.md).
+In order to configure Bondy when using Docker you will need  to create your own custom docker image from the official images or deploy the official image using a container orchestration platform like Kubernetes. 
+
+The section [Configuring Bondy on Docker](../configuring/configuring-bondy-on-docker.md)  explains how to create your a docker image allowing you to provide a custom `bondy.conf` file. [Deploying with Kubernetes](deploying-with-kubernetes.md) explains how to configure and deploy a cluster with Kubernetes.
 
 
 
