@@ -25,6 +25,28 @@ security.allow_anonymous_user = off
 Notice that for every option not provided by your configuration, Bondy will define a default value \(also specified in the following sections\).
 {% endhint %}
 
+### Variables
+
+Within the `bondy.conf` file you can use the following variables which Bondy will substitute before running.
+
+| Variable | Description |
+| :--- | :--- |
+| `platform_etc_dir` |  |
+
+The following is an example of how to use variable substitution.
+
+{% code-tabs %}
+{% code-tabs-item title="bondy.conf" %}
+```bash
+broker_bridge.config_file = $(platform_etc_dir)/broker_bridge_config.json
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+{% hint style="warning" %}
+Notice this are not OS environment variables. Bondy provides a tool for OS variable substitution that is automatically used by the Bondy Docker image start script. TO understand how to use OS environment variables substitution in Docker read [this](configuring-bondy-on-docker.md#os-environment-variable-substitution) section, otherwise take a look at how the `start.sh` script uses it in the official docker images.
+{% endhint %}
+
 ## Feature-specific configuration files
 
 Some features and/or subsystems in Bondy  allow providing an additional JSON configuration file e.g. the Security subsystem.

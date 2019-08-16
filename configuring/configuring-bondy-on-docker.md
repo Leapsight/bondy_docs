@@ -1,6 +1,8 @@
 # Configuring Bondy on Docker
 
-In order to configure Bondy when running on Docker you will need to create your own docker image. For example:
+In order to configure Bondy when running on Docker you will need to create your own docker image. 
+
+For example:
 
 {% code-tabs %}
 {% code-tabs-item title="Dockerfile" %}
@@ -14,7 +16,7 @@ COPY etc/bondy.conf /bondy/etc/bondy.conf
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Lines 3 and 4 of the Dockerfile copy two configuration files from your custom image directory to `/bondy/etc/` directory.
+Lines 3 and 4 copy two configuration files from your custom image directory to the `/bondy/etc/` directory.
 
 You can find this example in the official docker [repository](https://gitlab.com/leapsight/bondy_docker/tree/master/examples/custom_config).
 
@@ -22,7 +24,7 @@ You can find this example in the official docker [repository](https://gitlab.com
 
 The chances are that if you are deploying Bondy using Docker and a Container Orchestration platform like Kubernetes you will need to get some of the configuration values from OS environment variables.
 
-Bondy Docker allows you to define those variables using `${VariableName}` unix shell convention, as shown in the following example.
+Bondy Docker image allows you to define those variables using `${VariableName}` unix shell convention, as shown in the following example.
 
 {% code-tabs %}
 {% code-tabs-item title="bondy.conf" %}
@@ -46,7 +48,7 @@ COPY etc/bondy.conf /bondy/etc/bondy.conf.template
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Bondy Docker Image will make the substitution automatically and place the resulting files in the same directory with the `.template` extension removed before calling the `bondy` executable.
+Bondy Docker image will make the substitution automatically and place the resulting files in the same directory with the `.template` extension removed before calling the `bondy` executable.
 
 {% hint style="danger" %}
 Variable substitution will fail if the environment does not have a value set for a variable found in the `.template` files. This will cause the Docker image to fail.
