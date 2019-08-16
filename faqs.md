@@ -44,6 +44,10 @@ This problem usually happens when you use an API Gateway that relies on strong c
 
 ## Data Storage
 
+### Does Bondy depends on an external database server?
+
+No, Bondy does not depend on any external database server. Every Bondy node embeds a database which at the moment is based on Basho's fork of LevelDB but we plan to support and/or migrate to other backends in the future.
+
 ### Why does Bondy use its own embedded database?
 
 Because we want to provide an always on platform which is also easy to manage. Most data entities in Bondy are resident in memory to reduce latency e.g. routing tables, authorization checks, access tokens. Using an external database would imply not only the possibility of losing the connection to it, but also the need to instrument a caching layer.
