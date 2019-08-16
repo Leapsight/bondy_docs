@@ -1,4 +1,4 @@
-# Install from Source
+# Installing from Source
 
 Bondy should be installed from source if you are building on a platform for which a package does not exist or if you are interested in contributing to Bondy.
 

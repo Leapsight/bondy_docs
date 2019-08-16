@@ -16,8 +16,8 @@
 
 ## Installing
 
-* [Install from Source](installing/on-prem-installation.md)
-* [Install using Docker](installing/running-with-docker.md)
+* [Installing from Source](installing/on-prem-installation.md)
+* [Installing using Docker](installing/running-with-docker.md)
 * [Deploying with Kubernetes](installing/deploying-with-kubernetes.md)
 
 ## Configuring

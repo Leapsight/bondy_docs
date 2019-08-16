@@ -2,7 +2,7 @@
 description: Docker is the preferred way of installing and running Bondy.
 ---
 
-# Install using Docker
+# Installing using Docker
 
 You can install Bondy by using Docker images. 
 
