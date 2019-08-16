@@ -4,11 +4,7 @@ description: A guide covering commonly adjusted parameters when setting up a new
 
 # Basic Configuration
 
-{% hint style="info" %}
 This section covers the parameters that are commonly adjusted when setting up a new cluster. We recommend that you also review the detailed [Configuration Reference](configuration-reference.md) section before moving a cluster into production.
-{% endhint %}
-
-All configuration values discussed here are managed via a configuration file on each node, and in most cases a node must be restarted for any changes to take effect.
 
 ## The `bondy.conf` file
 
@@ -31,13 +27,11 @@ distributed_cookie = bondy
 {% endcode-tabs %}
 
 {% hint style="warning" %}
-Notice that for every option not provided by your configuration, Bondy will define a default value \(also specified in the following sections\).
+**Notice that:**
 
-Also notice that you should apply the same `bondy.conf` file **for every node** in the same cluster.
-{% endhint %}
-
-{% hint style="info" %}
-A node must be restarted for any changes in the `bondy.conf` file to take effect.
+* A node must be restarted for any changes in the `bondy.conf` file to take effect.
+* For every option not provided by your configuration file Bondy will define a default value \(also specified in the following sections\). 
+* You should apply the same bondy.conf file for every node in a cluster.
 {% endhint %}
 
 ## Security Settings

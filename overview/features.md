@@ -4,7 +4,7 @@
 
 At its core Bondy is a WAMP router, responsible for routing messages between WAMP clients, it does that by performing two main roles: _Dealer_ and _Broker_. In addition, the router is also responsible for many other tasks.
 
-### Dealer **\(Routed RPC\)**
+### **Routed RPC Dealer**
 
 The Dealer is responsible for routing _remote procedure calls_ between _Callers_ and _Callees._
 
@@ -14,11 +14,13 @@ All this interaction is done asynchronously, thus neither the Caller nor the Cal
 
 Finally, if multiple Callees \(or instances of the same Callee\) registered the same procedure, Bondy will load balance requests across those instances. Whether or not load balancing is used and which algorithm in play is controlled by the Callee during procedure registration.
 
-### Broker \(PubSub\)
+### PubSub Broker
 
 The Broker is responsible for routing _events_ between _Publishers_ and _Subscribers._ 
 
-\_\_
+### Registry
+
+TBD
 
 ### Connection Management
 
