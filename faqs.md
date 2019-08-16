@@ -4,7 +4,7 @@ description: 'Frequently asked questions about Bondy, its architecture and WAMP.
 
 # FAQs
 
-## WAMP
+## General
 
 ### How compliant is Bondy to the WAMP protocol?
 
