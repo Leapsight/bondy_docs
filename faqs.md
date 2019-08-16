@@ -36,29 +36,35 @@ Bondy is implemented in Erlang, a wonderful programming language and platform fo
 
 ### Why does Bondy use an eventually consistent model?
 
-Because we need Bondy to be scaleable and always-on either in the case of inter- or intra-datacentre clusters. 
+Because we need Bondy to be scaleable and always-on in the case of inter- and/or intra-datacentre connectivity disruptions. 
 
-We think it is really stupid to design super scaleable and fault-tolerant backend platforms using NoSQL databases, eventually consistency and more sophisticated techniques like CRDTs only to then define an API layer on top that relies on a strong consistency model. 
-
-This problem usually happens when you use an API Gateway that relies on strong consistency for configuration and/or cluster state data replication,  in most cases by relying on a strong consistency database management system. All the hard work you've done in the backend to provide an always-on system is then hampered by an entry point which is not!
+We think it is really stupid to design super scaleable and fault-tolerant backend platforms using NoSQL databases, eventually consistency and more sophisticated techniques like CRDTs only to then define an message routing and API Gateway that relies on strong consistency for configuration and/or cluster state data replication e.g. SQL database. All the hard work you've done in the backend to provide an always-on system is then hampered by an entry point which is not!
 
 ## Data Storage
 
-### Does Bondy depends on an external database server?
+### Does Bondy depend on an external database server?
 
 No, Bondy does not depend on any external database server. Every Bondy node embeds a database which at the moment is based on Basho's fork of LevelDB but we plan to support and/or migrate to other backends in the future.
 
 ### Why does Bondy use its own embedded database?
 
-Because we want to provide an always on platform which is also easy to manage. Most data entities in Bondy are resident in memory to reduce latency e.g. routing tables, authorization checks, access tokens. Using an external database would imply not only the possibility of losing the connection to it, but also the need to instrument a caching layer.
+Because we want to provide an always on platform which is also easy to manage. 
+
+Most data entities in Bondy are resident in memory to reduce latency e.g. routing tables, authorization checks, access tokens. Using an external database would imply not only the possibility of losing the connection to it and most probably the need to instrument a caching layer.
 
 ### Can Bondy use an external database for storing its state?
 
-The answer is "not now" for some data entities and "not ever" for some others. 
+The answer is "not now" for some data entities while "not ever" for some others. 
 
-For example, some data entities could be managed externally and we have plans to enable that capability through plugins e.g. managing user credentials in an external LDAP or database. But for some others it would be in detriment of Bondy's capabilities and the architectural tradeoffs we made for its design. Please refer to [Why does Bondy use its own embedded database?](faqs.md#why-does-bondy-use-its-own-embedded-database).
+For example, some data entities could be managed externally and we have plans to enable that capability through plugins e.g. managing user credentials in an external LDAP or database. But for some others it would be in detriment of Bondy's capabilities and the architectural tradeoffs that justify its current design. 
+
+Please refer to [Why does Bondy use its own embedded database?](faqs.md#why-does-bondy-use-its-own-embedded-database).
 
 ## License
+
+### Is Bondy free to use?
+
+Yes.
 
 ### How is Bondy licensed?
 
@@ -72,7 +78,7 @@ You can find the answer in the [Documentation License](documentation-license.md)
 
 ### Do you provide Commercial Support?
 
-Yes, please contact us to understand the options.
+Yes, please contact us to understand the service level options.
 
 
 
