@@ -54,16 +54,18 @@ You can achieve this by creating a security configuration file and letting Bondy
 
 {% tabs %}
 {% tab title="Configuration Files" %}
-The security configuration file can be named anything you like. The important thing is that \(i\) you give it a name anyone will understand, and \(ii\) that we use the same name on the `bondy.conf` file as shown in the following snippets.
+The security configuration file can be named anything you like. The important thing is that we use the same name on the `bondy.conf` file as shown in the following snippets.
 
 {% code-tabs %}
 {% code-tabs-item title="security\_config.json" %}
 ```javascript
-{
-  "uri": "com.myapp.test",
-  "description": "A test realm",
-  "security_enabled" : false
-}
+[
+  {
+    "uri": "com.myapp.test",
+    "description": "A test realm",
+    "security_enabled" : false
+  }
+]
 ```
 {% endcode-tabs-item %}
 
