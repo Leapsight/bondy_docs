@@ -98,7 +98,7 @@ bondy_broker_bridge.config_file = /bondy/etc/subscriptions.json
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## Broker Bridge Subscriptions Specification Format
+## Broker Bridge Subscriptions Object Specification Format
 
 ### Specification Object
 
@@ -107,6 +107,18 @@ bondy_broker_bridge.config_file = /bondy/etc/subscriptions.json
 | **id** | true | string | A unique identifier for this specification | subscribers\_1 |
 | **meta** | false | object | An arbitrary object containing user metadata. Bondy treats it as an opaque object. | {"foo" : "bar"} |
 | **subscriptions** | true | array | An array of [Subscription Objects](./#subscription-object) |  |
+
+{% code-tabs %}
+{% code-tabs-item title="Example Specification Object" %}
+```javascript
+{
+    "id":"subscribers_1",
+    "meta":{},
+    "subscriptions" : [ ]
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ### Subscription Object
 
