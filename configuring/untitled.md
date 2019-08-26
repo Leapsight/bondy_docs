@@ -115,7 +115,23 @@ The effect of both methods is that a Realm resource is persisted in Bondy's repl
 We recommend using static configuration for things that might not change during the lifetime of your system e.g. realms, groups and permissions, administrative or infrastructure users, OAuth2 clients.
 {% endhint %}
 
-## Erlang VM Settings
+## General Settings
+
+Starting with version 0.8.7 Bondy supports a coordinated startup process but we will disable most of it for now, add the following 3 lines to your configuration file.
+
+{% code-tabs %}
+{% code-tabs-item title="bondy.conf" %}
+```text
+nodename = bondy@127.0.0.1
+distributed_cookie = bondy
+security.config_file = /bondy/etc/security_conf.json
+
+startup.wait_for_partitions = on
+startup.wait_for_hashtrees = off
+startup.wait_for_aae_exchange = off
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## Storage Settings
 

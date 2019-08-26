@@ -33,6 +33,63 @@
       <td style="text-align:left">bondy</td>
     </tr>
   </tbody>
+</table>## Coordinated startup
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Key</b>
+      </th>
+      <th style="text-align:left"><b>Acceptable Values</b>
+      </th>
+      <th style="text-align:left"><b>Default</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p><b>startup.wait_for_store_partitions</b>
+        </p>
+        <p>Defines whether Bondy will wait for the db
+          <br />partitions to be initialised before
+          <br />continuing with initialisation.
+          <br />This is automatically turned on in case the
+          <br />property startup.wait_for_store_hashtrees is on.</p>
+      </td>
+      <td style="text-align:left">on | off</td>
+      <td style="text-align:left">on</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p><b>startup.wait_for_store_hashtrees</b>
+        </p>
+        <p>Defines whether Bondy will wait for the db
+          <br />hashtrees to be built before
+          <br />continuing with initialisation. In order for the
+          <br />hashtrees to be build the property</p>
+        <p>aae_enabled needs to be on.</p>
+        <p>This is automatically turned on in case the
+          <br />property startup.wait_for_store_aae_exchange is on.</p>
+      </td>
+      <td style="text-align:left">on | off</td>
+      <td style="text-align:left">on</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p><b>startup.wait_for_store_aae_exchange</b>
+        </p>
+        <p>Defines whether Bondy will wait for the first
+          <br />aae exchange to be finished before
+          <br />continuing with initialisation.</p>
+        <p>In order for the
+          <br />AAE exchange to be executed the property</p>
+        <p>aae_enabled needs to be on.</p>
+      </td>
+      <td style="text-align:left">on | off</td>
+      <td style="text-align:left">on</td>
+    </tr>
+  </tbody>
 </table>## Erlang VM settings
 
 <table>
