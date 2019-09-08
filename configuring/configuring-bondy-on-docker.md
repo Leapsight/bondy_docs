@@ -88,9 +88,9 @@ docker run \
 
 ## Creating your own docker image
 
-In order to configure Bondy when using Docker you will need  to create your own custom docker image from the official images or deploy the official image using a container orchestration platform like Kubernetes. 
+Another way to configure Bondy which might allow for further DevOps customisation is to create your own custom docker image from the official images. 
 
-The section [Configuring Bondy on Docker](configuring-bondy-on-docker.md)  explains how to create your a docker image allowing you to provide a custom `bondy.conf` file. [Deploying with Kubernetes](../installing/deploying-with-kubernetes.md) explains how to configure and deploy a cluster with Kubernetes.
+The following example shows how to do it.
 
 {% code-tabs %}
 {% code-tabs-item title="Dockerfile" %}
@@ -104,10 +104,11 @@ COPY etc/bondy.conf /bondy/etc/bondy.conf
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Lines 3 and 4 copy two configuration files from your custom image directory to the `/bondy/etc/` directory.
+Lines `3` and `4` copy two configuration files from your custom image subdirectory`/etc`  to the `/bondy/etc/` directory. 
 
 You can find this example in the official docker [repository](https://gitlab.com/leapsight/bondy_docker/tree/master/examples/custom_config).
 
+{% hint style="info" %}
 ### OS Environment Variable substitution
 
 The chances are that if you are deploying Bondy using Docker and a Container Orchestration platform like Kubernetes you will need to get some of the configuration values from OS environment variables.
@@ -138,7 +139,6 @@ COPY etc/bondy.conf /bondy/etc/bondy.conf.template
 
 Bondy Docker image will make the substitution automatically and place the resulting files in the same directory with the `.template` extension removed before calling the `bondy` executable.
 
-{% hint style="danger" %}
 Variable substitution will fail if the environment does not have a value set for a variable found in the `.template` files. This will cause the Docker image to fail.
 {% endhint %}
 
