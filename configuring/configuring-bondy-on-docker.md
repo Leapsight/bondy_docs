@@ -2,8 +2,8 @@
 
 In order to configure Bondy when using Docker you will have two options: 
 
-1. Mounting a volume when executing the docker run command 
-2. Creating your own docker image
+1. [Mounting a volume with the config files](configuring-bondy-on-docker.md#mounting-a-volume-with-the-config-files) when executing the `docker run` command 
+2. [Creating your own docker image](configuring-bondy-on-docker.md#creating-your-own-docker-image) based on the official images
 
 ## **Mounting a volume with the config files**
 
