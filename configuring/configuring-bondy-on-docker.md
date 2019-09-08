@@ -111,9 +111,9 @@ You can find this example in the official docker [repository](https://gitlab.com
 {% hint style="info" %}
 ### OS Environment Variable substitution
 
-The chances are that if you are deploying Bondy using Docker and a Container Orchestration platform like Kubernetes you will need to get some of the configuration values from OS environment variables.
+The chances are that you will need to get some of the configuration values from OS environment variables.
 
-Bondy Docker image allows you to define those variables using `${VariableName}` unix shell convention, as shown in the following example.
+Bondy Docker image allows you to define those variables using the unix shell convention syntax e.g.`${VariableName}`, as shown in the following snippet.
 
 {% code-tabs %}
 {% code-tabs-item title="bondy.conf" %}
@@ -138,7 +138,11 @@ COPY etc/bondy.conf /bondy/etc/bondy.conf.template
 {% endcode-tabs %}
 
 Bondy Docker image will make the substitution automatically and place the resulting files in the same directory with the `.template` extension removed before calling the `bondy` executable.
-
-Variable substitution will fail if the environment does not have a value set for a variable found in the `.template` files. This will cause the Docker image to fail.
 {% endhint %}
+
+{% hint style="danger" %}
+Notice that variable substitution will fail if the environment does not have a value set for a variable found in the `.template` files. **This will cause the Docker image to fail.**
+{% endhint %}
+
+
 
