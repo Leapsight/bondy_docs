@@ -64,7 +64,7 @@ In order to configure Bondy when using Docker you will have two options:
 
 ### Mounting a volume with the config files
 
-First, you will need to create your config files in a local directory e.g. `/tmp/bondy/etc` and map it to the `bondy/etc` directory exposed by the docker image.
+First, you will need to create your config files in a local directory e.g. `~/tmp/bondy/etc` and map it to the `bondy/etc` directory exposed by the docker image.
 
 Then, you will need to create a at least a minimal configuration for Bondy in that directory. The following are the snippets for a minimal configuration enabling anonymous clients to establish a session:
 
