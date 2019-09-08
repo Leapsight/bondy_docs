@@ -17,7 +17,7 @@ Bondy provides a **reliable application message router**, offering both routed R
 Find out more in the [What is Bondy](overview/what-is-bondy.md) section.
 {% endhint %}
 
-![Example Bondy application](.gitbook/assets/bondy_solution_1%20%281%29.svg)
+![](.gitbook/assets/polyglot.png)
 
 
 
