@@ -53,6 +53,8 @@ docker run \
     -d leapsight/bondy:0.8.6
 ```
 
+## Configuring a Bondy node
+
 ## Configuring a Bondy node using Docker
 
 The methods explained above do not allow you to provide a custom `bondy.conf` file and associated files as explained in the [Configuration Reference](../configuring/configuration-reference/) section.
