@@ -44,7 +44,7 @@ security.config_file = $(platform_etc_dir)/security_config.json
                     } 
                 }, 
                 { 
-                    "usernames" : "anonymous", 
+                    "usernames" : ["anonymous"], 
                     "authmethod" : "trust", 
                     "cidr" : "0.0.0.0/0", 
                     "meta" : { 
