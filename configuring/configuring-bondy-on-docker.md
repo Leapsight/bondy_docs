@@ -9,7 +9,7 @@ In order to configure Bondy when using Docker you will have two options:
 
 First, you will need to create your config files in a local directory e.g. `~/tmp/bondy/etc` and map it to the `bondy/etc` directory exposed by the docker image.
 
-Then, you will need to create a at least a minimal configuration for Bondy in that directory. The following are the snippets for a minimal configuration enabling anonymous clients to establish a session:
+Then, you will need to create a at least a minimal configuration for Bondy in that directory. The following are the snippets for a minimal configuration enabling anonymous clients to establish a session in a realm called `com.myapp.test` and also in the `com.leapsight.bondy` realm a.k.a. the administrative realm.
 
 {% code-tabs %}
 {% code-tabs-item title="bondy.conf" %}
@@ -67,8 +67,70 @@ security.config_file = $(platform_etc_dir)/security_config.json
                     "roles" : ["anonymous"] 
                 } 
             ] 
-        }
-    ]
+        },
+        {
+            "uri" : "com.leapsight.bondy",
+            "authmethods" : ["wampcra", "ticket", "anonymous"],
+            "security_enabled" : true,
+            "users" : [
+        ],
+        "groups" : [
+            {
+                "name" : "administrators",
+                "groups" : [],
+                "meta" : {
+                    "description": "The administrators of Bondy."
+                }
+            }
+        ],
+        "sources" : [
+            {
+                "usernames" : "all",
+                "authmethod" : "password",
+                "cidr" : "0.0.0.0/0",
+                "meta" : {
+                "description" : "Allows all users from any network authenticate using password credentials."
+                }
+            },
+            {
+                "usernames" : ["anonymous"],
+                "authmethod" : "trust",
+                "cidr" : "0.0.0.0/0",
+                "meta" : {
+                "description" : "Allows all users from any network authenticate as anonymous."
+                }
+            }
+        ],
+        "grants" : [
+            {
+                "permissions" : [
+                    "wamp.register",
+                    "wamp.unregister",
+                    "wamp.subscribe",
+                    "wamp.unsubscribe",
+                    "wamp.call",
+                    "wamp.cancel",
+                    "wamp.publish"
+                ],
+                "uri" : "*",
+                "roles" : "all"
+            },
+            {
+                "permissions" : [
+                    "wamp.register",
+                    "wamp.unregister",
+                    "wamp.subscribe",
+                    "wamp.unsubscribe",
+                    "wamp.call",
+                    "wamp.cancel",
+                    "wamp.publish"
+                ],
+                "uri" : "*",
+                "roles" : ["anonymous"]
+            }
+        ]
+    },
+]
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
