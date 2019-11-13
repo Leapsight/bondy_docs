@@ -11,8 +11,8 @@ First, you will need to create your config files in a local directory e.g. `~/tm
 
 Then, you will need to create a at least a minimal configuration for Bondy in that directory. The following are the snippets for a minimal configuration enabling anonymous clients to establish a session in a realm called `com.myapp.test` and also in the `com.leapsight.bondy` realm a.k.a. the administrative realm.
 
-{% code-tabs %}
-{% code-tabs-item title="bondy.conf" %}
+{% tabs %}
+{% tab title="bondy.conf" %}
 ```text
 distributed_cookie = bondy
 nodename = bondy@127.0.0.1
@@ -23,9 +23,9 @@ security.automatically_create_realms = off
 security.config_file = $(platform_etc_dir)/security_config.json
 
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="security\_config.json" %}
+{% tab title="security\_config.json" %}
 ```javascript
 [ 
     { 
@@ -132,8 +132,8 @@ security.config_file = $(platform_etc_dir)/security_config.json
     },
 ]
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Finally, you can run the docker image by mounting the local directory as the `/bondy/etc` volume adding the option `-v ~/tmp/bondy/etc:/bondy/etc` as shown in the following example:
 
@@ -154,8 +154,8 @@ Another way to configure Bondy which might allow for further DevOps customisatio
 
 The following example shows how to do it.
 
-{% code-tabs %}
-{% code-tabs-item title="Dockerfile" %}
+{% tabs %}
+{% tab title="Dockerfile" %}
 ```text
 FROM leapsight/bondy:0.8.6 AS builder
 
@@ -163,8 +163,8 @@ COPY etc/security_config.json /bondy/etc/security_config.json
 COPY etc/bondy.conf /bondy/etc/bondy.conf
 
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Lines `3` and `4` copy two configuration files from your custom image subdirectory`/etc`  to the `/bondy/etc/` directory. 
 
@@ -177,27 +177,19 @@ The chances are that you will need to get some of the configuration values from 
 
 Bondy Docker image allows you to define those variables using the unix shell convention syntax e.g.`${VariableName}`, as shown in the following snippet.
 
-{% code-tabs %}
-{% code-tabs-item title="bondy.conf" %}
 ```text
 nodename = ${BONDY_NODENAME}
 distributed_cookie = ${BONDY_COOKIE}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 Using the example above, the only modification required for Bondy Docker to substitute those variables with the OS environment counterparts is to add a `.template` extension to every configuration file containing variables. 
 
-{% code-tabs %}
-{% code-tabs-item title="Dockerfile" %}
 ```text
 FROM leapsight/bondy:0.8.6 AS builder
 
 COPY etc/security_config.json /bondy/etc/security_config.json.template
 COPY etc/bondy.conf /bondy/etc/bondy.conf.template
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 Bondy Docker image will make the substitution automatically and place the resulting files in the same directory with the `.template` extension removed before calling the `bondy` executable.
 {% endhint %}

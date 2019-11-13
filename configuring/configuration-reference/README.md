@@ -11,15 +11,15 @@ Bondy  has a `bondy.conf` configuration file that is used to set a wide variety 
 
 The `bondy.conf` file is used to set a wide variety of configuration options for Bondy. The file uses a sysctl-like syntax that looks like this:
 
-{% code-tabs %}
-{% code-tabs-item title="bondy.conf" %}
+{% tabs %}
+{% tab title="bondy.conf" %}
 ```text
 nodename = bondy@127.0.0.1
 distributed_cookie = bondy
 security.allow_anonymous_user = off
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 {% hint style="warning" %}
 Notice that for every option not provided by your configuration, Bondy will define a default value \(also specified in the following sections\).
@@ -35,13 +35,13 @@ Within the `bondy.conf` file you can use the following variables which Bondy wil
 
 The following is an example of how to use variable substitution.
 
-{% code-tabs %}
-{% code-tabs-item title="bondy.conf" %}
+{% tabs %}
+{% tab title="bondy.conf" %}
 ```bash
 broker_bridge.config_file = $(platform_etc_dir)/broker_bridge_config.json
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 {% hint style="warning" %}
 Notice these mechanism cannot be used to do OS environment variables substitution.   
@@ -54,16 +54,16 @@ Some features and/or subsystems in Bondy  allow providing an additional JSON con
 
 In those cases, we need to let Bondy know where to find those specific files. This is done in the `bondy.conf` under the desired section e.g. the following configuration file adds the location for the `security_conf.json` file.
 
-{% code-tabs %}
-{% code-tabs-item title="bondy.conf" %}
+{% tabs %}
+{% tab title="bondy.conf" %}
 ```text
 nodename = bondy@127.0.0.1
 distributed_cookie = bondy
 security.allow_anonymous_user = off
 security.config_file = /bondy/etc/security_conf.json
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 \*\*\*\*
 

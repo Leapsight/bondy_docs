@@ -49,8 +49,8 @@ To configure one or more subscriptions you need to define a specification file u
 
 The following snippet provides an example subscriptions specification file.
 
-{% code-tabs %}
-{% code-tabs-item title="/bondy/etc/subscriptions.json" %}
+{% tabs %}
+{% tab title="/bondy/etc/subscriptions.json" %}
 ```javascript
 {
     "id":"subscribers_1",
@@ -85,18 +85,18 @@ The following snippet provides an example subscriptions specification file.
 }
 
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 The following snippet shows how to modify the `bondy.conf` file to tell Bondy where to locate the file.
 
-{% code-tabs %}
-{% code-tabs-item title="bondy.conf" %}
+{% tabs %}
+{% tab title="bondy.conf" %}
 ```text
 bondy_broker_bridge.config_file = /bondy/etc/subscriptions.json
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 ## Broker Bridge Subscriptions Object Specification Format
 
@@ -108,8 +108,8 @@ bondy_broker_bridge.config_file = /bondy/etc/subscriptions.json
 | **meta** | false | object | An arbitrary object containing user metadata. Bondy treats it as an opaque object. | {"foo" : "bar"} |
 | **subscriptions** | true | array | An array of [Subscription Objects](./#subscription-object) |  |
 
-{% code-tabs %}
-{% code-tabs-item title="Example Specification Object" %}
+{% tabs %}
+{% tab title="Example Specification Object" %}
 ```javascript
 {
     "id":"subscribers_1",
@@ -117,8 +117,8 @@ bondy_broker_bridge.config_file = /bondy/etc/subscriptions.json
     "subscriptions" : [ ]
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 ### Subscription Object
 

@@ -31,14 +31,14 @@ On most Linux distributions, the total limit for open files is controlled by `sy
 
 If you installed Bondy from a binary package, you will need to the add the following settings to the `/etc/security/limits.conf` file for the `bondy` user:
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/security/limits.conf" %}
+{% tabs %}
+{% tab title="/etc/security/limits.conf" %}
 ```bash
 bondy soft nofile 65536
 bondy hard nofile 200000
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 #### Enable PAM-Based Limits for Debian & Ubuntu
 
@@ -46,39 +46,39 @@ You can enable PAM-based user limits so that non-root users, such as the `bondy`
 
 Edit `/etc/pam.d/common-session` and add the following line:
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/pam.d/common-session" %}
+{% tabs %}
+{% tab title="/etc/pam.d/common-session" %}
 ```bash
 session required pam_limits.so 
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Save and close the file.   
 If `/etc/pam.d/common-session-noninteractive` exists, append the same line as above.
 
 Then, edit `/etc/security/limits.conf` and append the following lines to the file:
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/security/limits.conf" %}
+{% tabs %}
+{% tab title="/etc/security/limits.conf" %}
 ```bash
 soft nofile 65536
 hard nofile 200000
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Save and close the file.
 
 \(Optional\) If you will be accessing the Bondy nodes via secure shell \(SSH\), you should also edit `/etc/ssh/sshd_config` and set the following line:
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/ssh/sshd\_config" %}
+{% tabs %}
+{% tab title="/etc/ssh/sshd\_config" %}
 ```bash
 UseLogin yes
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Restart the machine so the limits take effect and verify that the new limits are set with the following command:
 
@@ -102,11 +102,11 @@ SHELL ulimit -a
 
 To increase the open file limit on Solaris, add the following line to the `/etc/system file`:
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/system" %}
+{% tabs %}
+{% tab title="/etc/system" %}
 ```bash
 set rlim_fd_max=200000
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 

@@ -59,5 +59,7 @@ The methods explained above do not allow you to provide a custom `bondy.conf` fi
 
 To learn how to do it read the section [Configuring Bondy on Docker](../configuring/configuring-bondy-on-docker.md), or if you are planning to deploy Bondy using Kubernetes, read the section [Deploying with Kubernetes](deploying-with-kubernetes.md)
 
+To learn how to configure Bondy when deploying using Docker read the section [Configuring Bondy on Docker](../configuring/configuring-bondy-on-docker.md).
+
 
 
