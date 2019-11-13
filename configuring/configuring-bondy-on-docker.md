@@ -33,46 +33,46 @@ security.config_file = $(platform_etc_dir)/security_config.json
         "description" : "A test realm", 
         "authmethods" : ["wampcra", "ticket", "anonymous"], 
         "security_enabled" : true, 
-        "users" : [ 
-            "sources" : [ 
-                { 
-                    "usernames" : "all", 
-                    "authmethod" : "password", 
-                    "cidr" : "0.0.0.0/0", 
-                    "meta" : { 
-                        "description" : "Allows all users from any network authenticate using password credentials." 
-                    } 
-                }, 
-                { 
-                    "usernames" : ["anonymous"], 
-                    "authmethod" : "trust", 
-                    "cidr" : "0.0.0.0/0", 
-                    "meta" : { 
-                        "description" : "Allows all users from any network authenticate as anonymous." 
-                    }
+        "users" : [],
+        "sources" : [ 
+            { 
+                "usernames" : "all", 
+                "authmethod" : "password", 
+                "cidr" : "0.0.0.0/0", 
+                "meta" : { 
+                    "description" : "Allows all users from any network authenticate using password credentials." 
                 } 
-            ], 
-            "grants" : [
-                { 
-                    "permissions" : [ 
-                        "wamp.register", 
-                        "wamp.unregister", 
-                        "wamp.subscribe", 
-                        "wamp.unsubscribe", 
-                        "wamp.call", 
-                        "wamp.cancel", 
-                        "wamp.publish" 
-                    ], 
-                    "uri" : "*", 
-                    "roles" : ["anonymous"] 
-                } 
-            ] 
-        },
-        {
-            "uri" : "com.leapsight.bondy",
-            "authmethods" : ["wampcra", "ticket", "anonymous"],
-            "security_enabled" : true,
-            "users" : [
+            }, 
+            { 
+                "usernames" : ["anonymous"], 
+                "authmethod" : "trust", 
+                "cidr" : "0.0.0.0/0", 
+                "meta" : { 
+                    "description" : "Allows all users from any network authenticate as anonymous." 
+                }
+            } 
+        ], 
+        "grants" : [
+            { 
+                "permissions" : [ 
+                    "wamp.register", 
+                    "wamp.unregister", 
+                    "wamp.subscribe", 
+                    "wamp.unsubscribe", 
+                    "wamp.call", 
+                    "wamp.cancel", 
+                    "wamp.publish" 
+                ], 
+                "uri" : "*", 
+                "roles" : ["anonymous"] 
+            } 
+        ] 
+    },
+    {
+        "uri" : "com.leapsight.bondy",
+        "authmethods" : ["wampcra", "ticket", "anonymous"],
+        "security_enabled" : true,
+        "users" : [
         ],
         "groups" : [
             {
@@ -129,7 +129,7 @@ security.config_file = $(platform_etc_dir)/security_config.json
                 "roles" : ["anonymous"]
             }
         ]
-    },
+    }
 ]
 ```
 {% endtab %}
