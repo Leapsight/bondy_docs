@@ -4,11 +4,17 @@
 
 At its core Bondy is a WAMP router, responsible for routing messages between WAMP clients, it does that by performing two main roles: _Dealer_ and _Broker_. In addition, the router is also responsible for many other tasks.
 
-### **Routed RPC Dealer**
+### **Routed RPC**
 
 The Dealer is responsible for routing _remote procedure calls_ between _Callers_ and _Callees._
 
 The beauty of Routed RPC is that Callers and Callees do not need to know each other to collaborate. The Caller makes a call request to the Router \(Dealer\) based on a known procedure, represented as a reverse URI e.g. `com.example-app.add`. The Dealer then finds a Callee who has registered an implementation of the procedure and forwards it the call. When the Callee replies with a response, the Dealer forwards the response to the Caller.
+
+{% hint style="info" %}
+#### WAMP and Serverless
+
+If you accept the definition of serverless computing to be a programming model in which _"the concept of a server is not visible in the application logic"_  then WAMP is a protocol for serverless computing. As a Caller I do not care who implements the procedure I am calling, nor how it is implemented. It can be implemented by a large service, a microservice or a lamdba  stateless function.
+{% endhint %}
 
 All this interaction is done asynchronously, thus neither the Caller nor the Callee are blocked. In fact, not even the Dealer is blocked.
 
