@@ -48,8 +48,7 @@ All parameters explained below should be prefixed by `broker_bridge.kafka` e.g. 
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>{% tabs %}
-{% tab title="bondy.conf" %}
+</table>{% code title="bondy.conf" %}
 ```bash
 broker_bridge.config_file = $(platform_etc_dir)/broker_bridge_config.json
 broker_bridge.kafka.enabled = on
@@ -65,8 +64,7 @@ broker_bridge.kafka.clients.default.restart_delay_seconds = 10s
 broker_bridge.kafka.topics.account_events = ${MAGENTA_ACCOUNT_EVENTS_TOPIC}
 broker_bridge.kafka.topics.user_events = ${MAGENTA_USER_EVENTS_TOPIC}
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 ## Kafka Bridge Subscriptions Specification Format Extensions
 
@@ -80,8 +78,7 @@ broker_bridge.kafka.topics.user_events = ${MAGENTA_USER_EVENTS_TOPIC}
 
 The following snippet provides an example subscriptions using the defined Action Object.
 
-{% tabs %}
-{% tab title="/bondy/etc/subscriptions.json" %}
+{% code title="/bondy/etc/subscriptions.json" %}
 ```javascript
 {
     "id":"subscribers_1",
@@ -116,6 +113,5 @@ The following snippet provides an example subscriptions using the defined Action
 }
 
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 

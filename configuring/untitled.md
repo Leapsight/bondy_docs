@@ -17,14 +17,12 @@ A Bondy node  has a `bondy.conf` configuration file that is used to set a wide v
 
 The `bondy.conf` file is used to set a wide variety of configuration options for Bondy. The file uses a sysctl-like syntax that looks like this:
 
-{% tabs %}
-{% tab title="bondy.conf" %}
+{% code title="bondy.conf" %}
 ```text
 nodename = bondy@127.0.0.1
 distributed_cookie = bondy
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 {% hint style="warning" %}
 **Notice that:**
@@ -56,6 +54,7 @@ You can achieve this by creating a security configuration file and letting Bondy
 {% tab title="Configuration Files" %}
 The security configuration file can be named anything you like. The important thing is that we use the same name on the `bondy.conf` file as shown in the following snippets.
 
+{% code title="security\_config.json" %}
 ```javascript
 [
   {
@@ -65,17 +64,21 @@ The security configuration file can be named anything you like. The important th
   }
 ]
 ```
+{% endcode %}
 
+{% code title="bondy.conf" %}
 ```text
 nodename = bondy@127.0.0.1
 distributed_cookie = bondy
 security.config_file = /bondy/etc/security_conf.json
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Admin REST API" %}
 Notice that in the case of the REST API the `security_enabled` parameter takes a JSON`boolean` value.
 
+{% code title="Create a Realm" %}
 ```bash
 curl -X "POST" "http://localhost:18081/realms/" \
      -H 'Content-Type: application/json; charset=utf-8' \
@@ -86,6 +89,7 @@ curl -X "POST" "http://localhost:18081/realms/" \
   "security_enabled" : false
 }'
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="WAMP API" %}
@@ -109,8 +113,7 @@ We recommend using static configuration for things that might not change during 
 
 Starting with version 0.8.7 Bondy supports a coordinated startup process but we will disable most of it for now, add the following 3 lines to your configuration file.
 
-{% tabs %}
-{% tab title="bondy.conf" %}
+{% code title="bondy.conf" %}
 ```text
 nodename = bondy@127.0.0.1
 distributed_cookie = bondy
@@ -120,8 +123,7 @@ startup.wait_for_partitions = on
 startup.wait_for_hashtrees = off
 startup.wait_for_aae_exchange = off
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 ## Storage Settings
 
