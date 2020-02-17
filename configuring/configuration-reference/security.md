@@ -3,9 +3,9 @@
 <table>
   <thead>
     <tr>
+      <th style="text-align:left">Key</th>
       <th style="text-align:left">Acceptable Values</th>
       <th style="text-align:left">Default</th>
-      <th style="text-align:left"></th>
     </tr>
   </thead>
   <tbody>
