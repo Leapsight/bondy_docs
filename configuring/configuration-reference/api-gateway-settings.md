@@ -28,7 +28,8 @@
           <br />with a list of API Specifications.</p>
       </td>
       <td style="text-align:left">path to a file</td>
-      <td style="text-align:left">$(platform_etc_dir)/api_gateway_config.json</td>
+      <td style="text-align:left">$(platform_etc_dir)/
+        <br />api_gateway_config.json</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -69,17 +70,20 @@
     <tr>
       <td style="text-align:left">api_gateway.https.certfile</td>
       <td style="text-align:left">path to a file</td>
-      <td style="text-align:left">$(platform_etc_dir)/cert.pem</td>
+      <td style="text-align:left">$(platform_etc_dir)/
+        <br />cert.pem</td>
     </tr>
     <tr>
       <td style="text-align:left">api_gateway.https.keyfile</td>
       <td style="text-align:left">path to a file</td>
-      <td style="text-align:left">$(platform_etc_dir)/key.pem</td>
+      <td style="text-align:left">$(platform_etc_dir)/
+        <br />key.pem</td>
     </tr>
     <tr>
       <td style="text-align:left">api_gateway.https.cacertfile</td>
       <td style="text-align:left">path to a file</td>
-      <td style="text-align:left">$(platform_etc_dir)/cacert.pem</td>
+      <td style="text-align:left">$(platform_etc_dir)/
+        <br />cacert.pem</td>
     </tr>
   </tbody>
 </table>

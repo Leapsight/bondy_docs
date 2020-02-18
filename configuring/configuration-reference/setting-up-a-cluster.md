@@ -1,6 +1,6 @@
 # Cluster Settings
 
-## General
+
 
 <table>
   <thead>
@@ -73,7 +73,7 @@
       <td style="text-align:left">
         <p><b>cluster.peer_discovery.timeout</b>
         </p>
-        <p>Defines the time duration Bondy will wait for a response for a polling
+        <p>Defines the time duration Bondy will wait for a reponse for a polling
           attempt.</p>
       </td>
       <td style="text-align:left">time duration with units, e.g. &apos;10s&apos; for 10 seconds</td>
@@ -104,8 +104,7 @@
         <p>Default cert location for cluster TLS connection.</p>
       </td>
       <td style="text-align:left">path to the file</td>
-      <td style="text-align:left">$(platform_etc_dir)/
-        <br />cert.pem</td>
+      <td style="text-align:left">$(platform_etc_dir)/cert.pem</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -114,8 +113,7 @@
         <p>Default key location for cluster TLS connection</p>
       </td>
       <td style="text-align:left">path to the file</td>
-      <td style="text-align:left">$(platform_etc_dir)/
-        <br />key.pem</td>
+      <td style="text-align:left">$(platform_etc_dir)/key.pem</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -124,62 +122,7 @@
         <p>Default signing authority location for cluster TLS connection.</p>
       </td>
       <td style="text-align:left">path to the file</td>
-      <td style="text-align:left">$(platform_etc_dir)/
-        <br />cacert.pem</td>
-    </tr>
-  </tbody>
-</table>## Active Anti-entropy
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Key</th>
-      <th style="text-align:left">Acceptable Values</th>
-      <th style="text-align:left">Default</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">aae.data_exchange_timeout</td>
-      <td style="text-align:left">time duration with units,
-        <br />e.g. &apos;10s&apos; for 10 seconds</td>
-      <td style="text-align:left">1m</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p><b>aae.enabled</b>
-        </p>
-        <p>Controls wether the active anti-entropy subsystem is enabled.</p>
-      </td>
-      <td style="text-align:left">on | off</td>
-      <td style="text-align:left">on</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">aae.hashtree_timer</td>
-      <td style="text-align:left">time duration with units,
-        <br />e.g. &apos;10s&apos; for 10 seconds</td>
-      <td style="text-align:left">10s</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">aae.hashtree_ttl</td>
-      <td style="text-align:left">time duration with units,
-        <br />e.g. &apos;10s&apos; for 10 seconds</td>
-      <td style="text-align:left">1w</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p><b>aae.exchange_timer</b>
-        </p>
-        <p>Controls when will the AAE system will trigger the next data exchange</p>
-      </td>
-      <td style="text-align:left">time duration with units,
-        <br />e.g. &apos;10s&apos; for 10 seconds</td>
-      <td style="text-align:left">1m</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">aae.exchange_on_cluster_join</td>
-      <td style="text-align:left">on | off</td>
-      <td style="text-align:left">on</td>
+      <td style="text-align:left">$(platform_etc_dir)/cacert.pem</td>
     </tr>
   </tbody>
 </table>
