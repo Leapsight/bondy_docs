@@ -43,7 +43,7 @@
   * [WAMP Concepts](using/introduction_to_wamp/wamp-concepts.md)
 * [Developing with WAMP](using/developing-with-wamp.md)
 * [Developing with REST](using/developing-with-the-rest-api-gateway.md)
-* [mops language](using/mops-language.md)
+* [Mops language](using/mops-language.md)
 
 ## Operating
 
