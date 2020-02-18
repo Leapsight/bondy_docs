@@ -30,7 +30,6 @@
   * [WAMP Settings](configuring/configuration-reference/wamp-settings.md)
   * [API Gateway Settings](configuring/configuration-reference/api-gateway-settings.md)
   * [Security Settings](configuring/configuration-reference/security.md)
-  * [Storage Settings](configuring/configuration-reference/storage.md)
   * [Cluster Settings](configuring/configuration-reference/setting-up-a-cluster.md)
 * [Configuring Bondy on Docker](configuring/configuring-bondy-on-docker.md)
 * [REST API Gateway Settings](configuring/api-gateway.md)
