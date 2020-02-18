@@ -6,7 +6,7 @@ description: >-
 
 # General Settings
 
-## Coordinated startup
+## Coordinated Startup / Shutdown
 
 <table>
   <thead>
@@ -53,27 +53,14 @@ description: >-
         <p><b>startup.wait_for_store_aae_exchange</b>
         </p>
         <p>Defines whether Bondy will wait for the first
-          <br />aae exchange to be finished before
-          <br />continuing with initialisation.</p>
-        <p>In order for the
-          <br />AAE exchange to be executed the property</p>
-        <p>aae_enabled needs to be on.</p>
+          <br />active anti-entropy (AAE) exchange to be finished
+          <br />before continuing with initialisation.</p>
+        <p>In order for the AAE exchange to be executed</p>
+        <p>the property aae_enabled needs to be on.</p>
       </td>
       <td style="text-align:left">on | off</td>
       <td style="text-align:left">on</td>
     </tr>
-  </tbody>
-</table>## Shutdown
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Key</th>
-      <th style="text-align:left">Acceptable Values</th>
-      <th style="text-align:left">Default</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td style="text-align:left">
         <p><b>shutdown_grace_period</b>
@@ -140,11 +127,6 @@ description: >-
       </td>
       <td style="text-align:left">integer between 1024 and 134217727</td>
       <td style="text-align:left">65536</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
     </tr>
   </tbody>
 </table>

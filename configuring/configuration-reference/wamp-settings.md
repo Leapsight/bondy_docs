@@ -17,4 +17,10 @@
 | wamp.tls.keepalive | on \| off | on |
 | wamp.tls.nodelay | on \| off | on |
 | wamp.tls.backlog | integer | 1024 |
+| wamp.tls.certfile | path to a file | $\(platform\_etc\_dir\)/cert.pem |
+| wamp.tls.keyfile | path to a file | $\(platform\_etc\_dir\)/key.pem |
+| wamp.tls.cacertfile | path to a file | $\(platform\_etc\_dir\)/cacert.pem |
+|  |  |  |
+|  |  |  |
+|  |  |  |
 
