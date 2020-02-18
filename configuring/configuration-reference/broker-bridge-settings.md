@@ -10,11 +10,6 @@
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">broker_bridge.kafka.enabled</td>
-      <td style="text-align:left">on | off</td>
-      <td style="text-align:left">off</td>
-    </tr>
-    <tr>
       <td style="text-align:left">
         <p><b>broker_bridge.config_file</b>
         </p>
@@ -25,12 +20,18 @@
         <br />broker_bridge_config.json</td>
     </tr>
     <tr>
+      <td style="text-align:left">broker_bridge.kafka.enabled</td>
+      <td style="text-align:left">on | off</td>
+      <td style="text-align:left">off</td>
+    </tr>
+    <tr>
       <td style="text-align:left">
         <p><b>broker_bridge.kafka.topics.$name</b>
         </p>
         <p>A mapping of Clients to Kafka topics.
           <br />This mapping is used by the JSON
-          <br />broker_bridge.config_file which defines the subscribers for each bridge.</p>
+          <br />broker_bridge.config_file which defines the
+          <br />subscribers for each bridge.</p>
         <p></p>
       </td>
       <td style="text-align:left">string</td>
