@@ -13,7 +13,8 @@
       <td style="text-align:left">
         <p><b>broker_bridge.config_file</b>
         </p>
-        <p>The configuration filename for the Broker Bridge.</p>
+        <p>The configuration filename for the Broker Bridge. Read the <a href="../broker-bridge/#statically-configuring-subscriptions-via-a-configuration-file">Broker Bridge Settings </a>section
+          on the specification file format.</p>
       </td>
       <td style="text-align:left">path to a file</td>
       <td style="text-align:left">$(platform_etc_dir)/
