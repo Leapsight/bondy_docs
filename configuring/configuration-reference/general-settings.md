@@ -4,7 +4,7 @@ description: >-
   bondy.conf file.
 ---
 
-# General Settings
+# General Configuration
 
 ## Coordinated Startup / Shutdown
 

@@ -1,4 +1,4 @@
-# Broker Bridge Settings
+# Broker Bridge Configuration
 
 <table>
   <thead>

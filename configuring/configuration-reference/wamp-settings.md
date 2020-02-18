@@ -1,4 +1,4 @@
-# WAMP Settings
+# WAMP Configuration
 
 | Key | Acceptable Values | Default |
 | :--- | :--- | :--- |

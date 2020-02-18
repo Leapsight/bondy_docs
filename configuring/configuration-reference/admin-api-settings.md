@@ -1,4 +1,4 @@
-# Admin API Settings
+# Admin API Configuration
 
 | Key | Acceptable Values | Default |
 | :--- | :--- | :--- |

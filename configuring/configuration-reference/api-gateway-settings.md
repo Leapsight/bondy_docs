@@ -1,4 +1,4 @@
-# REST API Gateway Settings
+# REST API Gateway Configuration
 
 <table>
   <thead>
