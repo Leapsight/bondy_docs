@@ -1,4 +1,4 @@
-# API Gateway Settings
+# REST API Gateway Settings
 
 <table>
   <thead>
@@ -24,7 +24,7 @@
         <p><b>api_gateway.config_file</b>
         </p>
         <p>The filename of a the API Gateway JSON configuration file,
-          <br />which allows you to statically configure the API GAteway
+          <br />which allows you to statically configure the API Gateway
           <br />with a list of API Specifications.</p>
       </td>
       <td style="text-align:left">path to a file</td>

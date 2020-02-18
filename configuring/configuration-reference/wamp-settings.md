@@ -20,7 +20,4 @@
 | wamp.tls.certfile | path to a file | $\(platform\_etc\_dir\)/cert.pem |
 | wamp.tls.keyfile | path to a file | $\(platform\_etc\_dir\)/key.pem |
 | wamp.tls.cacertfile | path to a file | $\(platform\_etc\_dir\)/cacert.pem |
-|  |  |  |
-|  |  |  |
-|  |  |  |
 
