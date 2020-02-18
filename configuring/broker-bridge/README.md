@@ -7,7 +7,7 @@ description: >-
 # Broker Bridge Settings
 
 {% hint style="info" %}
-#### Bondy Broker Bridge is a subsystem that enables you to have a set of supervised embedded WAMP subscribers that re-publish events to an external message broker or system.
+Bondy Broker Bridge is a subsystem that enables you to have a set of supervised embedded WAMP subscribers that re-publish events to an external message broker or system.
 {% endhint %}
 
 The subsystem manages a set of bridges, each one enabled through the `bondy.conf` file.   

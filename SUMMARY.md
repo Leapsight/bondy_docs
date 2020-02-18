@@ -69,7 +69,6 @@
   * [Bondy Admin API](reference/wamp-api/bondy-admin-api.md)
 * [Admin REST API](reference/rest-api/README.md)
   * [Security](reference/rest-api/realm.md)
-* [CLI](reference/cli.md)
 * [WAMP Compliance](reference/wamp-compliance/README.md)
   * [Basic Profile Compliance](reference/wamp-compliance/basic-profile-compliance.md)
   * [Advanced Profile Compliance](reference/wamp-compliance/advanced-profile-compliance.md)
