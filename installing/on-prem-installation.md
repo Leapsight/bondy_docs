@@ -17,6 +17,7 @@ Bondy depends on source code located in multiple Git repositories. Install [Git]
 ```bash
 git clone git@gitlab.com:leapsight-lojack/bondy.git
 cd bondy
+rebar3 as prod release
 ```
 
 ## 
