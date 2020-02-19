@@ -21,7 +21,7 @@ curl -X "PUT" "http://localhost:18081/realms/com.myapp.realm/security_enabled" \
 ```
 {% endtab %}
 
-{% tab title="WAMP" %}
+{% tab title="Erlang" %}
 
 {% endtab %}
 {% endtabs %}
@@ -37,7 +37,7 @@ curl -X "DELETE" "http://localhost:18081/realms/com.myapp.realm/security_enabled
 ```
 {% endtab %}
 
-{% tab title="WAMP" %}
+{% tab title="Erlang" %}
 
 {% endtab %}
 {% endtabs %}

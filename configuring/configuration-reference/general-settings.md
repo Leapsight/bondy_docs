@@ -1,12 +1,39 @@
----
-description: >-
-  The following documents the General Settings that can be used in the
-  bondy.conf file.
----
+# General Settings
 
-# General Configuration
+## Metadata settings
 
-## Coordinated Startup / Shutdown
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Key</th>
+      <th style="text-align:left">Acceptable Values</th>
+      <th style="text-align:left">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p><b>nodename</b>
+        </p>
+        <p>Name of the Erlang node.</p>
+      </td>
+      <td style="text-align:left">text</td>
+      <td style="text-align:left">bondy@127.0.0.1</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p><b>distributed_cookie</b>
+        </p>
+        <p>Cookie for distributed node communication.
+          <br />All nodes in the same cluster should use the
+          <br />same cookie or they will not be able to
+          <br />communicate.</p>
+      </td>
+      <td style="text-align:left">text</td>
+      <td style="text-align:left">bondy</td>
+    </tr>
+  </tbody>
+</table>## Coordinated startup
 
 <table>
   <thead>
@@ -53,25 +80,14 @@ description: >-
         <p><b>startup.wait_for_store_aae_exchange</b>
         </p>
         <p>Defines whether Bondy will wait for the first
-          <br />active anti-entropy (AAE) exchange to be finished
-          <br />before continuing with initialisation.</p>
-        <p>In order for the AAE exchange to be executed</p>
-        <p>the property aae_enabled needs to be on.</p>
+          <br />aae exchange to be finished before
+          <br />continuing with initialisation.</p>
+        <p>In order for the
+          <br />AAE exchange to be executed the property</p>
+        <p>aae_enabled needs to be on.</p>
       </td>
       <td style="text-align:left">on | off</td>
       <td style="text-align:left">on</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p><b>shutdown_grace_period</b>
-        </p>
-        <p>The period in seconds that Bondy will wait for clients
-          <br />to gracefully terminate their connections when the
-          <br />router is shutting down.</p>
-      </td>
-      <td style="text-align:left">a time duration with units
-        <br />e.g. &apos;10s&apos; for 10 seconds</td>
-      <td style="text-align:left">30s</td>
     </tr>
   </tbody>
 </table>## Erlang VM settings
@@ -85,27 +101,6 @@ description: >-
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td style="text-align:left">
-        <p><b>nodename</b>
-        </p>
-        <p>Name of the Erlang node.</p>
-      </td>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left">bondy@127.0.0.1</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p><b>distributed_cookie</b>
-        </p>
-        <p>Cookie for distributed node communication.
-          <br />All nodes in the same cluster should use the
-          <br />same cookie or they will not be able to
-          <br />communicate.</p>
-      </td>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left">bondy</td>
-    </tr>
     <tr>
       <td style="text-align:left">
         <p><b>erlang.async_threads</b>
@@ -127,6 +122,11 @@ description: >-
       </td>
       <td style="text-align:left">integer between 1024 and 134217727</td>
       <td style="text-align:left">65536</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
     </tr>
   </tbody>
 </table>

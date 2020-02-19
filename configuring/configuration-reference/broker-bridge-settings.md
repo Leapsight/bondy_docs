@@ -1,5 +1,31 @@
 # Broker Bridge Configuration
 
+## General Configuration
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Key</th>
+      <th style="text-align:left">Acceptable Values</th>
+      <th style="text-align:left">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p><b>broker_bridge.config_file</b>
+        </p>
+        <p>The configuration filename for the Broker Bridge.
+          <br />Read the <a href="../broker-bridge/#statically-configuring-subscriptions-via-a-configuration-file">Broker Bridge Settings </a>section
+          on the specification file format.</p>
+      </td>
+      <td style="text-align:left">path to a file</td>
+      <td style="text-align:left">$(platform_etc_dir)/
+        <br />broker_bridge_config.json</td>
+    </tr>
+  </tbody>
+</table>## Kafka Bridge Configuration
+
 The following shows an example configuration for a Kafka bridge.
 
 {% code title="bondy.conf" %}
@@ -30,17 +56,6 @@ broker_bridge.kafka.topics.user_events = ${MAGENTA_USER_EVENTS_TOPIC}
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">
-        <p><b>broker_bridge.config_file</b>
-        </p>
-        <p>The configuration filename for the Broker Bridge. Read the <a href="../broker-bridge/#statically-configuring-subscriptions-via-a-configuration-file">Broker Bridge Settings </a>section
-          on the specification file format.</p>
-      </td>
-      <td style="text-align:left">path to a file</td>
-      <td style="text-align:left">$(platform_etc_dir)/
-        <br />broker_bridge_config.json</td>
-    </tr>
-    <tr>
       <td style="text-align:left">broker_bridge.kafka.enabled</td>
       <td style="text-align:left">on | off</td>
       <td style="text-align:left">off</td>
@@ -64,7 +79,12 @@ broker_bridge.kafka.topics.user_events = ${MAGENTA_USER_EVENTS_TOPIC}
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">broker_bridge.kafka.clients.$name.restart_delay_seconds</td>
+      <td style="text-align:left">
+        <p><b>broker_bridge.kafka.clients.$name.restart_delay_seconds</b>
+        </p>
+        <p>How long to wait between attempts to restart the Kafka</p>
+        <p>client process when it crashes.</p>
+      </td>
       <td style="text-align:left">a time duration with units, e.g. &apos;10s&apos; for 10 seconds</td>
       <td
       style="text-align:left">10s</td>
@@ -75,19 +95,29 @@ broker_bridge.kafka.topics.user_events = ${MAGENTA_USER_EVENTS_TOPIC}
       <td style="text-align:left">5</td>
     </tr>
     <tr>
-      <td style="text-align:left">broker_bridge.kafka.clients.$name.reconnect_cool_down_seconds</td>
+      <td style="text-align:left">
+        <p><b>broker_bridge.kafka.clients.$name.reconnect_cool_down_seconds</b>
+        </p>
+        <p>Delay this configured number of seconds before retrying to</p>
+        <p>estabilish a new connection to the kafka partition leader.</p>
+      </td>
+      <td style="text-align:left">a time duration with units, e.g. &apos;10s&apos; for 10 seconds</td>
       <td
-      style="text-align:left">a time duration with units, e.g. &apos;10s&apos; for 10 seconds</td>
-        <td
-        style="text-align:left">10s</td>
+      style="text-align:left">10s</td>
     </tr>
     <tr>
-      <td style="text-align:left">broker_bridge.kafka.clients.$name.auto_start_producers</td>
-      <td style="text-align:left">on | off</td>
-      <td style="text-align:left">on</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">broker_bridge.kafka.clients.$name.allow_topic_auto_creation</td>
+      <td style="text-align:left">
+        <p><b>broker_bridge.kafka.clients.$name.allow_topic_auto_creation</b>
+        </p>
+        <p>By default, the Kafka client respects what is configured in the broker</p>
+        <p>about topic auto-creation. i.e. whether `auto.create.topics.enable&apos;
+          <br
+          />is set in the broker configuration. However if this parameter is set
+          <br
+          />to false, the client will avoid sending metadata requests that</p>
+        <p>may cause an auto-creation of the topic regardless of what</p>
+        <p>the broker config is.</p>
+      </td>
       <td style="text-align:left">on | off</td>
       <td style="text-align:left">on</td>
     </tr>
@@ -106,7 +136,21 @@ broker_bridge.kafka.topics.user_events = ${MAGENTA_USER_EVENTS_TOPIC}
         style="text-align:left">10s</td>
     </tr>
     <tr>
-      <td style="text-align:left">broker_bridge.kafka.clients.$name.producer.required_acks</td>
+      <td style="text-align:left">
+        <p><b>broker_bridge.kafka.clients.$name.producer.required_acks</b>
+        </p>
+        <p>How many acknowledgements the Kafka broker should receive</p>
+        <p>from the clustered replicas before acknowledging producer.
+          <br />
+          <br />0: the broker will not send any response (this is the only case</p>
+        <p>where the broker will not reply to a request)
+          <br />
+          <br />1: The leader will wait the data is written to the local log</p>
+        <p>before sending a response.
+          <br />
+          <br />-1: If it is -1 the broker will block until the message is</p>
+        <p>committed by all in sync replicas before acknowledging.</p>
+      </td>
       <td style="text-align:left">integer</td>
       <td style="text-align:left">1</td>
     </tr>

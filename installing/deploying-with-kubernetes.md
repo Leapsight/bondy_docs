@@ -1,4 +1,8 @@
 # Deploying with Kubernetes
 
-Check the [Bondy Kubernetes](https://gitlab.com/leapsight/bondy_kubernetes) repository.
+
+
+{% hint style="info" %}
+Check [OS environment variable substitution](../configuring/configuring-bondy-on-docker.md#os-environment-variable-substitution) capabilities provided by Bondy Docker image.
+{% endhint %}
 

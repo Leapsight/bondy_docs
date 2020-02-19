@@ -1,4 +1,4 @@
-# Security Configuration
+# Security Settings
 
 <table>
   <thead>
@@ -17,8 +17,7 @@
           statically configure realms and its users, groups, sources and permissions.</p>
       </td>
       <td style="text-align:left">the path to a file</td>
-      <td style="text-align:left">{{platform_etc_dir}}/
-        <br />security_config.json</td>
+      <td style="text-align:left">{{platform_etc_dir}}/security_config.json</td>
     </tr>
     <tr>
       <td style="text-align:left">
