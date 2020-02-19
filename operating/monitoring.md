@@ -29,65 +29,65 @@ curl "http://localhost:18081/metrics" \
 
 | Metric | Type | Description |
 | :--- | :--- | :--- |
-| bondy\_registry\_tries | gauge | bondy\_registry\_tries Registry tries count |
-| bondy\_wamp\_cancel\_messages\_total | counter | bondy\_wamp\_cancel\_messages\_total The total number of cancel messages routed by a bondy node since reset |
-| bondy\_http\_errors\_total | counter | bondy\_http\_errors\_total Total number of HTTP request errors |
-| bondy\_wamp\_messages\_total | counter | bondy\_wamp\_messages\_total The total number of wamp messages routed by a bondy node since reset |
-| bondy\_wamp\_published\_messages\_total | counter | bondy\_wamp\_published\_messages\_total The total number of published messages routed by a bondy node since reset |
-| bondy\_http\_early\_errors\_total | counter | bondy\_http\_early\_errors\_total Total number of HTTP early errors |
-| bondy\_wamp\_unsubscribed\_messages\_total | counter | bondy\_wamp\_unsubscribed\_messages\_total The total number of unsubscribed messages routed by a bondy node since reset |
-| bondy\_wamp\_event\_messages\_total | counter | bondy\_wamp\_event\_messages\_total The total number of event messages routed by a bondy node since reset |
-| bondy\_wamp\_authenticate\_messages\_total | counter | bondy\_wamp\_authenticate\_messages\_total The total number of authenticate messages routed by a bondy node since reset |
-| bondy\_socket\_errors\_total | counter | bondy\_socket\_errors\_total The number of socket errors on a bondy node since reset |
+| bondy\_registry\_tries | gauge | Registry tries count |
+| bondy\_wamp\_cancel\_messages\_total | counter | The total number of cancel messages routed by a bondy node since reset |
+| bondy\_http\_errors\_total | counter | Total number of HTTP request errors |
+| bondy\_wamp\_messages\_total | counter | The total number of wamp messages routed by a bondy node since reset |
+| bondy\_wamp\_published\_messages\_total | counter | The total number of published messages routed by a bondy node since reset |
+| bondy\_http\_early\_errors\_total | counter | Total number of HTTP early errors |
+| bondy\_wamp\_unsubscribed\_messages\_total | counter | The total number of unsubscribed messages routed by a bondy node since reset |
+| bondy\_wamp\_event\_messages\_total | counter | The total number of event messages routed by a bondy node since reset |
+| bondy\_wamp\_authenticate\_messages\_total | counter | The total number of authenticate messages routed by a bondy node since reset |
+| bondy\_socket\_errors\_total | counter | The number of socket errors on a bondy node since reset |
 | cowboy\_protocol\_upgrades\_total | counter | cowboy\_protocol\_upgrades\_total Total number of protocol upgrades |
-| bondy\_wamp\_call\_retries\_total | counter | bondy\_wamp\_call\_retries\_total The total number of retries for WAMP call |
-| bondy\_http\_spawned\_processes\_total | counter | bondy\_http\_spawned\_processes\_total Total number of spawned HTTP handlers  \(processes\) |
-| bondy\_cluster\_dropped\_bytes | counter | bondy\_cluster\_dropped\_bytes The total bytes dropped by a bondy node from another node in the cluster since reset |
-| bondy\_wamp\_error\_messages\_total | counter | bondy\_wamp\_error\_messages\_total The total number of error messages routed by a bondy node since reset |
-| bondy\_wamp\_subscribed\_messages\_total | counter | bondy\_wamp\_subscribed\_messages\_total The total number of subscribed messages routed by a bondy node since reset |
-| bondy\_sockets\_closed\_total | counter | bondy\_sockets\_closed\_total The number of sockets closed on a bondy node since reset |
-| bondy\_received\_bytes | counter | bondy\_received\_bytes The total bytes received by a bondy node from clients since reset |
-| bondy\_errors\_total | counter | bondy\_errors\_total The total number of errors in a bondy node since reset |
-| bondy\_cluster\_sent\_bytes | counter | bondy\_cluster\_sent\_bytes The total bytes sent by a bondy node from another node in the cluster since reset |
-| bondy\_sessions\_closed\_total | counter | bondy\_sessions\_closed\_total The number of sessions closed on a bondy node since reset |
-| bondy\_protocol\_upgrades\_total | counter | bondy\_protocol\_upgrades\_total Total number of protocol upgrades |
+| bondy\_wamp\_call\_retries\_total | counter | The total number of retries for WAMP call |
+| bondy\_http\_spawned\_processes\_total | counter | Total number of spawned HTTP handlers  \(processes\) |
+| bondy\_cluster\_dropped\_bytes | counter | The total bytes dropped by a bondy node from another node in the cluster since reset |
+| bondy\_wamp\_error\_messages\_total | counter | The total number of error messages routed by a bondy node since reset |
+| bondy\_wamp\_subscribed\_messages\_total | counter | The total number of subscribed messages routed by a bondy node since reset |
+| bondy\_sockets\_closed\_total | counter | The number of sockets closed on a bondy node since reset |
+| bondy\_received\_bytes | counter | The total bytes received by a bondy node from clients since reset |
+| bondy\_errors\_total | counter | The total number of errors in a bondy node since reset |
+| bondy\_cluster\_sent\_bytes | counter | The total bytes sent by a bondy node from another node in the cluster since reset |
+| bondy\_sessions\_closed\_total | counter | The number of sessions closed on a bondy node since reset |
+| bondy\_protocol\_upgrades\_total | counter | Total number of protocol upgrades |
 | cowboy\_early\_errors\_total | counter | cowboy\_early\_errors\_total Total number of Cowboy early errors |
-| bondy\_wamp\_hello\_messages\_total | counter | bondy\_wamp\_hello\_messages\_total The total number of hello messages routed by a bondy node since reset |
-| bondy\_wamp\_abort\_messages\_total | counter | bondy\_wamp\_abort\_messages\_total The total number of abort messages routed by a bondy node since reset |
-| bondy\_sessions\_opened\_total | counter | bondy\_sessions\_opened\_total The number of sessions opened on a bondy node since reset |
-| bondy\_wamp\_register\_messages\_total | counter | bondy\_wamp\_register\_messages\_total The total number of register messages routed by a bondy node since reset |
-| bondy\_wamp\_subscribe\_messages\_total | counter | bondy\_wamp\_subscribe\_messages\_total The total number of subscribe messages routed by a bondy node since reset |
-| bondy\_sockets\_opened\_total | counter | bondy\_sockets\_opened\_total The number of sockets opened on a bondy node since reset |
-| bondy\_http\_requests\_total | counter | bondy\_http\_requests\_total Total number of HTTP requests |
-| bondy\_cluster\_received\_bytes | counter | bondy\_cluster\_received\_bytes The total bytes received by a bondy node from another node in the cluster since reset |
-| bondy\_sent\_bytes | counter | bondy\_sent\_bytes The total bytes sent by a bondy node from clients  since reset |
-| bondy\_wamp\_unsubscribe\_messages\_total | counter | bondy\_wamp\_unsubscribe\_messages\_total The total number of unsubscribe messages routed by a bondy node since reset |
-| bondy\_wamp\_unregistered\_messages\_total | counter | bondy\_wamp\_unregistered\_messages\_total The total number of unregistered messages routed by a bondy node since reset |
+| bondy\_wamp\_hello\_messages\_total | counter | The total number of hello messages routed by a bondy node since reset |
+| bondy\_wamp\_abort\_messages\_total | counter | The total number of abort messages routed by a bondy node since reset |
+| bondy\_sessions\_opened\_total | counter | The number of sessions opened on a bondy node since reset |
+| bondy\_wamp\_register\_messages\_total | counter | The total number of register messages routed by a bondy node since reset |
+| bondy\_wamp\_subscribe\_messages\_total | counter | The total number of subscribe messages routed by a bondy node since reset |
+| bondy\_sockets\_opened\_total | counter | The number of sockets opened on a bondy node since reset |
+| bondy\_http\_requests\_total | counter | Total number of HTTP requests |
+| bondy\_cluster\_received\_bytes | counter | The total bytes received by a bondy node from another node in the cluster since reset |
+| bondy\_sent\_bytes | counter | The total bytes sent by a bondy node from clients  since reset |
+| bondy\_wamp\_unsubscribe\_messages\_total | counter | The total number of unsubscribe messages routed by a bondy node since reset |
+| bondy\_wamp\_unregistered\_messages\_total | counter | The total number of unregistered messages routed by a bondy node since reset |
 | cowboy\_requests\_total | counter | cowboy\_requests\_total Total number of Cowboy requests |
-| bondy\_wamp\_welcome\_messages\_total | counter | bondy\_wamp\_welcome\_messages\_total The total number of welcome messages routed by a bondy node since reset |
+| bondy\_wamp\_welcome\_messages\_total | counter | The total number of welcome messages routed by a bondy node since reset |
 | cowboy\_errors\_total | counter | cowboy\_errors\_total Total number of Cowboy request errors |
-| bondy\_wamp\_unregister\_messages\_total | counter | bondy\_wamp\_unregister\_messages\_total The total number of unregister messages routed by a bondy node since reset |
+| bondy\_wamp\_unregister\_messages\_total | counter | The total number of unregister messages routed by a bondy node since reset |
 | cowboy\_spawned\_processes\_total | counter | cowboy\_spawned\_processes\_total Total number of spawned processes |
-| bondy\_wamp\_yield\_messages\_total | counter | bondy\_wamp\_yield\_messages\_total The total number of yield messages routed by a bondy node since reset |
-| bondy\_send\_errors\_total | counter | bondy\_send\_errors\_total The total number of router send errors in a bondy node since reset |
-| bondy\_wamp\_goodbye\_messages\_total | counter | bondy\_wamp\_goodbye\_messages\_total The total number of goodbye messages routed by a bondy node since reset |
-| bondy\_wamp\_call\_messages\_total | counter | bondy\_wamp\_call\_messages\_total The total number of call messages routed by a bondy node since reset |
-| bondy\_wamp\_publish\_messages\_total | counter | bondy\_wamp\_publish\_messages\_total The total number of publish messages routed by a bondy node since reset |
-| bondy\_wamp\_challenge\_messages\_total | counter | bondy\_wamp\_challenge\_messages\_total The total number of challenge messages routed by a bondy node since reset |
-| bondy\_wamp\_result\_messages\_total | counter | bondy\_wamp\_result\_messages\_total The total number of result messages routed by a bondy node since reset |
-| bondy\_wamp\_registered\_messages\_total | counter | bondy\_wamp\_registered\_messages\_total The total number of registered messages routed by a bondy node since reset |
-| bondy\_wamp\_interrupt\_messages\_total | counter | bondy\_wamp\_interrupt\_messages\_total The total number of interrupt messages routed by a bondy node since reset |
-| bondy\_wamp\_invocation\_messages\_total | counter | bondy\_wamp\_invocation\_messages\_total The total number of invocation messages routed by a bondy node since reset |
-| bondy\_sessions\_total | gauge | bondy\_sessions\_total The number of active sessions on a bondy node since reset |
-| bondy\_sockets\_total | gauge | bondy\_sockets\_total The number of active sockets on a bondy node |
-| bondy\_socket\_duration\_seconds | histogram | bondy\_socket\_duration\_seconds A histogram of the duration of a socket |
-| bondy\_http\_request\_duration\_microseconds | histogram | bondy\_http\_request\_duration\_microseconds HTTP request duration |
+| bondy\_wamp\_yield\_messages\_total | counter | The total number of yield messages routed by a bondy node since reset |
+| bondy\_send\_errors\_total | counter | The total number of router send errors in a bondy node since reset |
+| bondy\_wamp\_goodbye\_messages\_total | counter | The total number of goodbye messages routed by a bondy node since reset |
+| bondy\_wamp\_call\_messages\_total | counter | The total number of call messages routed by a bondy node since reset |
+| bondy\_wamp\_publish\_messages\_total | counter | The total number of publish messages routed by a bondy node since reset |
+| bondy\_wamp\_challenge\_messages\_total | counter | The total number of challenge messages routed by a bondy node since reset |
+| bondy\_wamp\_result\_messages\_total | counter | The total number of result messages routed by a bondy node since reset |
+| bondy\_wamp\_registered\_messages\_total | counter | The total number of registered messages routed by a bondy node since reset |
+| bondy\_wamp\_interrupt\_messages\_total | counter | The total number of interrupt messages routed by a bondy node since reset |
+| bondy\_wamp\_invocation\_messages\_total | counter | The total number of invocation messages routed by a bondy node since reset |
+| bondy\_sessions\_total | gauge | The number of active sessions on a bondy node since reset |
+| bondy\_sockets\_total | gauge | The number of active sockets on a bondy node |
+| bondy\_socket\_duration\_seconds | histogram | A histogram of the duration of a socket |
+| bondy\_http\_request\_duration\_microseconds | histogram | HTTP request duration |
 | cowboy\_receive\_body\_duration\_seconds | histogram | cowboy\_receive\_body\_duration\_seconds Request body receiving duration |
-| bondy\_session\_duration\_seconds | histogram | bondy\_session\_duration\_seconds A histogram of the duration of sessions |
-| bondy\_wamp\_call\_latency\_milliseconds | histogram | bondy\_wamp\_call\_latency\_milliseconds A histogram of routed RPC response latencies |
-| bondy\_wamp\_message\_bytes | histogram | bondy\_wamp\_message\_bytes A summary of the size of the wamp messages received by a bondy node |
+| bondy\_session\_duration\_seconds | histogram | A histogram of the duration of sessions |
+| bondy\_wamp\_call\_latency\_milliseconds | histogram | A histogram of routed RPC response latencies |
+| bondy\_wamp\_message\_bytes | histogram | A summary of the size of the wamp messages received by a bondy node |
 | cowboy\_request\_duration\_seconds | histogram | cowboy\_request\_duration\_seconds Cowboy request duration |
-| bondy\_http\_receive\_body\_duration\_microseconds | histogram | bondy\_http\_receive\_body\_duration\_microseconds Request body receiving duration |
+| bondy\_http\_receive\_body\_duration\_microseconds | histogram | Request body receiving duration |
 | telemetry\_scrape\_size\_bytes | summary | telemetry\_scrape\_size\_bytes Scrape size, not encoded |
 | telemetry\_scrape\_encoded\_size\_bytes | summary | telemetry\_scrape\_encoded\_size\_bytes Scrape size, encoded |
 | telemetry\_scrape\_duration\_seconds | summary | telemetry\_scrape\_duration\_seconds Scrape duration |
