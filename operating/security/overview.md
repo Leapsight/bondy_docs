@@ -2,6 +2,7 @@
 
 ## Terminology
 
+* **Realms** are administrative domains and act as a namespace for all resources in Bondy i.e. all Users, Groups and Grants live within a Realm.
 * **Authentication** is the process of identifying a user.
 * **Authorization** is verifying whether a user has access to perform the requested operation.
 * **Groups** can have permissions assigned to them, but cannot be authenticated.
@@ -21,7 +22,7 @@ curl -X "PUT" "http://localhost:18081/realms/com.myapp.realm/security_enabled" \
 ```
 {% endtab %}
 
-{% tab title="Erlang" %}
+{% tab title="WAMP" %}
 
 {% endtab %}
 {% endtabs %}
@@ -37,7 +38,7 @@ curl -X "DELETE" "http://localhost:18081/realms/com.myapp.realm/security_enabled
 ```
 {% endtab %}
 
-{% tab title="Erlang" %}
+{% tab title="WAMP" %}
 
 {% endtab %}
 {% endtabs %}

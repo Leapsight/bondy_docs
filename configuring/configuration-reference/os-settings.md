@@ -1,4 +1,4 @@
-# OS Settings
+# OS Configuration
 
 ## Configuring Open File Limits
 

@@ -12,19 +12,19 @@ Images are available on [Docker Hub](https://hub.docker.com/r/leapsight/bondy). 
 
 You can run an official Bondy Docker image using the `docker run` command with an image name using the following syntax: `leapsight/bondy:{VERSION}[-{VARIANT}] where:`
 
-* `{VERSION}` can be `master`, `develop` or a tag like `0.8.6` 
+* `{VERSION}` can be `master`, `develop` or a tag like `0.8.8` 
 * `{VARIANT}` can be null or `slim` \(we will provide the `alpine` variant in the future\).
 
 For example to run the 0.8.6 release you would use:
 
 ```bash
-docker run -d leapsight/bondy:0.8.6
+docker run -d leapsight/bondy:0.8.8
 ```
 
 To run the slim variant of the same release you would use:
 
 ```bash
-docker run -d leapsight/bondy:0.8.6-slim
+docker run -d leapsight/bondy:0.8.8-slim
 ```
 
 ### Exposing ports
@@ -50,7 +50,7 @@ docker run \
     -p 18082:18082 \
     -p 18086:18086 \
     --name bondy1 \
-    -d leapsight/bondy:0.8.6
+    -d leapsight/bondy:0.8.8
 ```
 
 ## Configuring a Bondy node

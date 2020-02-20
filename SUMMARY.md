@@ -42,8 +42,8 @@
 * [Introduction to WAMP](using/introduction_to_wamp/README.md)
   * [WAMP Concepts](using/introduction_to_wamp/wamp-concepts.md)
 * [Developing with WAMP](using/developing-with-wamp.md)
-* [Developing with REST](using/developing-with-the-rest-api-gateway.md)
-* [Mops language](using/mops-language.md)
+* [Developing with REST](using/developing-with-the-rest-api-gateway/README.md)
+  * [Mops language](using/developing-with-the-rest-api-gateway/mops-language.md)
 
 ## Operating
 
@@ -55,10 +55,10 @@
   * [Role Based Access Control](operating/security/role-based-access-control.md)
   * [Managing Security Sources](operating/security/managing-security-sources.md)
   * [OAuth2](operating/security/oauth2.md)
+* [Operating a Cluster](operating/operating-a-cluster.md)
 * [Monitoring](operating/monitoring.md)
 * [Logging](operating/logging.md)
 * [Tracing](operating/debugging.md)
-* [Operating a Cluster](operating/operating-a-cluster.md)
 
 ## Reference
 
